@@ -1,0 +1,68 @@
+ 
+* install
+./configure make make install
+(load-path )(require)
+** setup file
+~/.emacs-w3m
+
+* proxy
+1) export http_proxy
+2) (setq w3m-command-argumens...)
+3) no-proxy (setq w3m-no-proxy-domains..)
+
+* use
+1) w3m-- w3m-home-page w3m-quick-start
+2) w3m-browser-url
+3) keys
+| keys        | desc                            |
+|-------------+---------------------------------|
+| g           | open                            |
+| G           | open-new-tab                    |
+| RET         | open-link-under-cursor          |
+| c           | print url link                  |
+| u           | print url link under the cursor |
+| R           | reload page                     |
+|-------------+---------------------------------|
+| scroll      | desc                            |
+|-------------+---------------------------------|
+| SPC         |                                 |
+| DEL         |                                 |
+| >           |                                 |
+| <           |                                 |
+| .           |                                 |
+| ,           |                                 |
+| M-l         |                                 |
+|-------------+---------------------------------|
+| quick move  | desc                            |
+|-------------+---------------------------------|
+| TAB         |                                 |
+| M-TAB       |                                 |
+| S-TAB       |                                 |
+| [           |                                 |
+| ]           |                                 |
+| {           |                                 |
+| }           |                                 |
+|-------------+---------------------------------|
+| url browser | desc                            |
+|-------------+---------------------------------|
+| B           | back history                    |
+| N           | forward history                 |
+| H           | Home page                       |
+| ^           | parent page                     |
+| SPC         | next page?                      |
+| DEl         | Previous Page?                  |
+|-------------+---------------------------------|
+| exit        | desc                            |
+|-------------+---------------------------------|
+| q           | close buff                      |
+| Q           | kill buff                       |
+|-------------+---------------------------------|
+| images      | desc                            |
+|-------------+---------------------------------|
+| T           | Toggle img display              |
+| I           | ??                              |
+| M-i         | save img to local               |
+| M-[         | zoom out??                      |
+| M-]         | zoom in??                       |
+  
+
