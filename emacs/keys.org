@@ -1,0 +1,43 @@
+
+* 按键整理
+
+- 常用移动键位
+- 文字删除与yank
+- 选取功能
+- 寄存器
+- bookmark
+- keyboard macro
+- files 
+- 常用功能与插件
+| cate          | desc | level | key-count |
+|---------------+------+-------+-----------|
+| yasnippet     |      |     1 | 1/        |
+| auto-complete |      |     1 | 1/0/0     |
+| eshell        |      |     2 | 1/0/0     |
+| ielm          |      |     2 | 1/0/0     |
+| etags         |      |     2 |           |
+| cscope        |      |     2 |           |
+|               |      |       |           |
+- 窗口管理
+| cate     |                     | level |
+|----------+---------------------+-------|
+| 滚动     |                     |       |
+| 缩放     |                     |       |
+| 切换     |                     |       |
+| 开关控制 | TODO:自定义快速分窗 |       |
+- 其他
+| cate       |   |   | level |
+|------------+---+---+-------|
+| common     |   |   |       |
+| read-only  |   |   |       |
+| trune-line |   |   |       |
+|            |   |   |       |
+  
+*  TODLIST
+** Dired
+** speednar/no-frame
+** ctags/cscope
+** sql-mode
+** w3m
+** emms
+** 画图
