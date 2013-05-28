@@ -1,0 +1,67 @@
+
+* 设置缓存
+#BEGIN_SRC pyton
+# http cache
+HTTPCACHE_ENABLED = True
+HTTPCACHE_EXPIRATION_SESC = 0 # never lost the cache
+HTTPCACHE_DIR = path.join(PROJECT_DIR, 'caches/')
+HTTPCACHE_IGNORE_HTTP_CODES = [404, 500]
+#HTTPCACHE_STORAGE = 
+#END_SRC
+
+* TODO 使用stats跟踪状态
+#BEGIN_SRC python
+self.crawler.stats.set_value('', 0)
+self.crawler.stats.inc_value('')
+self.crawler.stats.get_value('')
+...
+#END_SRC
+** TODO stats 分类
+
+* cookie处理
+禁用cookie可以避免一些cookie和session引起的问题
+#+BEGIN_SRC python
+# settings.py
+COOKIES_ENABLED = True # default value
+COOKIES_DEBUG = True 
+#+END
+
+* TODO run scrapy from a python scrapy
+
+* items实现save方法
+* TODO 使用mongodb做数据存储
+无结构，高性能，易于调试
+* 维护一个scrapy的快速启动模板
+1) 继承BaseSpider, HTMLXPathSelector
+2) item(db.save), item(mongodb.save)
+3) utils函数库
+4) logs,cachees,exports目录
+
+
+
+
+* 设置抓取速度
+#+BEGIN_SRC python
+CONCURRENT_REQUESTS = 4
+CONCURRENT_REQUESTS_PER_IP = 4
+DOWNLOAD_DELAY = 4
+RANDOMIZE_DOWNLOAD_DELAY = True  
+#+END
+
+* TODO 日志记录
+#+BEGIN_SRC python
+#settings.py
+LOG_FILE
+...
+# spider
+self.log(msg)  
+#+END
+
+
+* TODO still
+** profile and memory debug
+** jobs(pause and resuming crawls)
+** middelwares
+** web service and scrapyd
+** TODO handler exception
+** feed exports
