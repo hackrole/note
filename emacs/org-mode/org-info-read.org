@@ -1,0 +1,8 @@
+记录org info的阅读进度,及必要的一些信息
+
+
+* 进度
+** DONE the first captain:
+** TODO the second captain: Document structure
+
+* 重要信息

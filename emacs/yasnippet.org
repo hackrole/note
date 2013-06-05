@@ -1,0 +1,3 @@
+
+* 去掉末尾空行
+(setq require-final-line  nil)

@@ -1,0 +1,42 @@
+* to remember
+** org 一般用途
+1）note
+2）TODOLIST(org-agent, GTD)
+3) project planning(wiki,todolist)
+** TODO  org 主要功能
++ TODO items
++ tags
++ property
++ deadlines(?)
++ timestamps(?)
++ scheduling(?)
++ agent()
++ work with calender and diary
++ plain text link(file, web,...)
++ table
++ exported
++ publish
+** 启用org-mode的方式
+1) .org后缀
+2）org-mode-line(org-insert-mode-line-in-empty-file variable)
+** bug提交与求助
+1) maillist
+   + M-x org-submit-bug-report(emacs-orgmode@gnu.org)
+   + add the information
+2) useful backtrace and debug the org-mode
+   + M-x org-reload
+   + 'Options' menu -> enter Debugger on error(setq debug-on-error)
+   + do the debug, and see the Backtrace buffer
+ 
+** 命名规范
+1) TODOLIST: 大写
+2) tags:
+   + user-define: 小写
+   + system: 大写
+3) properties:
+   + user-define: 首字母大写
+   + system: 大写
+
+
+
+   
