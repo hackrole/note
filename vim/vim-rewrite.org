@@ -1,0 +1,39 @@
+计划重写vim配置
+完成后覆盖github
+
+* 计划
+** set.vim and vim-manager-addon
+** keys bind
+** plugin list
+** .gitignore and install.sh and so on
+
+* plugin list
+** zencoding
+** nerdtree
+** neocomplcache
+** snipmate
+snipmate-snippets
+vim-addon-mw-util
+tlib
+** powerline
+fugitive
+** surround
+** grep
+** vim-tips
+** nerd-comment
+** lookupfile
+genutils
+** css_color
+css_color_preview
+
+* some want plugins
+** session
+** ctags
+** cscope
+** tasklist
+** taglist
+** translate
+** evervim
+** conque shell :not really want
+** a :for c header file:
+
