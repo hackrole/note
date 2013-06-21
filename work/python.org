@@ -1,0 +1,13 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-06-17
+
+简单记录python工作相关内容，使用过的模块等
+* sqlachemy
+1) create_engine做简单sql查询的链接池使用
+
+* ConfigureParser
+基本的ini配置文件读取
+
+* urllib,urllib2
+url转码等
