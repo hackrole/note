@@ -6,8 +6,36 @@
 * sqlachemy
 1) create_engine做简单sql查询的链接池使用
 
+* scrapy/pymongo/scrapd/webkit
+爬虫相关
+scrapy爬虫框架
+pymongo数据mongodb存储
+scrapyd爬虫运行监控程序，待研究
+webkit爬虫js模拟器，无法完全模拟，带研究
+
 * ConfigureParser
 基本的ini配置文件读取
 
 * urllib,urllib2
 url转码等
+
+* requests
+方便好用的网路编程模块
+
+* logging
+日志模块,待深入研究
+
+* threading, Quenue
+线程，线程队列模块
+
+* selenium
+自动化测试，爬虫突破
+
+* unitTest
+测试驱动编程，带深入
+研究django测试类库
+研究scrapy测试用例
+scrapy测试驱动
+
+* gevent/twister
+异步网络框架

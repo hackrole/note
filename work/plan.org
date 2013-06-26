@@ -1,0 +1,21 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-06-25
+
+
+* TODO scrapy相关
+** TODO 完成sqlsave2pipeline
+** TODO scrapy测试驱动与contract研究
+** TODO 高抽象爬虫类与自定义命令
+1) 搜索/翻页/列表递归/item_xpath_db hooks
+2) 自定义命令实现爬虫级配置
+3) RulerSpider研究
+
+
+
+* TODO selenium相关								 :错误处理:日志记录:调用hooks:settings:
+selenium高抽象爬虫框架 
+1) proxy_use and proxy_check(requests)
+2) threads and Quene
+
+

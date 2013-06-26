@@ -1,0 +1,38 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-06-25
+#+Title: 简单记录Ultisnips插件的使用和配置
+
+Ultisnips是vim下实现模板功能的插件,被认为是snipmate的替代产品.
+
+
+
+* requirements
+1) set nocp
+2) has('python') and python >=2.6
+#+BEGIN_SRC vim
+let g:UltiSnipsUsePythonVersion = 2 (or 3)  
+#+END
+
+* TODO knowledgment
+
+
+* settings and commands
+** trigger keys
+#+BEGIN_SRC 
+let g:UltiSnipsExpandTrigger = ""
+let g:UltiSnipsListSnippets = ""
+let g:UltiSnipsJumpForwardTrigger = ""   
+let g:UltiSnipsJumpBackWardTrigger = ""
+#+END
+** use-define trigger function
+要遵守一定的约定,可以使用python玩自定义扩展
+#+BEGIN_SRC vim
+   
+#+END
+
+** snippet search path
+分为私有目录和全局目录,考虑去掉全局目录
+#+BEGIN_SRC vim
+   
+#+END
