@@ -1,0 +1,45 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-06-26
+
+python-mode-klen配置
+
+
+* 功能说明
+1) 查看文档
+2) pylint语法检查
+3) 运行python
+4) 语法高亮定制
+5) rope补全
+6) 断点/自动取空格/自动修复pep8/代码折叠
+7) 快捷移动
+
+* keys
+| func           | comamnd | key_n | key_old     |
+|----------------+---------+-------+-------------|
+| show docs      | :Pydoc  | <C-f> | K           |
+| rope complete  | :Pylint |       | C-space     |
+| run python     | :Pyrun  |       | \r          |
+| set breakpoitn |         |       | \b          |
+| python move    |         |       | ]],[[,]m,[m |
+| python select  |         |       | aC/iC aM/iM |
+
+
+* commands
+| command       | desc                  |   |
+|---------------+-----------------------+---|
+| :Pydoc        | show doc              |   |
+| :PyLintToggle | Enable/disable pylint |   |
+| :PyLint       | check pylint          |   |
+| :PyLIntAuto   | auto fix pep8         |   |
+| :pyrun        | run python            |   |
+
+* TODO questions
+** TODO fold配置
+** TODO 语法高亮配置
+** TODO breakpoint
+** TODO virtualenv
+** TODO pylint config
+** TODO python paths
+** TODO rope
+:RopeOpenProject to create rope dbfile
