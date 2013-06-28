@@ -1,0 +1,33 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-06-28
+
+
+* TODO vim
+** TODO vim按键整合
++ shell (split, tab)
++ vam bug fix(curl, wget代理)
++ auto_pairs(\p)
++ findfiles(\l)
++ python_mode(\p or)
++ neocomplete
+  1) 按键：手动补全，取消，使用. 设置ftype等
+  2) 配置sources, dict, tags等
++ Ultisnips(<A-e>,<A-e>)
++ minibuf(默认不显示，buffix，killbuff)
++ ctags/cscope/greps/quickfix
++ TagmaTask(\t)
++ zencoding
+
+** TODO set/key/command/func修改
+使用bak,考虑使用session,
+
+** git/hr-gvim-conf
+.gitignore/install.sh
+
+* TODO note
+** TODO python longging
+** TODO unittest
+** TODO elisp
+
+** TODO unix c/c start
