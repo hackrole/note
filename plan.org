@@ -30,4 +30,6 @@
 ** TODO unittest
 ** TODO elisp
 
-** TODO unix c/c start
+* TODO unix c/c start
+
+* git projects auto daily push bash

@@ -1,0 +1,39 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-07-04
+
+
+* TODO conf
+** TODO keys.vim
+** DONE set.vim
+** TODO plugin.vim分离
+
+* TODO plugin
+** TODO neocomplecache
+conf/keys/code/doc/note
+** ultisnips
+note/
+** TODO python mode
+key/note
+** TODO auto paris
+note/
+** TODO find-file
+note/
+** TODO conque shell
+key/doc/note
+
+* TODO builtin
+** TODO ctags/cscope
+makefiles/keys/note
+** TODO greps
+note
+** quickfix
+note
+
+* TODO something others
+** TODO vim-debug
+** TODO keys bind
+** TODO cmd
+** TODO builin func
+
+
