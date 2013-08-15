@@ -1,0 +1,19 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-08-15
+#Title: Scrapy TODO list
+
+
+* TODO url dup class
+
+* TODO log confiugre
+
+* TODO perspider settings(commands and design)
+
+* TODO sqlalchemy models and models-item
+
+* TODO scrapy start and end extension(run proxy validator and other python script)
+
+* TODO scrapy sleep downloadmiddleware(if goto the fireware, sleep the crawler for times)
+
+* TODO proxy downloadmiddleware and proxy spider and proxy validator

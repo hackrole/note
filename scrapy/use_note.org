@@ -1,0 +1,35 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-07-09
+
+
+* 配置分离
+| filename         | desc |   |
+|------------------+------+---|
+| settings.py      | main |   |
+| settings_dev.py  | dev  |   |
+| settings_prod.py | prod |   |
+
+* conf文件
+| filename   | desc             |   |
+|------------+------------------+---|
+| .gitignore | add to ignore    |   |
+| main.conf  | some useful conf |   |
+| .git       | use git          |   |
+
+* plugins
+| filename      | desc                                | TODO        |
+|---------------+-------------------------------------+-------------|
+| pipelines     | save(sql/mongo)/filter/             | dists/egg   |
+| unittest      |                                     |             |
+| FundTest      | contract/check                      | log to file |
+| debug         | open_in_browser/inspect_shell       |             |
+|               | parse command/check command         |             |
+| log           |                                     |             |
+| mails         |                                     |             |
+| downloadwares | fail url record and retry extension |             |
+| spiders       | keywords spider/three spider        |             |
+|               | crawlspider/..                      |             |
+| commands      | spider settings                     |             |
+| makefiles     | makefiles or install.sh for project |             |
+|               | template for genspider              |             |
