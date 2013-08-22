@@ -1,0 +1,41 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-08-22
+
+1) 读书要制定相应的计划
+
+2）制定计划，并坚定的实践
+
+3) 娱乐节制，多样性 
+
+
+
+* 近期计划
+** TODO wordpress与博客
++ 免费dns与域名
++ GAE博客
++ evernote(vim/emacs)
++ 整理github
+
+** TODO scrapy计划
++ 分配置命令
++ mongodb/redis
++ urlfilter(redis/leveldb/..)
++ httpcache(mongo)
++ logging定制
++ contract增强
++ unittest
+
+** 读书计划
++ python数据分析
++ rails
++ elisp
++ http
+
+
+
+
+
+
+
+
