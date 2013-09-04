@@ -33,3 +33,12 @@
 * TODO unix c/c start
 
 * git projects auto daily push bash
+
+* 本周计划
+** TODO mew配置
+** TODO elisp
+** TODO ruby
+** TODO wordpress
+** TODO python gevent sese.com
+** TODO http权威指南
+** TODO unix高级
