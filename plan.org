@@ -43,3 +43,4 @@
 ** TODO http权威指南
 ** TODO unix高级
 ** TODO reids实战
+** TODO freebsd/centeros安装
