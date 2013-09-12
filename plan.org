@@ -35,12 +35,34 @@
 * git projects auto daily push bash
 
 * 本周计划
-** TODO mew配置
+** DONE mew配置
+基本配置完成，有时间熟悉下按键和操作
+** WAITING: emacs evernote mode
 ** TODO elisp
 ** TODO ruby
+ruby koans进行中,加快进度
 ** TODO wordpress
+熟悉基本使用后就可是hr-note,源码有时间在读
 ** TODO python gevent sese.com
+scrapy 完成, gevent爬虫实现需要花点时间
 ** TODO http权威指南
 ** TODO unix高级
 ** TODO reids实战
+基本操作比较简单,熟悉pyredis及阅读源码比较重要
 ** TODO freebsd/centeros安装
+回家安装，之后熟悉基本软件安装，考虑安装桌面环境
+
+
+* 本周计划 2013/09/12
+** TODO scrapy
++ mongosavepipelines
++ savesavepipelines
++ scrapy unittest尝试
+
+
+** TODO ruby koans/programming ruby
+
+** TODO hr-note初步计划
+
+
+
