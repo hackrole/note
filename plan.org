@@ -64,5 +64,7 @@ scrapy 完成, gevent爬虫实现需要花点时间
 
 ** TODO hr-note初步计划
 
+** TODO w3af了解/fiddler linux替代软件webscarab了解
+
 
 
