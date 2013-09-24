@@ -1,0 +1,17 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-09-22
+
+gblog计划
+
+
+* first
+熟悉mdoel/query/key api
+基本功能设计/实现
+unitest/markdown
+终端客户端
+
+* second
+memcahced
+auth/htpts
+sitemaps/robots/订阅

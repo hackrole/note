@@ -1,0 +1,41 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-09-24
+
+the usefull command about cc-mode to edit c-source file
+
+
+* indent comands
+| comamnds           | keys       | desc                          | others                   |
+|--------------------+------------+-------------------------------+--------------------------|
+| c-indent-command   | <tab>      | indent cuurent line or region | some variables           |
+| newline-and-indent | <C-j>      | newline and indent            | standard emacs command   |
+| c-indent-exp       | <C-M-q>    |                               | not realy understand now |
+| c-indent-defun     | <C-c><C-q> | indent the the full function  |                          |
+| c-mark-function    | <C-M-h>    | mark the fun                  |                          |
+
+| varirable               | desc                                   |                  |
+|-------------------------+----------------------------------------+------------------|
+| indent-tabs-mode        | use tabs or spaces for indent          | standard         |
+| c-syntactic-indentation | use syntactic or just space for indent | usually set to t |
+|                         |                                        |                  |
+
+* comment commands
+| comands                         | keys       | desc           | other               |
+|---------------------------------+------------+----------------+---------------------|
+| comment-region                  | <C-c><C-c> | comment-region | need to conf(<M-;>) |
+| comment-dwim/indent-for-comment | <M-;>      |                | use-dwim conf       |
+
+* TODO move comamnds
+| comands                  | keys  | desc              | other |
+|--------------------------+-------+-------------------+-------|
+| c-beginning-of-defun     | C-M-a | move to fun begin |       |
+| c-end-fo-defun           | C-M-e | move to fun end   |       |
+| c-begunning-of-statement | M-a   |                   |       |
+| c-end-of-statement       | M-e   |                   |       |
+
+* TODO fill and line break commadns
+
+* TODO mirror modes
+
+* others
