@@ -41,3 +41,56 @@
 ** w3m
 ** emms
 ** 画图
+
+
+* something need to be note
+
+** key to avoid use
++ C-[ tied to <Esc>
++ f1 and C-h was use for help
++ C-m tied to <RET>
++ <C-i> tied to <tab>
+
+** key good choices
++ <f1> .. <f12>
++ <C-f1>.. <C-f12>
++ <M-f1> ..<M-f12>
++ <S-f1> .. <S-f12>
++ <C-0>.. <C-9> <M-0>..<m-9>
++ <hyper> or <super>
+
+** something others
+use <M-@> but not <M-S-2> as possible
+use <C-S-2> but not <C-@> as possible
+
+** swap the Control and alt on linux
+#+BEGIN: code
+# ~/.Xmodmap
+! -*- coding: utf-8 -*-
+! swap the ctrl and alt key
+
+http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html
+#+END
+
+** comamnds
+| comamnds                        |   |
+|---------------------------------+---|
+| global-set-key/global-unset-key |   |
+| local-set-key/local/unset-key   |   |
+| add-hook/remove-hook            |   |
+| define-key                      |   |
+| define-prefix-command           |   |
+
+** emacs key summary
++ <M-x> call command by name
++ <C-*> usually editing command, move/mark/search...
++ <M-*> not usually used,but is complement to ctrl
++ <C-x> for useful global comamnds
++ <C-c> usually for major-mode commands
++ <C-h> help system
+
+
+
+
+
+
