@@ -69,3 +69,24 @@ wireshark/fiddler qq/快播分析
 
 
 
+
+* the week plan for 10/1  2013/10/1
+** TODO the first day/ visit lifu for dinner/or maybe dota at night
+** TODO the second day goto the library
+** TODO the third day  blog/ruby/hack tools/some c source
+** TODO the fourth day go to the library
+** TODO the five day goon gblog/ruby rails/hack tools maybe/ some c source/scrapy_utils
+** the sixed and seven for rest or may some work
+
+remember to restart the 1125ssh scrapy and watch it at home
+the vim/note to add
+the scrapy utils/vimspider/ssfspider controls
+
+
+** TODO the long for the later plan
+controls unittest/nose/mock/profile/pdb/logging/optionparse/configparese/ library  learn and note
+goto gevent and or twister learn
+set  the emacs python/ruby/c/html/css/eshell/w3m env/and exchange from vim for maybe one year
+the c/lisp/ruby rails
+the redis/mongodb/hbase/consbase nosql db
+the redis/nginx and so on source read
