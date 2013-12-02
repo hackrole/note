@@ -90,3 +90,8 @@ set  the emacs python/ruby/c/html/css/eshell/w3m env/and exchange from vim for m
 the c/lisp/ruby rails
 the redis/mongodb/hbase/consbase nosql db
 the redis/nginx and so on source read
+
+
+* TODO the week plan for 2013/11/30
+** TODO gnote
+** pyevernote
