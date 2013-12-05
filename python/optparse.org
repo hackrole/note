@@ -1,0 +1,34 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-05
+
+
+* options参数列表
+usage:帮助信息
+
+| name          | desc                                       | example   |
+|---------------+--------------------------------------------+-----------|
+| short options |                                            | -v        |
+| long options  |                                            | --version |
+| dest          | the options parse destion                  |           |
+| help          | the help message                           |           |
+| default       | the default value                          |           |
+| action        | this optparse behaviour on this otpion     |           |
+| type          | the arguement type(string/int)             |           |
+| metavar       | use for the help message on options        |           |
+| nargs         | default 1, if >1, the dest will be a tuple |           |
+|               |                                            |           |
+
+** action列表
+| name         | desc                        | example |
+|--------------+-----------------------------+---------|
+| store        | store the option's argument |         |
+| store_const  | store a constant value      |         |
+| store_true   | store a true value          |         |
+| store_false  | store a false value         |         |
+| append       | append this value to a list |         |
+| append_const | append a constant to  list  |         |
+| count        | increment a counter by one  |         |
+| callback     | call a specified function   |         |
+| help         | print a usage message       |         |
+
