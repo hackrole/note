@@ -1,0 +1,36 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-19
+#+TITLE: pdb调试小记
+
+
+
+* 常用命令
+| short | long     | desc                         |   |
+|-------+----------+------------------------------+---|
+| n     | next     | go to next, step over method |   |
+| s     | step     | go to next, step into method |   |
+| b     | break    | make a break point           |   |
+| c     | continue | continue to next breakpoint  |   |
+| r     | return   | go to the method end         |   |
+| p     | print    | print value                  |   |
+
+
+* 小技巧
+** 启动pdb方式
+1> python -m pdb <python-file>
+
+2> pdb.set_trace()
+# the file
+import pdb
+pdb.set_trace()
+
+** pdb替代方案ipdb
++ 支持语法高亮
++ 支持tab补全
+
+
+** 不应该在for循环内加pdb.set_trace(), 不便调试
+
+** 条件启动pdb.set_trace(),方便调试。也可参考条件断点
+
