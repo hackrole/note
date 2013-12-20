@@ -1,0 +1,70 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-20
+#+TITLE: 关于编译安装的小记
+
+
+* 编译安装的一般流程
++ ./configure
++ make
++ sudo make install
+
+* 可能遇到的问题
+** 依赖问题
+*** 一般都是缺少某些必须的依赖包导致, 可以通过安装相应的依赖包解决
+
+部分软件在编译前 通过:
+#+BEGIN_SRC bash
+sudo aptitude build-dep <name> 
+#+END_SRC
+解决大部分甚至全部的依赖问题。
+
+*** 包依赖如果有版本要求一般比较麻烦，通常需要打补丁等，具体情况具体方案
+
+** 安装后的卸载/清理问题
+有些编译安装程序生成的makefile会包含
+#BEGIN_SRC bash
+make uninstall
+#END_SRC
+可以用来执行卸载
+
+*** 关于configure的一些通用约定
+| configure options | desc                                   |                                                                                        |
+|-------------------+----------------------------------------+----------------------------------------------------------------------------------------|
+| -h/--help         | show the full option list help message |                                                                                        |
+| --prefix          | set the soft directory to install      | very important, and very device to set(for more easy to uninstall and manage the soft) |
+| --with*           | add a feature                          |                                                                                        |
+| --without*        | feature                                |                                                                                        |
+
+
+*** 关于make的一些通用约定
+| make target     | desc                                                                                             |   |
+|-----------------+--------------------------------------------------------------------------------------------------+---|
+| make/(make all) | usually use to compile the soft                                                                  |   |
+| make install    | use to move the compiled target to the right directory, as to say install the soft on the system |   |
+| make uninstall  | use to remove the soft from the system                                                           |   |
+| make clean      | use to remove the compile middle file                                                            |   |
+| make dist-clean | use to remove the finally compile target                                                         |   |
+
+
+
+:: important ::
+如果不支持uninstall 则只能自己手动删除,
+如果安装时制定--prefix,则一般删除过程会比较容易，所以推荐编译安装都设置--prefix,方便软件的管理和安装
+
+手动删除时比较难定位具体问题位置，不过make install会返回实际安装了那些问题,
+所以极力建议保存一份make install的日志
+
+
+
+* 有用的建议
+** 执行./configure前，查看下configure的list，上网搜下一般应设置的选项.
+** 执行./configure如果可能，尽量要设置--prefix到一个自定义目录
+** 使用build-dep提前解决一部分包依赖问题
+** 应保留一份make install的日志，方便日后的卸载等操作
+** TODO 应该学习make/autoconf/conf等工具的使用				 :important:TODO:
+
+
+* 编译日志
+
+** TODO php编译
