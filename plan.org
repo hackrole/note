@@ -95,3 +95,7 @@ the redis/nginx and so on source read
 * TODO the week plan for 2013/11/30
 ** TODO gnote
 ** pyevernote
+
+* TODO 本周计划 <2013-12-21 六>
+** TODO GDG单元测试与TDD <2013-12-21 9:30 六>
+** TODO 重读/练习 Advanced Design Patterns in Python <2013-12-21 六>--<2013-12-22 日>
