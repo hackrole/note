@@ -97,5 +97,35 @@ the redis/nginx and so on source read
 ** pyevernote
 
 * TODO 本周计划 <2013-12-21 六>
-** TODO GDG单元测试与TDD <2013-12-21 9:30 六>
+** DONE GDG单元测试与TDD <2013-12-21 9:30 六>
 ** TODO 重读/练习 Advanced Design Patterns in Python <2013-12-21 六>--<2013-12-22 日>
+
+* TODO 2013年底读书计划
+** TODO python
+| book name                 | why | tag                   |
+|---------------------------+-----+-----------------------|
+| python source read        |     | :job:important:first: |
+| python advance program    |     | :job:important:first: |
+| mock(python lib)          |     | :for usage:third:     |
+| nose(python unittest lib) |     | :for usage:third:     |
+
+** TODO c
+| book name                   | why | tag                   |
+|-----------------------------+-----+-----------------------|
+| c program                   |     | :important:second     |
+| unix advance program        |     | :important:view:third |
+| unix network program(first) |     | :important:view:third |
+
+** TODO ruby
+| book name            | why | tag      |
+|----------------------+-----+----------|
+| ruby meta programing |     | :fourth: |
+| rails web            |     |          |
+| programming ruby     |     |          |
+
+
+** TODO others
+| book name | why | tag              |
+|-----------+-----+------------------|
+| 45 habit  |     | :view to note:   |
+|           |     | :view just once: |
