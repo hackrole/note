@@ -1,0 +1,12 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-23
+#+TITLE: the question you should ask during face
+
+
+* 使用svn还是git做版本管理
+
+* 编辑和测试的地位如何
+
+
+* 公司用到的语言

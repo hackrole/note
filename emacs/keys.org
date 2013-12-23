@@ -94,3 +94,10 @@ http://xahlee.info/linux/linux_swap_control_and_alt_xmodmap.html
 
 
 
+
+
+* others
+| key       | usage                       |   |
+|-----------+-----------------------------+---|
+| C-u 0 C-k | delete to the line begining |   |
+|           |                             |   |
