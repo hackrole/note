@@ -125,7 +125,9 @@ the redis/nginx and so on source read
 
 
 ** TODO others
-| book name | why | tag              |
-|-----------+-----+------------------|
-| 45 habit  |     | :view to note:   |
-|           |     | :view just once: |
+| book name            | why | tag              |
+|----------------------+-----+------------------|
+| 45 habit             |     | :view to note:   |
+|                      |     | :view just once: |
+| rst/emacs-rst-mode   |     |                  |
+| sphinx(doc generate) |     |                  |
