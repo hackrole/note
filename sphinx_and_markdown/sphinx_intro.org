@@ -1,0 +1,79 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-25
+#+TITLE: 文档工具sphinx简介
+
+
+* 入门
+sphinx是一个用python实现的项目文档工具, 用来快速建立项目文档。
+使用markdown(rst)作为文档源文件，自动生成多种格式的项目文档(html/pdf/latex等)
+
+同时支持各种便捷的配置选项,和快捷命令(make/autodoc等)。
+
+可以快速的配置生成的html文档的模板/主题等。
+
+通过extension来扩展，功能强大而又有很好的扩展性。
+
+* 起步
+
+1) 安装
+sudo pip install sphinx
+
+2) 建立一个文档项目
+sphinx-quickstart <目录名>
+
+  1> 要注意的是是否把 build和source放到同一个目录
+
+  2> 适当选择你需要的extension
+
+  3> 配置make/项目名/作者/版本号等
+
+
+3) 编写你的项目文档，修改主入门(index.rst)的 toctree指令, 加入需要的文件
+
+文件使用相对路径，可以定制_template/themes, 也可以加入图片/js/css等静态文件
+
+4) make html 或 sphinx-build -b html source-dir build-dir生成html格式文档项目
+
+ 
+
+
+* 基本概念等
+
+** 配置
+sphinx的配置放在目录下conf.py中，可以手动修改此文件，文件内容为一般的python代码.
+
+但是，要注意不完全是按照python的方式执行。
+
+| conf category | desc                            | example                       |
+|---------------+---------------------------------+-------------------------------|
+| project       | some conf about the project     | project/version/..            |
+| dir/files     | some conf about direction/files | source_suffix/source_encoding |
+| template      | the template conf               | templates_path                |
+| domain/role   |                                 |                               |
+| ...           |                                 |                               |
+
+** domain/role
+domain/role的概念是为了快捷的引入模块/类/方法/函数帮助时，加入对不同语言的支持
+
+** extension/扩展
+以此来完成对sphinx的扩展, 除了一些已有好用的扩展(autodoc/math/ipython..),
+
+你可以自己写extension来完成你需要的功能
+
+** rst扩展
+sphinx默认采用rst来作为文档源文件，不过扩展了rst的标签，加入了更多的功能
+
+
+* TODO sphinx深入
+** TODO 完成一个sphinx 文档项目(可以考虑argparse/loggin)等
+1) 改写template
+2) 改写themes
+3) 尝试conf
+4) 实验部分extension(autodoc/ipython..)
+5) 实验sphinx-apidoc
+
+** TODO 考虑实现一个自动完成(django mongoengine autodoc)扩展
+
+
+
