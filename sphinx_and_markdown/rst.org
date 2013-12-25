@@ -1,0 +1,57 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-25
+#+TITLE: rst格式小记
+#+WARNING: not finish
+
+* 文本样式
+
+
+* 空格换行处理/pre/block
+
+
+* 多种列表/list
+** 无序列表/bullet list
++ 使用 -,+,* 后跟空格和文本内容
++ 列表前后必须有空行，中间空行可选
++ 列表项后的内容如果跨行，必须要注意缩进
+
+
+** 有序列表/enumerated list
++ 通过1-9,A-z,罗马数字等后跟 . )等，跟空格加内容
++ 列表前后必须有空行，中间空行可选
++ 不必从1/a开始，支持#.自增索引
+
+** 键值列表/definition list/dd
++ 键必须单独一行，值可以跨越多行并且需要缩进，键值之间不允许有空行
++ item之间要有空行
+
+** 表格列表/field list
++ 键值在同一行通过空格来分开
++ 键需要::包围
+
+** 命令行选项列表/option list
+
+例子:
+-f file  the file to use
+-v   version to show
+--version  tiem
+
+* 章节/section/div
+一个用=,-,+,_等包围或下划标题, 例如：
+
+==========
+title 1
+==========
+
+section1
+==========
+
+chap 1
+----------
+
+* 表格/table
+
+* 图片与超链接
+
+* 脚注与refer
