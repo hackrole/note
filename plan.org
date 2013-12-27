@@ -131,3 +131,10 @@ the redis/nginx and so on source read
 |                      |     | :view just once: |
 | rst/emacs-rst-mode   |     |                  |
 | sphinx(doc generate) |     |                  |
+
+* TODO 购物计划
+** TODO 手套 <2013-12-28 六>
+** TODO 果蔬汁/牛奶 <2013-12-28 六>
+** TODO 火车票 <2013-12-28 六>
+** TODO 洗衣粉 <2013-12-28 六>
+** TODO 保湿霜 <2013-12-28 六>
