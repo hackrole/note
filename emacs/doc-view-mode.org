@@ -1,0 +1,51 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2013-12-31
+#+TITLE: emacs doc-view-mode相关小计
+
+
+
+* 简介
+doc-view-mode用于在emacs下打开pdf,DVI,ps(photoshop), OpenDocument, doc等格式文件
+
+doc-view-mode的基本原理是使用gs等后台命令讲文件转化为图片在emacs上显示,转化分页进行，可以设置超时，并且结果会被缓存到设置好的目录中。
+
+可以在图片模式和文本模式之间转换(C-c C-c).
+
+doc-view模式和linum-mode有冲突，同时开始会导致doc-view变的缓慢甚至无法使用.
+
+* 按键设置
+| key         | function                                                          | desc                                              |
+|-------------+-------------------------------------------------------------------+---------------------------------------------------|
+| C-c C-c     | doc-view-toggle-display                                           | toggle between img-mode and text-mode             |
+| k           | doc-viiew-kill-proc-and-buffer                                    | kill the proc and the buffer                      |
+| q           | quit-window                                                       |                                                   |
+|-------------+-------------------------------------------------------------------+---------------------------------------------------|
+| C-n/C-p     |                                                                   | next/prev line scroll                             |
+| n/p         | doc-view-next-page/doc-view/prev-page                             | next/preve page scroll                            |
+| <spc>/<del> | doc-view-scroll-up-or-next-page/doc-view-scroll-down-or-prev-page | scroll up/down, when the end side scroll the page |
+| M-</M->     | doc-view-first-page/doc-view-last-page                            | go to the first/last page                         |
+| \+/-\       | doc-view-enlarge/doc-view-shrink                                  | larger/smaller the size                           |
+| M-g         | doc-view-goto-page                                                | goto certain page                                 |
+|-------------+-------------------------------------------------------------------+---------------------------------------------------|
+| C-s/C-r     | doc-view-search/doc-view-search-backward                          | search for a certain regexps, forward/backward    |
+| C-t         | doc-view-show-tooltip                                             | show a popup for the match search                 |
+| C-u C-s/C-r |                                                                   | for a new word search                             |
+|-------------+-------------------------------------------------------------------+---------------------------------------------------|
+| r/g         | revert-buffer                                                     | refresh out the cache                             |
+| K           | doc-view-kill-proc                                                |                                                   |
+| k           | doc-view-kill-proc-and-buffer                                     |                                                   |
+|             | doc-view-clear-cache                                              | clear the cache                                   |
+
+
+* 配置相关
+** 关闭linum-mode等一些无用的mode
+** 设置缓存目录
+doc-view-cache-directory
+** <C-n>/<C-p>是否换页
+doc-view-continuouse
+** 默认size
+doc-view-resolution
+** 超时时间
+doc-view-conversioni-refresh-interval
+** TODO 其他
