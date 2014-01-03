@@ -1,0 +1,5 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-02
+#+TITLE: elisp buffer处理相关
+

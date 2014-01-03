@@ -11,3 +11,4 @@
 
 * TODO 阅读计划
 ** TODO redis
+** TODO python2.7

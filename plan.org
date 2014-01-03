@@ -30,7 +30,7 @@
 ** TODO unittest
 ** TODO elisp
 
-* TODO unix c/c start
+* DONE unix c/c start
 
 * git projects auto daily push bash
 
@@ -92,13 +92,13 @@ the redis/mongodb/hbase/consbase nosql db
 the redis/nginx and so on source read
 
 
-* TODO the week plan for 2013/11/30
+* DONE the week plan for 2013/11/30
 ** TODO gnote
 ** pyevernote
 
-* TODO 本周计划 <2013-12-21 六>
+* DONE 本周计划 <2013-12-21 六>
 ** DONE GDG单元测试与TDD <2013-12-21 9:30 六>
-** TODO 重读/练习 Advanced Design Patterns in Python <2013-12-21 六>--<2013-12-22 日>
+** DONE 重读/练习 Advanced Design Patterns in Python <2013-12-21 六>--<2013-12-22 日>
 
 * TODO 2013年底读书计划
 ** TODO python
@@ -133,8 +133,16 @@ the redis/nginx and so on source read
 | sphinx(doc generate) |     |                  |
 
 * TODO 购物计划
-** TODO 手套 <2013-12-28 六>
-** TODO 果蔬汁/牛奶 <2013-12-28 六>
-** TODO 火车票 <2013-12-28 六>
-** TODO 洗衣粉 <2013-12-28 六>
+** DONE 手套 <2013-12-28 六>
+** DONE 果蔬汁/牛奶 <2013-12-28 六>
+** DONE 火车票 <2013-12-28 六>
+** DONE 洗衣粉 <2013-12-28 六>
 ** TODO 保湿霜 <2013-12-28 六>
+* TODO buy programming ruby(English 1.9-2.0) <2014-01-03 五>
+* TODO 图书馆 <2014-01-04 六>
+** TODO python source(1-5) 
+** TODO gun program(make/gcc/automake/autoconf)
+** TODO some ruby
+** TODO c and net
+* TODO write this to notebooks <2014-01-03 五>
+* TODO some python <2014-01-04 六>
