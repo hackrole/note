@@ -1,0 +1,7 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-06
+#+TITLE: emacs插件 key-chord
+
+
+* TODO 是否不错，有时间尝试下
