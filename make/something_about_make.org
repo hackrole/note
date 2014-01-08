@@ -60,10 +60,12 @@ make uninstall
 * 有用的建议
 ** 执行./configure前，查看下configure的list，上网搜下一般应设置的选项.
 ** 执行./configure如果可能，尽量要设置--prefix到一个自定义目录
+设置--prefix到一个自定义目录后，会导致命令无法install到PATH路径中，需要手动ln -s
+部分软件除了可以设置--prefix外,还可以设置--exec-path自动完成ln -s
 ** 使用build-dep提前解决一部分包依赖问题
 ** 应保留一份make install的日志，方便日后的卸载等操作
 ** TODO 应该学习make/autoconf/conf等工具的使用				 :important:TODO:
-
+   
 
 * 编译日志
 

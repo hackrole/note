@@ -6,6 +6,7 @@
 
 
 * 简介
+nodejs适合做多人游戏,实时系统,联网软件，高并发应用
 ** 异步io与事件驱动
 
 ** CommonJS规范
@@ -142,9 +143,17 @@ layout使用, render设置layout属性
 *** unicode与国际化缺陷
 
  
-* nodejs编码规范
+* DONE nodejs编码规范
+[[http://nodeguid.com/style.html][Felix's node.js style Guide]]
+
++ 两个空格缩进
++ 80字符限制
++ ;换行
++ 永远使用var定义变量，建议绝不使用全局变量
++ 变量/函数用陀峰(考虑_命名方式?)
++ 建议尽量使用单引号，避免json/xml的双引号问题
++ 尽量使用===来做比较
++ 避免复杂继承/多集成，尽量使用utils.inherits函数
 
 * nodejs计划
-** TODO nodejs微薄app(express/mongodb)
-** TODO npm安装失败问题
-
+** TODO nodejs微博app(express/mongodb)

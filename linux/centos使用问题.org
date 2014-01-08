@@ -31,14 +31,17 @@ virbox免费，
 性能据说也会差一些
 
 * TODO 终端centos使用问题
+
 ** TODO 滚屏问题
 终端下不能滚屏，使用起来很麻烦，应该有解决方案
 
 ** TODO 复制/粘帖问题
 终端下不能使用鼠标，C-S-c,C-S-v也无法使用
 
-** TODO 远程使用方式
+** DONE 远程使用方式  :important:
 不知道能否通过ssh远程登录方式使用
+
+可以使用ssh登录方式使用centos，可以解决滚屏，复制/粘帖，中文乱码问题
 
 ** TODO yum使用与apt-get颇为不同
 有待研究,不知道能否配置使用aptitude

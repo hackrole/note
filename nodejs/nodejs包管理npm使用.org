@@ -1,0 +1,41 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-07
+#+TITLE: npm使用
+
+npm可以用来快速安装nodejs模块
+
+
+* 本地安装/全局安装/dependence安装
+** 本地安装
+npm install <module>
+会将模块安装到当前目录下的node_modules目录下,
+可以在项目中直接require后使用该模块
+** 全局安装
+npm install -g <module>
+会将模块安装到全局的目录中，
+不能直接在项目中require使用，需要调用
+npm link <module>
+
+** package.json安装                                                    :推荐用法:
+可以通过在项目根目录下package.json中指定dependences,
+然后调用:
+npm install
+一次安装所有依赖包，
+
+* 搜索模块
+到官网或国内镜像站点内搜索，例如:
+[[https://npmjs.org/][npm模块搜索]]
+
+* TODO 发布模块
+
+* TODO npm命令详解
+* 问题记录
+** DONE npm安装模块失败
+nodejs还在快速开发中，使用apt-get安装的nodejs,npm安装会失败
+不论是设置国内源，还是设置代理都会失败.
+
+原因似乎是因为npm的结构做了变更，老版本的npm无法使用，不过可以通过
+指定包地址的方式安装，不过遇到依赖时无法自动解决，需要手动一个个安装.
+
+通过编译安装最新版的node/npm问题解决

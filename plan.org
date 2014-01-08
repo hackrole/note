@@ -132,17 +132,11 @@ the redis/nginx and so on source read
 | rst/emacs-rst-mode   |     |                  |
 | sphinx(doc generate) |     |                  |
 
-* TODO 购物计划
-** DONE 手套 <2013-12-28 六>
-** DONE 果蔬汁/牛奶 <2013-12-28 六>
-** DONE 火车票 <2013-12-28 六>
-** DONE 洗衣粉 <2013-12-28 六>
-** TODO 保湿霜 <2013-12-28 六>
-* TODO buy programming ruby(English 1.9-2.0) <2014-01-03 五>
+* DONE buy programming ruby(English 1.9-2.0) <2014-01-03 五>
 * TODO 图书馆 <2014-01-04 六>
 ** TODO python source(1-5) 
 ** TODO gun program(make/gcc/automake/autoconf)
 ** TODO some ruby
 ** TODO c and net
-* TODO write this to notebooks <2014-01-03 五>
-* TODO some python <2014-01-04 六>
+* DONE write this to notebooks <2014-01-03 五>
+* DONE some python <2014-01-04 六>
