@@ -1,0 +1,45 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-09
+#+TITLE: emacs org-mode链接管理相关
+
+
++ org-mode可以在文本中插入链接
++ 支持列表的高亮/特殊显示
++ 快速的编辑/修改链接
++ 支持多种格式链接
++ 可以设置target(anchor)
++ 配置w3m，快速在url/文件等切换
++ search
+
+* 基本使用
+
+** 格式
+org链接的格式为:
+#BEGIN_SRC org
+[[link][description]]
+or
+[[link]]
+#ENG_SRC
+
+** 命令
+可以通过C-c C-l来快速/修改插入链接,
+通过(org-toggle-link-display)来关闭/启用link的显示
+
+#+TODO
+| key         | desc                                    | function |
+|-------------+-----------------------------------------+----------|
+| C-c C-l     | insert/modify link                      |          |
+| C-u C-c C-l | insert a file link                      |          |
+| C-c C-o     | open link at point with default browser |          |
+| C-c l       | store-link, usually set global          |          |
+| C-c C-x C-n | next link                               |          |
+| C-c C-x C-p | previous link                           |          |
+| ....        |                                         |          |
+
+* TODO 其他
+** TODO link abbreviations
+
+** TODO search options in the file links
+
+** TODO custom searchs
