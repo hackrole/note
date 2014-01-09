@@ -1,0 +1,80 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-09
+#+TITLE: emacs org-mode todo item使用
+
+org-mode的todo功能可以:
+1> 做笔记等时，简单标记下未完成项目,以备后来补充
+2> 配置org-agent/org-time相关做任务规划管理/进度安排表等
+
+
+
+* 基本使用
+| key                | desc                       | fun       |
+|--------------------+----------------------------+-----------|
+| C-c C-t            | retate the todo status     |           |
+| C-u C-u C-t        | select a status            |           |
+| S-<right>/S-<left> | pref/next states           |           |
+| C-c a t            | show all global agent todo | org-agent |
+| C-c a a            | show (weekly) agent todo   |           |
+| S-M-<RET>          | insert todo item           |           |
+| C-c / t            | show the file's todo keys  |           |
+
+
+* 高级配置
+
+** 状态配置
+org-mode默认的配置中，todo item中有(none, TODO, DONE)三种状态，
+可以通过设置org-todo-keywords来配置更多或更个性化的状态.
+
+** TODO type设置
+
+** 多状态选择
+org-mode可以配置几种平行状态集，例如:
+
+#BEGIN_SRC elisp
+(setq org-todo-keywords
+  '((sequence "TODO" "|" "DONE")
+  (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
+  (sequence "|" "CANCELED")))   
+#END_SRC
+
+** TODO 快速设置状态
+通过给每种状态设置一个单字符key,可以不需要每次都循环的该状态，
+可以直接直接key来设置状态
+
+** TODO 文件标签
+通过在文件头加入一些元标签，可以单独为每个org文件配置不同的设置
+例如:
+
+#BEGIN_SRC org
+#+TODO: TODO | DONE
+#END_SRC
+
+** 子任务依赖
+设置(setq org-enforce-todo-dependencies t)后，
+父item只有在所有子标签都标记为DONE后才能修改为DONE状态
+
+** TODO 日志记录
+通过设置
+#BEGINE_SRC elisp
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+#END_SRC
+可以在完成TODO item时记录下时间或添加一个备注信息
+
+
+也可以通过
+#+BEGIN_SRC org
+#+STARTUP: logdone
+#+STARTUP: lognotedone
+#+END_SRC
+来为文件单独配置
+
+*** TODO trace stats change and you habit
+
+** TODO proiorities
+
+** TODO break tasks into subtasks
+
+** TODO checkbox
