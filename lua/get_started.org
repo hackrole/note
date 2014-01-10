@@ -1,0 +1,145 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-10
+#+TITLE: lua入门
+
+
+* lua简介
+
+* 运行lua
+** 文件运行
+直接运行lua文件
+** 交互运行
+lua解释器使用
+dofile()可以加载外部文件
+
+* 类型
+lua支持8中基本类型, 可以通过type()函数来测试给定变量的类型
+** nil
+** boolean
+true or false
+
+出false和nil外，其他值都为true(0/空串)
+** number
+int/float
+无浮点数精度问题
+
+** string
+8为字节串，可以表达所有形式字符
+
+[[]] 用来创建多行字符串
+
+lua会自动在int和string中完成转换
+
+.. 字符串连接操作符
+
+tonumber/tostring完成显示转化
+** userdata
+可以将c数据放到lua变量中，
+
+除赋值/相等之外，没有预定义其他操作
+** function
+可以赋值给变量，可以做为函数参数，支持函数式编程特性
+
+可以调用lua/c实现的函数
+** thread
+** table
+高级结构
+
+
+
+* 表达式
+lua表达式包括:
++ 数字常量
++ 字符串常量
++ 变量
++ 运算符
++ 函数调用
++ 非传统的函数定义和表构造
+
+** 运算符
+包括算术/逻辑/关系运算
+
+除^/..外，所有二元运算都是左连接
+
+** TODO 表
+
+* 基本语法
+** 赋值
+支持并行赋值，两边元素数可不对应，补nil值或忽略多余值
+
+** 局部变量
+lua默认变量为全局变量，使用local创建局部变量.
+支持代码块作用域
+
++ 应尽可能使用local变量,避免全局变量
++ do ... end 可以设置local变量作用域
+
+** TODO 控制结构
+#+BEGIN_SRC lua
+if condition then
+    ....
+end;
+
+if condition then
+   ....
+else
+   ....
+end;
+
+if condtion then
+    ....
+elseif conditions then
+    ....
+else
+    ....
+end;
+
+while condition do
+    ....
+end;
+
+repeat
+    ...
+until conditions;
+
+for var=start,end,step do 
+    ...
+end
+
+for i,v in ipairs(a) do
+    ...
+end
+#+END
+
+
+
+
+* TODO 函数
+(...)设置多个arg参数
+
+支持尾调用特性
+
+* TODO 迭代器与for
+* TODO 编译/运行
+** dofile/loadfile/loadstring
+** require
+** c packages
+local f = loadlib("*.so", "function")
+
+** 错误/异常
+error("错误信息")
+assert(f(), "message")
+debug.traceback()
+
+* 协同程序
+有挂起/运行/停止三种状态
+
+|                  |                      |   |
+|------------------+----------------------+---|
+| coroutine.create | create a thread      |   |
+| coroutine.status | get status           |   |
+| coroutine.resume | run a thread         |   |
+| coroutine.yield  | yield to other thead |   |
+
+* TODO 实例

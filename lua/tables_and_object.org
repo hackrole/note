@@ -1,0 +1,18 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-10
+#+TITLE: lua中table与object实现
+
+
+* 数据结构
+table是lua唯一的数据结构，
+list/set/dict/object都可以基于table实现
+
+** TODO 实例
+programming in lua (C10)
+
+* TODO 数据/持久化
+
+* TODO Metatables and Metamethods
+
+...
