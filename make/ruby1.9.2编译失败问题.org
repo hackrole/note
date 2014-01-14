@@ -1,0 +1,41 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-14
+#+TITLE: ruby1.9.2编译失败问题
+
+
+ruby1.9.2在ubuntu13.04/centos6.5都编译失败，
+失败原因都是openssl库的问题.
+
+是否是因为ruby1.9.2依赖一个版本较旧的openssl库导致,
+网上的说法需要打个ssl的补丁才行
+
+建议还是不要使用ruby1.9.2了，应该是个问题版本
+
+* 多版本ruby与rvm问题
+之前安装了多个版本的ruby:
+1.8.7/1.9.1/1.9.3，真是各种问题
+
+** TODO rvm体验
+ruby是否都推荐使用rvm来方便的做版本切换，
+大致估计其原理就是来换的切换ruby软链接
+
+** 卸载ruby导致vim/gvim无法启动
+vim/gvim如果有+ruby特性，在找不到libruby-*.so.*时，
+是无法启动.
+
+解决方法：
+sudo aptitude purge ruby vim-common vim vim-gnome
+sudo aptitude install ruby vim vim-gnome
+
+** 卸载ruby导致emacs启动报错问题
+原因应该是因为我装了evernote-mode这个插件，这个插件依赖ruby
+重新安装下ruby就解决了
+
+* ldd实用命令
+解决ruby问题时，偶尔发现的一个帖子
+
+通过
+ldd `which vim`
+可以查看对应软件依赖的共享库(.so)
+配合grep可以很好的定位依赖库找不到导致的问题
