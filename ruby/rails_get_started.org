@@ -1,0 +1,43 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-01-15
+#+TITLE: rails起步
+
+
+* rails问题
+** 版本问题
+部分rails书籍上仍然是用ruby1.9和rails3来讲解的,
+不过官网已更新到ruby2.1/rails4.0,
+之间差距不小,加之ruby1.9.1会有不少版本和库依赖的问题
+
+所以直接编译安装ruby2.1,之后安装rails4开始学习rails会比较好
+
+rails官方文档不错，可以做起步用
+
+* rails学习
+** TODO commands使用
+*** TODO rails命令
+*** TODO rake命令
+*** TODO gem/bundle
+*** TODO rails console调试
+
+** TODO 模型理解model
+
+** TODO controller
+
+** TODO 模板系统
+*** TODO ass/coff script
+*** TODO form
+
+** TODO config
+*** db
+*** routes
+
+
+* rails起步项目
+
+** TODO rails blog(get started)
+
+** TODO rails tutorial demo
+
+** TODO rails depot
