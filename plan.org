@@ -140,3 +140,42 @@ the redis/nginx and so on source read
 ** TODO c and net
 * DONE write this to notebooks <2014-01-03 五>
 * DONE some python <2014-01-04 六>
+
+
+* TODO 年底计划
+** TODO emacs配置
+*** yasnippet配置/note
+*** autocomplete配置/note
+*** 通用配置
++ tab/space/indent配置
++ whitespace
++ speedbar
++ undotree
++ zencode
++ popup
++ markdown
++ rst-mode
++ w3m
++ emms
++ google-translate
++ mail
++ magit
++ sql-mode
++ color-theme
+*** 编程配置
++ cscope
++ etags
+*** python配置
++ pylint/pep8
++ pylookup
++ pydoc
++ ipython
++ complete
+*** c配置
+*** ruby配置
+*** nodejs配置
+** TODO vim配置更新
+** TODO pyevernote TDD练习
+** TODO rails学习
+** TODO node/lua了解
+** TODO c算法与数据结构
