@@ -1,0 +1,50 @@
+
+
+* 需要定义的key
+ac-mode-map
+| function                  | default-key  | desc                                                    |
+|---------------------------+--------------+---------------------------------------------------------|
+| ac-expand                 | <TAB>/<C-i>  | trigge to start complete                                |
+| ac-complete               | <RET>/<C-m>  | finish complete                                         |
+| ac-next                   | <down>/<M-n> | next candidate                                          |
+| ac-previous               | <up>/<M-p>   | previous candidate                                      |
+| ac-help                   | <C-?>/<F1>   | show buffer help                                        |
+|                           | <C-g>        | cancel complete                                         |
+| auto-complete             |              | start complete<need no charater input before            |
+| ac-fuzzy-complete         |              | fuzzy complete/auto-complete with on chioce do this too |
+|                           | <C-s>/<del>  | search in the complete menu/cancel search               |
+| ac-clear-dictionary-cache |              |                                                         |
+| ac-stop                   |              | stop complete                                           |
+
+* 有用的变量
+** quickhelp
+ac-use-quick-help
+ac-quick-help-delay
+
+** menu
+ac-show-menu-immediately-on-auto-complete 
+ac-expand-on-auto-complete
+ac-auto-show-menu
+ac-menu-height
+** trigger key/auto complete
+ac-trigger-key(should set to nil)
+ac-auto-start(num to start auto-complete)
+
+** complete history
+ac-use-comphist
+ac-comphist-file
+ac-cmphist 
+** dict
+*** user dict
+ac-user-dictionary(use below instead)
+ac-user-dictionary-file
+*** marjor-mode dict
+ac-dictionary-directories 目录
+
+** source
+ac-sources
+buffer-local
+
+** others
+ac-modes
+ac-ignore-case(smart)
