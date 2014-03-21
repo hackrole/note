@@ -1,0 +1,89 @@
+diff --git a/elisp/intro.org b/elisp/intro.org
+index 24b57e3..1dab882 100644
+--- a/elisp/intro.org
++++ b/elisp/intro.org
+@@ -7,7 +7,7 @@
+ * lisp的基本特性
+ + 变量不需要提前声明
+ + 几种基本类型(integer,list, buffer等)是内建实现
+-+ 通过函数判断数据类型，可以属于多个类型，但只能属于一直欧冠你基本类型
+++ 通过函数判断数据类型，可以属于多个类型，但只能属于一种你基本类型
+ 
+ 
+ * integer type
+diff --git a/emacs/key-chord.org b/emacs/key-chord.org
+index b98f087..2403f2b 100644
+--- a/emacs/key-chord.org
++++ b/emacs/key-chord.org
+@@ -4,4 +4,4 @@
+ #+TITLE: emacs插件 key-chord
+ 
+ 
+-* TODO 是否不错，有时间尝试下
++* TODO 似乎不错，有时间尝试下
+diff --git a/emacs/org-mode/org-todo.org b/emacs/org-mode/org-todo.org
+index a27a5e6..63dfe51 100644
+--- a/emacs/org-mode/org-todo.org
++++ b/emacs/org-mode/org-todo.org
+@@ -41,7 +41,7 @@ org-mode可以配置几种平行状态集，例如:
+ 
+ ** TODO 快速设置状态
+ 通过给每种状态设置一个单字符key,可以不需要每次都循环的该状态，
+-可以直接直接key来设置状态
++可以直接key来设置状态
+ 
+ ** TODO 文件标签
+ 通过在文件头加入一些元标签，可以单独为每个org文件配置不同的设置
+diff --git a/emacs/sql-mode.org b/emacs/sql-mode.org
+index 4bc6eb0..f1a1cfe 100644
+--- a/emacs/sql-mode.org
++++ b/emacs/sql-mode.org
+@@ -17,7 +17,7 @@ sql-mode为emacs下sql交互接口,相对与terminal sql有不少优点
+ *** 快捷键定义
+ *** 功能定制
+ **** 登录快捷
+-**** 则行和水平滚动或折叠
++**** 折行和水平滚动或折叠
+ **** sql-plus
+ **** sql beautry
+ 
+diff --git "a/linux/centos\344\275\277\347\224\250\351\227\256\351\242\230.org" "b/linux/centos\344\275\277\347\224\250\351\227\256\351\242\230.org"
+index 84b0c7c..715d091 100644
+--- "a/linux/centos\344\275\277\347\224\250\351\227\256\351\242\230.org"
++++ "b/linux/centos\344\275\277\347\224\250\351\227\256\351\242\230.org"
+@@ -30,12 +30,12 @@ virbox免费，
+ 功能上是否也偏弱
+ 性能据说也会差一些
+ 
+-* TODO 终端centos使用问题
++* DONE 终端centos使用问题
+ 
+-** TODO 滚屏问题
++** DONE 滚屏问题
+ 终端下不能滚屏，使用起来很麻烦，应该有解决方案
+ 
+-** TODO 复制/粘帖问题
++** DONE 复制/粘帖问题
+ 终端下不能使用鼠标，C-S-c,C-S-v也无法使用
+ 
+ ** DONE 远程使用方式  :important:
+@@ -46,7 +46,7 @@ virbox免费，
+ ** TODO yum使用与apt-get颇为不同
+ 有待研究,不知道能否配置使用aptitude
+ 
+-** TODO 中文支持
++** DONE 中文支持
+ 1> 中文乱码问题
+ 
+ 2> 编译安装中文输入法及使用
+diff --git a/lua/tables_and_object.org b/lua/tables_and_object.org
+index 8091256..baedc4c 100644
+--- a/lua/tables_and_object.org
++++ b/lua/tables_and_object.org
+@@ -14,5 +14,5 @@ programming in lua (C10)
+ * TODO 数据/持久化
+ 
+ * TODO Metatables and Metamethods
+-
++  
+ ...

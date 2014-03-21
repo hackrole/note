@@ -17,7 +17,7 @@ sql-mode为emacs下sql交互接口,相对与terminal sql有不少优点
 *** 快捷键定义
 *** 功能定制
 **** 登录快捷
-**** 则行和水平滚动或折叠
+**** 折行和水平滚动或折叠
 **** sql-plus
 **** sql beautry
 
