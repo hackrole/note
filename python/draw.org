@@ -1,0 +1,11 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-03-14
+#+Title: python画图
+
+python画图库:
+1> PIL
+2> matplotlib
+
+
+* TODO 使用

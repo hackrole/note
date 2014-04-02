@@ -4,4 +4,4 @@
 #+TITLE: emacs插件 key-chord
 
 
-* TODO 是否不错，有时间尝试下
+* TODO 似乎不错，有时间尝试下
