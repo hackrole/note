@@ -179,3 +179,6 @@ the redis/nginx and so on source read
 ** TODO rails学习
 ** TODO node/lua了解
 ** TODO c算法与数据结构
+
+* 本周计划 <2014-03-10 一>
+** TODO emacs配置去冗余 <2014-03-16 日>
