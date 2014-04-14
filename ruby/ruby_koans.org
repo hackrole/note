@@ -1,0 +1,181 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-04-13
+#+TITLE: ruby koans 临时整理
+
+
+
+* 正则表达式
++ scan
++ sub
++ gsub
++ $1, $2...
++ "hello world"[/(hello)/, 1]
+
+* 方法method
+** argumentError
+** self带与不带??
+** *args参数问题?
+** call private method with self raise error??
+
+* 方法关键字参数
+def t(one: 1, two: 2)
+end
+t()
+t(one: 2)
+t(two: 1)
+
+* 常量
+
+** 常量引用方式
+C
+::C
+Class::C
+::Class::C
+** 常量的作用域
+** 继承与内部类中常量的优先级问题??
+** 内部类的两种定义方式??
+class T
+  class TT
+  end
+end
+
+class T
+end
+class T::TT
+end
+
+* 控制结构
+所有的语句都返回一个结果,所以
+
+value = if true
+          :true
+        else
+          :false
+
+** 支持三目预算 ?:
+
+** 倒if表达式
+value = :tt if true
+** unless == if !()
+** break返回值
+break 1/"string"
+** next取代continue
+** for与while循环
+while ...
+end
+for .. in ..
+end
+** times等block函数??
+
+* true与false
+ruby中除nil与false,其他都为true,包括[],{},'',0
+
+* Exception
+** Exception层次??
+RuntimeError < StandardError < Exception < Object
+** 使用?? retry/..
+begin
+   raise ..,..
+rescue Exception
+  ..
+ensure
+  ..
+end
+
+* 迭代??
+** each
+.each {|item| ..} 依次迭代,类似for .. in
+** collect
+.collect{|item| ..} 依次对item做修改后返回新的Array
+** map
+same as collect
+** select
+.select {|item| ..}, 返回符合条件的元素的数组
+** find_all
+same as collect
+** find
+same as find_all, but find the first one only
+** inject
+.inject(init) {|result, item| ..} 
+用init初始化result后,对item迭代,每次把返回结果赋值给result,
+最后返回result
+
+
+* block
+** yield是block的基础
+yield
+yield v1, v2...
+result = yield ..
+** block_given?判断是否有block调用
+** 定义与传递block
+a = lambda { |n| n.upcase }
+def m(&block)
+block.call(10)
+end
+m(&a)
+** block与变量的影响关系??
+
+* 类定义class
+** 实例变量默认不可见
+instance_variable返回类变量列表
+可以通过instance_variable_get('@name'), instance_variable_eval('@name')/{@name}取到
+** attr_reader/attr_write/attr_accessor
+** 初始化方法initialize/new
+** to_s/inspect/to_str区别??
+** self问题??
+** 打开类??
+类定义只是一个执行语句,可以在任何时候打开一个类,添加新的方法
+*** 打开built-in类,需要::  ??
+*** 打开类与内部类重定义问题??
+*** ::来引用全局作用于
+::String
+** super可以调用父类同名方法,不能调用不同名方法
+** 类名也只是constant
+也可以通过const_get方法拿到
+Objects.constants返回常量列表
+** 通过类的method/methods/method_define?可以找到类的定义的方法
+** 可以为特定对象定义方法
+obj = Object.new
+def obj.you
+end
+类是Object对象,实例是类对象,也是Object对象
+** 类方法和实例方法是分开的,实例方法在对象中有更高优先级
+类与实例不共享实例变量
+** 定义类方法
+class Dog
+def Dog.dd
+end
+def self.ss
+end
+class <<self
+def tt
+end
+end
+** 类定义返回最后的表达式结果,通过调用self可以返回类对象给变量
+a = class T
+     21
+    end
+a = class T
+     self
+    end
+** 可以通过obj.class.method调用类方法
+
+* 模块module
+模块不能初始化, 通过include加入类定义中,实现minix多继承
+模块内方法的优先级低于类中定义的方法
+
+** 模块可以实现命名空间效果
+通过module::class等实现命名空间分离
+
+* 消息机制
+** __send__/send??
+方法调用等都是一个消息传递,可以通过obj.send(:name)来调用
+send第一个参数是消息名,后面的是参数列表
+** response_to?返回对象是否支持某个消息
+** method_missing方法在消息找不到时调用
+默认抛出NoMethodError,通过重写该方法可以实现高级技巧
+method_missing会导致与response_to?的不一致,
+可以重写response_to?来实现统一
+
+* TODO rake使用??
