@@ -1,0 +1,89 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-04-26
+#+TITLE: vim插件列表及简介
+
+
+简单记录下自己的vim插件配置和一些常用功能按键等. 不定期更新.
+
+* nerdtree
+一个文件系统树浏览插件,方便浏览和操作文件和目录.
+1) 不同文件的高亮显示
+2) bookmark支持
+3) 动态的基于正则的文件过滤支持<f>
+4) 动态的隐藏文件显示<i>
+5) 基本的文件操作支持
+6) 多个好用快捷键绑定
+7) 提供扩展api<?>
+
+** 常用设置选项
++ NERDTreeIgnore
++ NERDTreeBookmarksFile
+
+** 常用命令
+1) :NERDTreeToggle <path>/<bookmarks>
+   打开cwd/<path>/<bookmarks> nerdtree
+** 按键绑定
+<f3> :NERDTreeToggle<CR>
+<f2> :NERDTreeToggle <current-file-dir><CR>
+
+* TODO NERD-comment?
+快捷的代码注释插件,提供多个注释快捷键.
+
+常用的按键:
+| key              | desc                   |
+|------------------+------------------------|
+| <leader>c<space> | toggle comments status |
+| <leader>cc       | comments               |
+
+* TODO tagbar
+取代taglist的代码结构浏览器(支持递归tags),方便的查看代码的类/函数/变量等
+1) tags嵌套显示,取代taglist
+2) 动态的两种sort方式
+3) 支持扩展? <see tagbar-extend><TODO golang extend>
+4) 需要vim7以上,ctags5.5以上,filetype on
+
+常用命令
+| command                         | desc                                                   | my key |
+|---------------------------------+--------------------------------------------------------+--------|
+| :TagbarToggle                   | toggle tagbar display                                  | <f4>   |
+| :TagbarOpenAutoClose            | open tagbar and close if after select a tags           |        |
+| :TagbarTogglePause              | freezing the tagbar auto refresh on change source file | <C-f4> |
+| :TagbarGetTypeConfig {filetype} | get filetype tagbar config <see tagbar-extend>         |        |
+| :TagbarDebug [logfile]          | start debug mode, write debug message to logfile       |        |
+| :TagbarDebugEnd                 | end debug mode                                         |        |
+
+
+
+* TODO lookupfile
+* TODO surrond
+处理auto-pairs surrond的插件.
+| key            | desc             |
+|----------------+------------------|
+| ds<"/(/t>      | delete surrond   |
+| cs<><>         | change surrond   |
+| ys             | insert a surrond |
+| <virual-mode>S | ??               |
+** add jinja2/template support
+let g:surrond_104 = ""
+
+* easymotion
+* TagmaTasks
+* neocomplcache
+* auto-pair
+* gtrans
+* grep
+* c
+c.vim
+a.vim
+* python
+python-mode.vim
+* ruby
+* golang
+* rst
+riv
+* markdown
+* TODO evervim
+* html/css/js
+emment
+...
