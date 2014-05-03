@@ -64,18 +64,73 @@
 | cs<><>         | change surrond   |
 | ys             | insert a surrond |
 | <virual-mode>S | ??               |
-** add jinja2/template support
+** TODO add jinja2/template support
 let g:surrond_104 = ""
 
 * easymotion
+一个更方便的文本移动插件
+1) <leader><leader>w/W/b/B/e/E/ge/gE
+2) <leader><leader>f/F/t/T
+3) <leader><leader>j/k
+4) <leader><leader>n/N
+
+
 * TagmaTasks
+可以收集并显示一个/多个文件的任务列表, TODO, FIXME. NOTE, WARNING标记任务.
+1) <leader>tt, :TagmaTasks, generate the task list and mark
+2) <leader>tc, :TagmaTaskClear, clear marks
+3) <leader>tm, :TagmaTaskMarks, display the tasks mark
+4) <leader>tw, :TagmaTaskToggle, toggle the task list display
+5) [t/]t/[T/]T, jump to next/pre/first/last task
+
+
+
+
 * neocomplcache
 * auto-pair
+一个自动插入匹配pairs的插件,(),{},[],''等
+1) 可以自己扩展auto_pairs支持的pairs
+2) 可以实现buffer咯擦了的pairs
+
+按键:
+1) <leader>pt, toggle autopair enable
+2) <leader>pp, fast wrap pairs
+3) <leader>pj, jump to next close pair
+
+
 * gtrans
-* grep
-* c
-c.vim
-a.vim
+vim的翻译软件,翻译用google服务提供.
+1) <leader>gt, translate en word to zh
+2) <leader>gv, <virual-mode>, translate en sentence to zh
+3) <leader>gT,<personal>, translate zh word to en
+
+* TODO grep
+* c配置
+** TODO c.vim
+1) comment key
+2) run/make key
+3) insert key -> ultisnipet
+
+** a.vim
+quickly switch between source and header file.support many language,include c.
+
+*** command:
+1) :A/:AS/:AV/:AT switch to header file in current/split/vsplit/newtab
+2) :IH/IHS/IHV/IHT/IHN swtich to file under cursor in current/split/vsplit/newtab/new match.
+
+*** TODO: keys:
+1) <leader>ih
+2) <leader>is
+3) <leader>ihn
+
+*** config
+1) g:alternateExtensions_*, set header file extension, not used
+2) g:alternateSearchPath, header file search path
+3) g:alternateNoDefaultAlternate=1, echo err msg where header not exists, instead of create one.
+
+
+
+
 * python
 python-mode.vim
 * ruby
