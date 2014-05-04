@@ -1,0 +1,144 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-04-26
+#+TITLE: vim插件列表及简介
+
+
+简单记录下自己的vim插件配置和一些常用功能按键等. 不定期更新.
+
+* nerdtree
+一个文件系统树浏览插件,方便浏览和操作文件和目录.
+1) 不同文件的高亮显示
+2) bookmark支持
+3) 动态的基于正则的文件过滤支持<f>
+4) 动态的隐藏文件显示<i>
+5) 基本的文件操作支持
+6) 多个好用快捷键绑定
+7) 提供扩展api<?>
+
+** 常用设置选项
++ NERDTreeIgnore
++ NERDTreeBookmarksFile
+
+** 常用命令
+1) :NERDTreeToggle <path>/<bookmarks>
+   打开cwd/<path>/<bookmarks> nerdtree
+** 按键绑定
+<f3> :NERDTreeToggle<CR>
+<f2> :NERDTreeToggle <current-file-dir><CR>
+
+* TODO NERD-comment?
+快捷的代码注释插件,提供多个注释快捷键.
+
+常用的按键:
+| key              | desc                   |
+|------------------+------------------------|
+| <leader>c<space> | toggle comments status |
+| <leader>cc       | comments               |
+
+* TODO tagbar
+取代taglist的代码结构浏览器(支持递归tags),方便的查看代码的类/函数/变量等
+1) tags嵌套显示,取代taglist
+2) 动态的两种sort方式
+3) 支持扩展? <see tagbar-extend><TODO golang extend>
+4) 需要vim7以上,ctags5.5以上,filetype on
+
+常用命令
+| command                         | desc                                                   | my key |
+|---------------------------------+--------------------------------------------------------+--------|
+| :TagbarToggle                   | toggle tagbar display                                  | <f4>   |
+| :TagbarOpenAutoClose            | open tagbar and close if after select a tags           |        |
+| :TagbarTogglePause              | freezing the tagbar auto refresh on change source file | <C-f4> |
+| :TagbarGetTypeConfig {filetype} | get filetype tagbar config <see tagbar-extend>         |        |
+| :TagbarDebug [logfile]          | start debug mode, write debug message to logfile       |        |
+| :TagbarDebugEnd                 | end debug mode                                         |        |
+
+
+
+* TODO lookupfile
+* TODO surrond
+处理auto-pairs surrond的插件.
+| key            | desc             |
+|----------------+------------------|
+| ds<"/(/t>      | delete surrond   |
+| cs<><>         | change surrond   |
+| ys             | insert a surrond |
+| <virual-mode>S | ??               |
+** TODO add jinja2/template support
+let g:surrond_104 = ""
+
+* easymotion
+一个更方便的文本移动插件
+1) <leader><leader>w/W/b/B/e/E/ge/gE
+2) <leader><leader>f/F/t/T
+3) <leader><leader>j/k
+4) <leader><leader>n/N
+
+
+* TagmaTasks
+可以收集并显示一个/多个文件的任务列表, TODO, FIXME. NOTE, WARNING标记任务.
+1) <leader>tt, :TagmaTasks, generate the task list and mark
+2) <leader>tc, :TagmaTaskClear, clear marks
+3) <leader>tm, :TagmaTaskMarks, display the tasks mark
+4) <leader>tw, :TagmaTaskToggle, toggle the task list display
+5) [t/]t/[T/]T, jump to next/pre/first/last task
+
+
+
+
+* neocomplcache
+* auto-pair
+一个自动插入匹配pairs的插件,(),{},[],''等
+1) 可以自己扩展auto_pairs支持的pairs
+2) 可以实现buffer咯擦了的pairs
+
+按键:
+1) <leader>pt, toggle autopair enable
+2) <leader>pp, fast wrap pairs
+3) <leader>pj, jump to next close pair
+
+
+* gtrans
+vim的翻译软件,翻译用google服务提供.
+1) <leader>gt, translate en word to zh
+2) <leader>gv, <virual-mode>, translate en sentence to zh
+3) <leader>gT,<personal>, translate zh word to en
+
+* TODO grep
+* c配置
+** TODO c.vim
+1) comment key
+2) run/make key
+3) insert key -> ultisnipet
+
+** a.vim
+quickly switch between source and header file.support many language,include c.
+
+*** command:
+1) :A/:AS/:AV/:AT switch to header file in current/split/vsplit/newtab
+2) :IH/IHS/IHV/IHT/IHN swtich to file under cursor in current/split/vsplit/newtab/new match.
+
+*** TODO: keys:
+1) <leader>ih
+2) <leader>is
+3) <leader>ihn
+
+*** config
+1) g:alternateExtensions_*, set header file extension, not used
+2) g:alternateSearchPath, header file search path
+3) g:alternateNoDefaultAlternate=1, echo err msg where header not exists, instead of create one.
+
+
+
+
+* python
+python-mode.vim
+* ruby
+* golang
+* rst
+riv
+* markdown
+* TODO evervim
+* html/css/js
+emment
+...
