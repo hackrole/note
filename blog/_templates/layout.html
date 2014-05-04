@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block htmlhead %}
+    <meta charset="UTF-8">
+    <title>hackrole's home</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="alternate" href="/feed.atom"
+      title="Your atom feed title" type="application/atom+xml">
+    {% for link in links %}
+      <link rel="{{ link.rel }}" href="{{ link.href }}" type="{{ link.type }}"
+        {% if link.media %} media="{{ link.media }}" {% endif %} >
+    {% endfor %}
+  {% endblock htmlhead %}
+</head>
+<body>
+  <div id="header" class="container">
+    <h2>hackrole's home</h2>
+    <h4>life is just meet it self</h4>
+    <ul class="nav nav-pills">
+      <li><a href="/">index</a></li>
+      <li><a href="/archive/">archive</a></li>
+      <li><a href="/tags/">tags</a></li>
+      <li><a href="/about/">About me</a></li>
+    </ul>
+  </div>
+  <div id="body" class="container">
+    <div class="body">
+      {% block body %}
+      {% endblock body %}
+    </div>
+  </div>
+  <div id="footer" class="container">
+    <div class="footer">
+      <p>&copy; Copyright {{ format_date(format="YYYY") }}</p> 
+      <p>
+      Content me via <a href="mailto:daipeng123456@gmail.com">gmail</a>
+      <a href="http://github.com/hackrole">github</a>
+    </p>
+    <p>
+      Feed this blog via <a href="/feed.atom" rel="alternate" title="hackrole's home">Feed</a>
+    </div>
+  </div>
+  <script src="/static/jquery-1.11.1.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

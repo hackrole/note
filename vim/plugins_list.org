@@ -51,7 +51,7 @@
 | :TagbarTogglePause              | freezing the tagbar auto refresh on change source file | <C-f4> |
 | :TagbarGetTypeConfig {filetype} | get filetype tagbar config <see tagbar-extend>         |        |
 | :TagbarDebug [logfile]          | start debug mode, write debug message to logfile       |        |
-| :TagbarDebugEnd                 | end debug mode                                         |        |
+| :TagbarDebugEnd                 | end  debug mode                                        |        |
 
 
 
