@@ -1,0 +1,10 @@
+active_modules: [pygments, tags, blog, latex]
+author: hackrole
+canonical_url: http://hr-note.appspot.com
+feed:
+  name: hackrole's home
+  subtitle: u'life is just meet itself.'
+
+modules:
+  pygments:
+    style: friendly
