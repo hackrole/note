@@ -1,0 +1,12 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-05-05
+#+TITLE: linux下写*.desktop
+
+
+基本都是仿造/usr/share/applications/目录下来写，
+一般都要定义: exec, name, icon等
+
+
+可以使用:
+desktop-file-validate来验证
