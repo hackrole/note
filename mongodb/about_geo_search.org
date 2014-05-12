@@ -1,0 +1,13 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-05-05
+#+TITLE:  关于mongodb地理位置查询小记
+
+
+1) geo可以和其他字段生成联合索引
+
+2) find($near)查询无法返回距离.
+
+3) runcommand(geoNear)可以返回距离，不过这个距离不是经纬度计算出来的距离。
+   1) 所以考虑通过坐标在客户端完成计算.
+
