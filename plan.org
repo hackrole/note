@@ -182,3 +182,11 @@ the redis/nginx and so on source read
 
 * 本周计划 <2014-03-10 一>
 ** TODO emacs配置去冗余 <2014-03-16 日>
+
+* TODO note
+1) gcc
+2) make
+3) 共享库/静态库/动态库
+4) unix-net 2 and 1
+
+* TODO git 仓库server
