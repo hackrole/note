@@ -188,5 +188,10 @@ the redis/nginx and so on source read
 2) make
 3) 共享库/静态库/动态库
 4) unix-net 2 and 1
-
+   
+* TODO vim
+1) c autocmd
+2) make autocmd
+3) keys
+4) 二进制
 * TODO git 仓库server
