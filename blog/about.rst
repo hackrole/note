@@ -16,7 +16,7 @@ About Me
 
 1) 重点学会c/python/ruby/lisp/erlang/lisp
 
-2) 了解node/golang
+2) 了解node/golang/lua
 
 3) 深入linux开发,vim/emacs
 
@@ -26,6 +26,6 @@ About Me
 
 6) 环游世界
 
-7) GAE_blog/uml_tools/pyevernote
+7) GAE_blog/uml_tools/pyevernote/治愈手机app
 
 8) 开发一款不无聊的有趣的手机网游
