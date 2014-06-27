@@ -1,0 +1,100 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-06-27
+#+TITLE: mongodb管理与监控
+
+
+mongodb的管理和监控可以有以下方面
+
+1) 状态/性能监控
+
+2) 备份与恢复
+
+3) 主从复制集
+
+4) 索引优化
+
+5) 数据分片
+
+本文主要记录下关于性能/状态监控的问题.
+
+
+* mongo shell status工具
+启动mongo shell后可以在终端下使用的mongo状态工具。
+
+#+BEGIN_SRC mongo_shell
+use test_db
+# 查看数据库统计状态
+# 集合数/文档数/索引数/索引大小等
+db.status() 
+# 查看集合统计状态
+# 文档数/索引具体大小情况等
+db.colloection.status()
+# 查看服务器具体状态
+# 服务器的锁/内存/io读写/网络等
+db.serverStatus()
+#+END
+
+* mongostat工具
+每秒打印一次当前mongodb的运行状况
+CURD情况，客户端链接情况，网络传输情况等
+
+反映当前mongod的负荷情况
+
+
+#+BEGIN_SRC shell
+
+mongostats
+#+END
+
+* mongotop工具
+类似linux下的top工具.
+
+collection级别的发应，读写时间统计信息
+
+注意: 应该是在较新的mongodb中才支持，ubuntu默认带的2.0.4不支持
+
+#+BEGIN_SRC shell
+mongotop
+#+END
+
+
+* profiling
+可以设置profile为: 0 不记录， 1：记录慢查询， 2：记录所有
+slowms设置慢查询秒数
+
+该工具比较适合用来找出慢查询
+
+#+BEGIN_SRC mongoshell
+use test_db
+# 获取当前db的profile状态
+db.getProfilingStatus()
+# 关闭profile
+db.setProfilingLevel(0, 100)
+# 开启
+db.setProfilingLevel(1/2, 100)
+# 查看profile结果
+show profile
+# or
+db.system.profile.find().pretty()
+#+END
+
+** mongod --profile=(0, 1, 2) --slowms=20 可以打开全局的profile
+
+** profile为固定大小的集合
+默认为1M.如果想要更改，需先删除该集合后在建立该集合并制定大小
+
+
+#+BEGIN_SRC mongo_shell
+db.setProfilingLevel(0)
+db.system.profile.drop()
+db.createCollection("system.profile", {capped: true, size: 400000})
+db.setProfilingLevel(1)
+#+END
+
+* web监控界面
+一般mongod还会听过一个web监控界面，
+端口默认为shell端口加100(28017)
+
+* mongoperf
+io压力测试工具
