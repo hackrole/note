@@ -29,3 +29,10 @@ About Me
 7) GAE_blog/uml_tools/pyevernote/治愈手机app
 
 8) 开发一款不无聊的有趣的手机网游
+
+9) 一个更加好用的google chrome bookmark扩展。
+    1) 无文件夹嵌套,一层目录
+    2) only tags, no category
+    3) key bindings
+    4) net support for backup/restore
+    5) version controls
