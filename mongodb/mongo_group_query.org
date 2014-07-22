@@ -1,0 +1,12 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-07-05
+#+TITLE: mongodb实现分组聚合查询
+
+1) distinct
+2) group
+3) aggrate
+4) mapreduce
+
+
+
