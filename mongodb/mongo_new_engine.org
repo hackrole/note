@@ -1,0 +1,27 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-07-31
+#+TITLE: mongoengine新版功能奢望
+
+* TODO mongoengine问题
+mongoengine 是个mongodb ORM库。
+不过mongo本身是无模式的，虽然使用时大部分都要预订一些模式.
+
+mongoengine强制在mongodb上加模式的特点有很多问题。考虑自己实现一个.
+
+** 索引应该跟document分开.并且有自动化建立和删除的command.
+
+把索引定在Document/meta/indexes里很糟糕：
+1) 写法很乱，不易管理。
+2) 有时会失效，没有建立对应的索引
+
+** listField没法做长度限制
+set/sortset/max-len list/ sort-list等结构没有实现
+
+** 不支持自定义字段验证/文档级验证
+
+** pre_save/after_save hooks
+
+** 不可存储的EmbdDocumment
+
+** 可扩展的Document
