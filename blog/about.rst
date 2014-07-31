@@ -36,3 +36,5 @@ About Me
     3) key bindings
     4) net support for backup/restore
     5) version controls
+
+10) logging mongodb handlers
