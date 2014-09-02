@@ -1,0 +1,105 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-08-15
+#+TITLE: uwsgi log 配置
+
+* uwsgi日志配置features
+** 基本使用
+1) --daemonize
+2) --logto
+3) logto2
+
+** 基于插件的可插拔配置. 
+--logger --req-logger --logger-list
+
+** log routing支持
+通过正则把不同内容的log输出到不同文件
+log-route = 
+
+** 支持多种log输出
+1) file
+2) udp/unix socket
+3) syslog
+4) remote syslog
+5) redis
+6) mongodb
+7) zeroMQ
+8) crypto<加密>
+...
+
+** 可以自定义logging plugins
+
+#+BEGIN_SRC c
+#include <uwsgi.h>
+
+ssize_t uwsgi_foolog_logger(struct uwsgi_logger *ul, char *message, size_t len) {
+
+        struct iovec iov[2];
+
+        iov[0].iov_base = "[foo] ";
+        iov[0].iov_len = 6;
+
+        iov[1].iov_base = message;
+        iov[1].iov_len = len;
+
+        return writev(uwsgi.original_log_fd, iov, 2);
+}
+
+void uwsgi_foolog_register() {
+        uwsgi_register_logger("syslog", uwsgi_syslog_logger);
+}
+
+struct uwsgi_plugin foolog_plugin = {
+    .name = "foolog",
+    .on_load = uwsgi_foolog_register,
+};
+
+#+END
+
+
+
+
+
+
+
+* 配置uwsgi日志格式 log-format
+uwsgi日志分为三种可变项
+1) offsetof系统变量: uri/method/proto/addr等
+2) 系统函数: status/time/size/pid/
+3) 用户自定义logvars: 
+
+
+** 用户自定义logvars:
+
+#+BEGIN_SRC python
+import uwsgi
+
+def application(env, start_response):
+    uwsgi.set_logvar('foo', 'bar')
+    # returns 'bar'
+    print uwsgi.get_logvar('foo')
+    uwsgi.set_logvar('worker_id', str(uwsgi.worker_id()))
+
+#+END
+
+** 注册logchunk(function)
+
+#+BEGIN_SRC c
+
+struct uwsgi_logchunk *uwsgi_register_logchunk(char *name, ssize_t (*func)(struct wsgi_request *, char **), int need_free);
+
+static ssize_t uwsgi_lf_foobar(struct wsgi_request *wsgi_req, char **buf) {
+        *buf = uwsgi_num2str(wsgi_req->status);
+        return strlen(*buf);
+}
+
+static void register_logchunks() {
+        uwsgi_register_logchunk("foobar", uwsgi_lf_foobar, 1);
+}
+
+struct uwsgi_plugin foobar_plugin = {
+        .name = "foobar",
+        .on_load = register_logchunks,
+};
+
+#+END
