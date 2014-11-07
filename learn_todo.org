@@ -8,16 +8,18 @@
 
 3) 娱乐节制，多样性 
 
+4) 娱乐多样性就是坑
+
 
 
 * 近期计划
-** TODO wordpress与博客
+** DONE wordpress与博客
 + 免费dns与域名
 + GAE博客
 + evernote(vim/emacs)
 + 整理github
 
-** TODO scrapy计划
+** DONE scrapy计划
 + 分配置命令
 + mongodb/redis
 + urlfilter(redis/leveldb/..)
@@ -31,6 +33,7 @@
 + rails
 + elisp
 + http
+
 
 
 

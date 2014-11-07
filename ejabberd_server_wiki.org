@@ -36,8 +36,26 @@
 			]}
 
 
-* TODO 配置外部认证
+* DONE 配置外部认证
+1) 配置 auth_method: ext, ext_auth_path: '',
+2) 重启服务查看日志，外部日志是否正常
+3) ejabberdctl check* 检查是否生效
+4) 外部认证书写可以参考官网
 
-* TODO 配置离线推送
+* DONE 配置离线推送
+1) 编写一个erlang模块，注册offline-hooks.
+2) 在offline-hooks里调用apns的http方法
 
 * TODO 编写扩展模块
+
+** python sleekxmpp
+*** 机器人client.
+sleekxmpp.ClientXmpp
+
+*** server component
+sleekxmpp.ComponentXmpp
+
+*** TODO 全局的filter/hooks
+
+*** TODO new plugin/extension/stanze
+** TODO erlang mode

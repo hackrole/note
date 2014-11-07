@@ -1,0 +1,81 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-11-07
+#+TITLE: sleekxmpp阅读笔记(1)
+
+* sleekxmpp现状
+目前python可用的xmpp库,有xmpppy/sleekxmpp等.
+不过xmpppy实现比较粗糙低层,不宜使用.
+sleekxmpp设计比较好,易于扩展和使用,功能也比较全.
+
+不过目前围绕sleekxmpp的开发/group/issus等很糟糕,
+不论是github issus, 还是google group 基本都是一谭死水.
+官方文档也基本是很简陋,很多东西只能自己看源码研究.
+
+
+* sleekxmpp库结构
+** 最外层 接口层
+1) clientxmpp
+2) componentxmpp
+3) jid/api/exception等
+** 核心层 xmlstream包
+socket/xmlstream/stanzebase/scheduler/hanlder/match等都是在此处实现
+
+** plugin层 plugins
+xep扩展实现的地方
+
+** 其他
+utils/test/feature等
+
+
+* sleekxmpp 基本流程
+
+sleekxmpp的基本流程是会在process调用会起四个线程
+1) event thread(处理事件,可以注册handler,也可以event触发事件)
+2) scheduler thread(处理调度和延时任务)
+3) send thread 发送消息
+4) read thread 接受消息
+
+所以的线程基本都是一个无线循环, 所有的事件/调度/发送/接收,
+都好像是放入一个队列中,在各自的线程中.
+
+** xmlstream的基本重要接口方法
+*** handler 注册xml match处理
+add/register/remove
+*** event 注册事件处理
+1) add_event_handler
+2) del_event_handler
+3) event_handler
+4) event
+*** filter 添加xml过滤
+in/out, 先于xml match handler起作用.
+handler接收一个stanze作为参数,返回stanze或none
+返回none, stanze会被丢弃
+
+1) add_filter
+2) del_filter
+
+*** schedular 调度
+1) schedular
+
+*** send 系列函数
+处理消息发送
+
+*** connect/reconnect等连接管理方法
+属性statte是一个状态machine,处理状态变更
+
+** sleekxmpp的重点在与xml处理/外层处理循环
+使用的python的自带库: xml.etree.cElementTree. 
+
+xml的处理中的重点是:
+1) 注册stanze,构造stanze的树形结构class
+2) register_handler(match) 注册match和回调,其中match可能是根据tagname {ns}tag来匹配
+
+# register_stanze_plugin(stanze, plugin), 动态修改stanze class plugin_*_map属性,
+
+# xmlstream.register_stanze(stanzeClass), 注册root stanze class
+
+# register_handler(match()) 注册回调
+
+
+

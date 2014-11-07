@@ -8,6 +8,7 @@
 + 文档/实现说明/doxygen/网络资源
 + gdb/traceback/ main函数开始
 + 编译调试运行
++ 手动写，尝试，时间
 
 * TODO 阅读计划
 ** TODO redis
