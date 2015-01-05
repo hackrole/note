@@ -1,0 +1,19 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2015-01-05
+#+TITLE: vim心得
+
+* ctrl-g 显示当前文件相关信息
+
+* set scrolloff 设置自动回滚
+
+* :nohlsearch取消当前搜索高亮
+
+* help 不同内容补全格式不一样
+
+* :marks/:jumps 显示最近的标记和跳转列表
+
+* 配置文件分类
+1) 系统 /usr/share/vimrc
+2) 用户 $home/vimrc
+3) gvim配置 $home/gvimrc

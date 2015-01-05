@@ -1,0 +1,17 @@
+#+Author: hackrole
+#+Email: daipeng123456@gmail.com
+#+Date: 2014-12-24
+#+TITLE: mnesia用户手册(官方文档)
+
+* mnesia用户手册
+
+mnesia是一个分布式数据库, ...
+
+** 介绍
+
+本文档描述mnesia数据库, mnesia是一个分布式数据库系统.
+...
+是OTP系统的一部分.
+
+* 关于mnesia
+
