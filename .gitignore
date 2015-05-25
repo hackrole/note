@@ -1,1 +1,4 @@
+*.ropeproject
 blog/_build/*
+hr-blog/output/*
+hr-blog/cache/*
