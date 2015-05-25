@@ -1,0 +1,3 @@
+[submodule "hr-blog"]
+	path = hr-blog
+	url = git@github.com:hackrole/hr-blog.git
