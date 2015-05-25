@@ -1,5 +1,6 @@
 *.ropeproject
-blog/_build/*
+/blog/*
+/blog/_build/*
 hr-blog/output/*
 hr-blog/cache/*
 *.pyc
