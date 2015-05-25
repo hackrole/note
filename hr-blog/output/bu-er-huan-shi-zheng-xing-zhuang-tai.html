@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+          <title>hackrole's home</title>
+        <meta charset="utf-8" />
+
+
+
+    <meta name="tags" contents="数据库" />
+    <meta name="tags" contents="后端开发" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's home <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/pages/关于.html">About Me</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/bu-er-huan-shi-zheng-xing-zhuang-tai.html" rel="bookmark"
+         title="Permalink to 布尔还是整型状态">布尔还是整型状态</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <abbr class="published" title="2014-06-09T00:00:00+02:00">
+      Mon 09 June 2014
+    </abbr>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/hackrole.html">hackrole</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <div class="section" id="id2">
+<h2>写在前面的话</h2>
+<p>做后端开发3年了，后端的大头说白的就是一个数据库。所以每天都在与数据库打交道。
+从业之处，那管你什么表结构，需要功能就加表加字段，要性能就做冗余或是缓存。
+也算勉强混过了几个年头。表建的太多了，就会发现很多的表都有相似的结构，也有很多相似的考量方案。</p>
+<p>其中一个比较常见的就是在选择数据状态位时，是选择多个bool_if值控制还是一个int_status值。</p>
+<p>本文大量使用了 <strong>表</strong> 这一词,此处不单单指SQL数据库. nosql数据库,甚至是内存对象，类对象也应该有相似的处理。</p>
+</div>
+<div class="section" id="id3">
+<h2>布尔还是整型?</h2>
+<p>布尔和整型status的区别, <strong>就是布尔只能是true/false,而整形一般可以是任意一个整数，当然没人会整出那么多状态的结构，一般都会再3-5,或是5-10之间</strong></p>
+<p>布尔例子:</p>
+<pre class="literal-block">
+if_live = BooleanField(help_text=u&quot;是否还没死&quot;)
+if_gold = BooleanField(help_text=u&quot;是否是金子做的&quot;)
+</pre>
+<p>整形例子:</p>
+<pre class="literal-block">
+CHOICES = {
+    'dead': -1, # 禁用
+    'normal': 0, # 正常
+    'closed': 1, # 关闭
+
+}
+status = IntField(choices=CHOICES, help_text=u&quot;状态&quot;)
+</pre>
+<p>从上面可以看出两者最大的区别在于:</p>
+<ol class="arabic simple">
+<li>互斥性</li>
+</ol>
+<p>整形状态值具有互斥性(你只能设置一个状态值).
+而多个布尔型之间就没这种特性，比如:</p>
+<pre class="literal-block">
+# bool
+if_finish = BooleanField(help_text=u&quot;是否是正式用户&quot;)
+if_gold = BooleanField(help_text=u&quot;是否是黄金用户&quot;)
+
+# int
+CHOICES = {
+    'not_finish': -1,  # 非正式用户
+    'finish': 0,  # 正式用户
+    'gold': 1,  # 黄金用户
+}
+user_status = IntField(choices=CHOICES, help_text=u&quot;用户状态&quot;)
+</pre>
+<p>用户当然必须是正式用户才能是黄金用户.</p>
+<p>但是bool的例子中数据结构中确实有可能使一个用户在成为正式用户前，变身黄金用户。
+当然你可以通过代码的方式来控制这种逻辑，随着而来的就是代码的硬逻辑和维护负担。</p>
+<p>反观int的例子就很好的解决了这个问题。</p>
+<ol class="arabic simple" start="2">
+<li>多状态的记忆性</li>
+</ol>
+<p>整形状态值一旦被重新设置后就会丢失之前的状态。
+而多个布尔值的状态变化不会出现这种情况, 比如:</p>
+<pre class="literal-block">
+# bool
+if_close = BooleanField(help_text=u&quot;是否被禁用&quot;)
+if_gold = BooleanField(help_text=u&quot;是否是黄金用户&quot;)
+
+# int
+CHOICES = {
+    'closed': -1,  # 禁用
+    'normal': 0,  # 普通用户
+    'gold': 1,  # 黄金用户
+}
+user_status = IntField(choices=CHOICES, help_text=u&quot;用户状态&quot;)
+</pre>
+<p>假若现在临时禁用一个用户，之后有取消禁用。
+bool的例子没有问题，设置下is_close就好了。
+int的例子有个问题，没法判断一个被禁用的用户之前是普通用户还是黄金用户, 之前的状态丢失了。</p>
+</div>
+<div class="section" id="id4">
+<h2>实践策略</h2>
+<p>再设计表结构的状态位时，基本的考量也就是考虑在状态互斥和记忆性。
+1) 允许一个非正式用户成为黄金用户，当然不能算一个好的数据结构设计。
+2) 一旦禁用就不能返回以前状态当然更加糟糕。</p>
+<p>除此之外，还有一些其他的方面需要考虑。
+1) bool型字段应该在逻辑允许的情况下尽量少，但是前提是满足逻辑以及可以考虑的扩展的要求。</p>
+<dl class="docutils">
+<dt>原因很简单, 当一个表结构中bool字段太多，那你可能就会有下面这样查询语句的对比::</dt>
+<dd><p class="first"># bool
+user.objects(is_close=False, is_gold=True, is_finish=True,....)</p>
+<p class="last"># int
+user.objects(status=CHOICES['gold'])</p>
+</dd>
+</dl>
+<p>选择一目了然.</p>
+<ol class="arabic" start="2">
+<li><p class="first">int型字段应该做好顺序的设置，这种顺序有时会发挥很好的副作用:</p>
+<pre class="literal-block">
+# int 1
+CHOICES = {
+    'normal': -2,  # 普通用户
+    'closed': -1,  # 禁用
+    'gold': 1,  # 黄金用户
+}
+status = IntField(choices=CHOICES, help_text=u&quot;用户状态&quot;)
+
+# int 2
+CHOICES = {
+    'closed': -1,  # 禁用
+    'normal': 0,  # 普通用户
+    'gold': 1,  # 黄金用户
+}
+status = IntField(choices=CHOICES, help_text=u&quot;用户状态&quot;)
+
+# 查询正常或黄金用户
+# int 1
+user.objects(status__in=[CHOICES['normal'], CHOICES['gold']])
+# int 2
+user.objects(status__gte=CHOICES['normal'])
+</pre>
+</li>
+</ol>
+<p>3) 设计即多选一
+一般的策略是一个int_status配合几个bool型做状态处理。
+但是很多时候,尤其是状态位较多的情况，会出现的一个问题是如何做int型和bool型间做平衡。
+应该设置几个bool型，那些应该放到bool型中，那些应该放到int型中，这些考量当然必须首先满足逻辑要求。
+之后如果仍有多个选项，则可能要靠个人的经验和品味。</p>
+</div>
+<div class="section" id="id5">
+<h2>扩展思考</h2>
+<div class="section" id="bits-string">
+<h3>bits/string状态位。</h3>
+<dl class="docutils">
+<dt>相信不少朋友碰到过这样的设计::</dt>
+<dd># string
+status = &quot;11&quot; # 第一位if_close, 第二位if_gold
+# bits
+status = 4 # 2进制位控制，（00, 01, 11, 10)</dd>
+</dl>
+<p>现在在楼主看来这样的设计很糟糕.</p>
+<ol class="arabic simple">
+<li>这中设计根本上就是无非把多个bool位合并成一个，带来的结果
+1) 设计结构可读性差。
+2) 可扩展和可维护性差(多状态被硬编码在一起)。
+3) 查询不便，必须手动拼接status值，甚至做位运算。
+4) 要说多省存储空间吧，也不见得。</li>
+<li>延伸的思考就是int型某种意义上来说也是多个bool合并的结构，但是很大的差别在于, 不会对int值做某种硬性规定.</li>
+</ol>
+<p>一方面将int与原先的多个bool之间做了解耦合，解决了扩展性和可维护的问题.
+另一方面，允许设计者对int值做自己的选择,一定程度上能解决可读性，和查询不变的问题。
+存储的问题是最次要的问题，甚至不应该考虑.因为太便宜了。</p>
+</div>
+<div class="section" id="id6">
+<h3>其他可选方案</h3>
+<ol class="arabic simple">
+<li>int型状态位结合，status change_log(状态机模式), 解决记忆性问题</li>
+<li>多个bool型配合分表。</li>
+</ol>
+</div>
+</div>
+
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
