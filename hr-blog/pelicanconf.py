@@ -12,8 +12,8 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'cn'
 
-# THEME = "/home/daipeng/Desktop/tmp/pelican-tmp/pelican-themes/alchemy"
-THEME = "/home/daipeng/Desktop/tmp/pelican-tmp/pelican-themes/bootstrap2"
+THEME = "/home/daipeng/Desktop/tmp/pelican-tmp/pelican-themes/alchemy"
+# THEME = "/home/daipeng/Desktop/tmp/pelican-tmp/pelican-themes/bootstrap2"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
