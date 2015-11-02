@@ -2,6 +2,11 @@
  numpy中使用不对称数组初始话np.array的结果
 ===========================================
 
+:author: hackrole
+:tags: numpy,pydata
+:date: 2015/10/29
+
+
 numpy.array一般使用对齐数组初始化.
 初始化后, arr具有对应的shape, 可以使用多维数组的诸多特性.
 
