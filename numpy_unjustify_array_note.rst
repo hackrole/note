@@ -1,6 +1,5 @@
-===========================================
- numpy中使用不对称数组初始话np.array的结果
-===========================================
+numpy中使用不对称数组初始话np.array的结果
+=========================================
 
 :author: hackrole
 :tags: numpy,pydata
@@ -14,7 +13,7 @@ numpy.array一般使用对齐数组初始化.
    如果使用未对齐的数组或未完全对齐的数组初始化, arr只会对应的可以对齐的维度上,更低维度会作为list-object类型存储.
 
 
-.. code:: python
+.. code: python
    import pytest
    import numpy as np
 

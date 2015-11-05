@@ -1,6 +1,8 @@
-=======================
  如何mock requests模块
 =======================
+
+:tags: requests,mock,unittest
+:author: hackrole
 
 
 requests模块是非常好用的python http处理模块，使用场景很长广。

@@ -1,12 +1,12 @@
 如何管理个人笔记和计划
 ======================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2015-11-05
-tags: note,learn
-marks: important
-summary: 个人笔记和计划的管理和组织方式
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2015-11-05
+:tags: note,learn
+:marks: important
+:summary: 个人笔记和计划的管理和组织方式
 
 
 个人笔记是个人学习成长中非常重要的记录和辅助.
