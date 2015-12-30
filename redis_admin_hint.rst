@@ -9,14 +9,13 @@ redis服务管理需要
 
 1) 建议使用linux部署。
 
-
 2) sysctl vm.overcommit_memory=1 或者 vm.overcommit_memory = 1 (/etc/sysctl.conf)
 
 3) echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 4) 设置一个和内存一样大或更大的swap分区，不然redis有可能在内存不足时被系统杀死。
 
-5) 设置一个明确的maxmemoery. 这样redis会在内存到限后抛出错误，而不会falling.
+5) 设置一个明确的maxmemory. 这样redis会在内存到限后抛出错误，而不会falling.
 
 6) 在写比较重的场景下需要有大约2倍于normal的内存。这些是来在内存中保留那些需要被写回磁盘的数据.
 
