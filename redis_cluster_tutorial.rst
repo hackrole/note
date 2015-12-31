@@ -95,3 +95,27 @@ cluster-require-full-coverage <yes/no>
 创建和使用redis集群
 ~~~~~~~~~~~~~~~~~~~
 
+一般都需要安装ruby的redis包::
+
+    gem install redis
+
+如果是测试可以使用redis下提供的命令，快速启动集群做测试.如下::
+
+    1) cd <reids>/utils/utils/create-cluster/
+
+    2) read the readme and gem install redis.
+
+    3) ./create-cluster start
+
+    4) ./create-cluster create.
+
+    5) test it now.
+
+    6) ./create-cluster stop && ./create-cluster clean
+
+
+当然最好是自己配置集群环境，这样能学到更多东西, 如下::
+
+    1) mkdir cluster-test
+       cd cluster-test
+       mkdir 7000 7001 7002 7003 7004 7005
