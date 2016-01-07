@@ -23,7 +23,7 @@ redis中主要包含如下数据类型:
 6) bit-array或bitmaps.
 7) HyperLogLogs, 概率行数据结构. **TODO**
 
-不过数据结构可用根据需要解决不过的任务集。
+不同数据结构可以根据需要解决不同的任务集。
 
 类型具体说明
 ------------
@@ -34,9 +34,9 @@ redis-key
 redis-key只能是字符串，并且是2进制安全。
 
 1) 空字符串也能做为key.
-2) 太长的key不被推荐，比较性能不好.
-3) 太短的key不好，可读行不好 u1000flw => user:1000:followers
-4) 对键做良好的管理，引入命名空间和键前缀扽概念. user:1000, comment:1234.replys
+2) 太长的key不被推荐，compare性能不好.
+3) 太短的key不好，可读性不好 u1000flw => user:1000:followers
+4) 对键做良好的管理，引入命名空间和键前缀等概念. user:1000, comment:1234.replys
 5) 最大长度512MB, 不会成为限制。
 6) exists判断key是否存在, del用于删除key, keys用于列出keys.type获取key类型.
 7) ttl/expire用于获取和设置过期时间. persist移除key的过期设置。pttl/pexpire返回/设置millsecond级别的过期时间.
@@ -55,9 +55,9 @@ redis-string
 redis-list
 ~~~~~~~~~~
 
-列表, 链表实现, 在数据总监插入/移除原始的复杂度为O(1), 查找元素的复杂度为O(N).
+列表, 链表实现, 在列表中间插入/移除元素的复杂度为O(1), 查找元素的复杂度为O(N).
 
-1) 大多数操作都支持左右两个方向， lpsuh/rpush. l->head/r->end
+1) 大多数操作都支持左右两个方向， lpush/rpush. l->head/r->end
 2) 两个方向的push/pop可以作为队列/栈使用. lrange用于获取列表内容.常用的场景: 
    A) 任务队列.
    B) 返回最新内容.

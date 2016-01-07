@@ -12,7 +12,7 @@ redis复制配置相关
 如下配置可能有用::
 
     repl-diskless-sync (不使用磁盘同步)
-    repl-diskless-sync-delay (同步前的延时, 已等待其他的要链接的slave)
+    repl-diskless-sync-delay (同步前的延时, 以等待其他的要链接的slave)
 
 
 安全问题
