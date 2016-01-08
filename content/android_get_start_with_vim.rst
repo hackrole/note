@@ -5,6 +5,7 @@ eclipse过程忽略，只记录vim/shell过程
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:43:40
 :tags: android, hello world
+:status: draft
 
 
 开始工程
