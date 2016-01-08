@@ -1,10 +1,10 @@
 ruby下的irb/iruby如何使用补全
 =============================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-01-08
-tags: ruby,irb,iruby,bond,ruby_completion
+:date: 2016-01-08 10:20
+:author: hackrole
+:email: daipeng123456@gmail.com
+:tags: ruby, irb, iruby, bond, ruby_completion
 
 概述
 ====
@@ -34,8 +34,8 @@ bond是一个ruby-gems, 用来增强irb的补全功能.
 
 2) 需要修改~/.irbrc::
 
-   require 'bond'
-   require 'bond/completion'
+    require 'bond'
+    require 'bond/completion'
 
 iruby补全
 ~~~~~~~~~

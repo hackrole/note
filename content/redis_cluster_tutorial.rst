@@ -4,11 +4,13 @@ redis集群教程
 :title: redis集群教程整理
 :tags: redis,redis-cluster,cluster,high-avaliable
 :author: hackrole
-:date: 2015/12/30
+:date: 2015-12-30
 
 redis集群相关内容, 讲解如何设置集群，对集群做测试和常规操作。
 不涵盖redis集群的细节，只从用户的角度讲如何使用redis集群, 以及redis的高可用性和一致性相关内容。
-更具体内容参见 `http://redis.io/topics/cluster-spec`_
+更具体内容参见::
+
+    http://redis.io/topics/cluster-spec
 
 redis集群的作用
 ---------------

@@ -39,8 +39,9 @@ redis分片相关
 
 1) 客户端, 直接在客户端选择正确的实例完成操作。部分redis-client库实现这一功能.
 
-2) proxy, 类似mogos. 客户端链接到proxy, 由proxy代为转发到正确的redis实例上. 比如twemproxy
-   `https://github.com/twitter/twemproxy`_
+2) proxy, 类似mogos. 客户端链接到proxy, 由proxy代为转发到正确的redis实例上. 比如twemproxy::
+
+    https://github.com/twitter/twemproxy
 
 3) 查询路由. 查询被发到集群中任一台实例上, 由实例来转发到正确的实例上.
    redis集群实现了一个混合风格的查询路由，需要配合client端使用(不是由redis来做定位，而是重定向client来实现).
@@ -70,8 +71,12 @@ redis作为缓存和数据库时，对待分片的策略有所不同.
 redis分片
 ---------
 
-1) redis集群是自动分片和高可用的首选方案. 具体参见 redis_cluster `http://redis.io/topics/cluster-tutorial`_
+1) redis集群是自动分片和高可用的首选方案. 具体参见 redis_cluster::
 
-2) Twemproxy, 更易用,速度很快。 具体参见 `http://antirez.com/news/44`_
+    http://redis.io/topics/cluster-tutorial
+
+2) Twemproxy, 更易用,速度很快。 具体参见 
+
+   http://antirez.com/news/44
 
 3) 客户端分片库： Redis-rb / Predis.

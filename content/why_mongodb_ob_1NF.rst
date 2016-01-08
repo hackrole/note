@@ -3,6 +3,9 @@ mongodb与第一范式
 
 :tag: mongodb,1NF,SQL,model
 :author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08
+
 
 
 mongodb作为一个弱模型化的nosql数据库，被认为是不需要遵守SQL第一范式.
