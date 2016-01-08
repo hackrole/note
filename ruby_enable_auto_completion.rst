@@ -25,6 +25,8 @@ ruby下自带irb交互式环境， 开启irb补全需要将一下内容加入到
 bond补全
 ~~~~~~~~
 
+更好的补全: http://tagaholic.me/2009/07/22/better-irb-completion-with-bond.html
+
 bond是一个ruby-gems, 用来增强irb的补全功能.
 1) 需要安装bond-gem::
 
