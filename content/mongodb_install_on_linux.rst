@@ -1,10 +1,11 @@
 linux(ubuntu)下安装mongodb服务器
 ================================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-01-04
-tags: mongodb
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:34:30
+:tags: mongodb
+
 
 概述
 ----

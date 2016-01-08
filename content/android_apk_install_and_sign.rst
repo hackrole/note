@@ -1,10 +1,10 @@
 androiod下如何安装和对apk做sign
 ===============================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-01-07
-tags: android,apk_release,apk_sign,react_native_release,
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-07
+:tags: android, apk_release, apk_sign, react_native_release,
 
 
 尝试react-native的时候想把观望的example装到手机上。

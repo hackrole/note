@@ -1,6 +1,12 @@
 redis服务管理需要
 =================
 
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:34:49
+:tags: redis
+
+
 
 介绍一些redis部署时的注意事项
 

@@ -1,11 +1,11 @@
 android开发起步
 ===============
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-01-05
-tags: android,android-sdk,get-started
-summary: linux(ubuntu)下搭建android开发环境.
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:32:47
+:tags: android,android-sdk,get-started
+:summary: linux(ubuntu)下搭建android开发环境.
 
 安装sdk
 -------
@@ -20,13 +20,13 @@ summary: linux(ubuntu)下搭建android开发环境.
 
 2) 设置环境变量::
 
-   export ANDOIRD_HOME=
-   export PATH=
+    export ANDOIRD_HOME=
+    export PATH=
 
 3) 使用sdk-manager安装必要的android-sdk::
 
-   android sdk
-   **TODO图片**
+    android sdk
+    **TODO图片**
 
 4) 安装必要软件::
 

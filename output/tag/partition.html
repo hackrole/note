@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - partition</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/redisfen-pian-xiao-ji.html">redis分片小记</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-12-30T00:00:00+08:00">
+                Published: 三 30 十二月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/partition.html">partition</a> <a href="/tag/redis-partition.html">redis-partition</a> </p>
+</footer><!-- /.post-info --><p>介绍redis分片相关内容.</p>
+<div class="section" id="id1">
+<h2>分片相关</h2>
+<p>分片是将数据分布到不同的redis实例上, 让每个redis服务实例只保存部分数据。</p>
+<div class="section" id="id2">
+<h3>为何需要分片</h3>
+<ol class="arabic simple">
+<li>突破单机的内存和磁盘存储限制.</li>
+<li>复用多机的cpu计算和网络传输能力。</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>分片方法</h3>
+<p>分片有不同的实现方式, 如</p>
+<ol class="arabic simple">
+<li>范围分片, R0(1-10000), R1(10001-2000)...
+缺点: 需要记录键的对应情况，所以比较低效, redis中不建议这种方式.</li>
+<li>hash分片. 对每个key通过hash函数，计算到对应的实例。
+redis中部分client和proxy实现了一致性hash来做分片处理。</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>分片实现层面</h3>
+<p>分片可以做不同层面实现.</p>
+<ol class="arabic">
+<li><p class="first">客户端, 直接在客户端选择正确的实例完成操作。部分redis-client库实现这一功能.</p>
+</li>
+<li><p class="first">proxy, 类似mogos. 客户端链接到proxy, 由proxy代为转发到正确的redis实例上. 比如twemproxy:</p>
+<pre class="literal-block">
+https://github.com/twitter/twemproxy
+</pre>
+</li>
+<li><p class="first">查询路由. 查询被发到集群中任一台实例上, 由实例来转发到正确的实例上.
+redis集群实现了一个混合风格的查询路由，需要配合client端使用(不是由redis来做定位，而是重定向client来实现).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3>分片的缺点</h3>
+<ol class="arabic simple">
+<li>跨越多个key的操作通常都不能使用, 部分操作可以通过间接的方式实现.</li>
+<li>跨越多个key的事务无法被支持.</li>
+<li>XXX 以key的粒度来做分片，所以无法通过很多的key来共享一个大数据集，比如一个很大的sortedSet.</li>
+<li>使用分片会让业务逻辑更加复杂，包括运维工作。</li>
+<li>增加和删除节点/容量比较麻烦，是要平衡重新分片。redis集群支持这一个特性。
+client/proxy实现需要通过Pre-sharding来支持。</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>数据库还是缓存</h3>
+<p>redis作为缓存和数据库时，对待分片的策略有所不同.</p>
+<p>缓存可以容忍定位失败。而数据库不允许。
+所以在增加和删除节点时，或是部分节点失败时，数据库要良好的处理再分片/再路由操作。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>redis分片</h2>
+<ol class="arabic">
+<li><p class="first">redis集群是自动分片和高可用的首选方案. 具体参见 redis_cluster:</p>
+<pre class="literal-block">
+http://redis.io/topics/cluster-tutorial
+</pre>
+</li>
+<li><p class="first">Twemproxy, 更易用,速度很快。 具体参见</p>
+<p><a class="reference external" href="http://antirez.com/news/44">http://antirez.com/news/44</a></p>
+</li>
+<li><p class="first">客户端分片库： Redis-rb / Predis.</p>
+</li>
+</ol>
+</div>
+                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>react起步须知</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/reactqi-bu-xu-zhi.html" rel="bookmark"
+           title="Permalink to react起步须知">react起步须知</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:26:01+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/react.html">react</a> <a href="/tag/browserify-debug.html">browserify-debug</a> <a href="/tag/react-get-started.html">react-get-started</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="id1">
+<h2>起步须知</h2>
+<p>react当前0.14, react-awesome上很多使用的是0.13的例子，所以要看情况使用.</p>
+<p>react跑实例的三种方式:</p>
+<div class="section" id="id2">
+<h3>浏览器端编译测试</h3>
+<p>在浏览器上测试,要引入react/react-dom/babel, 并设置text/babel. 如下:</p>
+<pre class="literal-block">
+&lt;script src=&quot;libs/react/0.14.5/react.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/react/0.14.5/react-dom.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/babel&quot; src=&quot;scripts/example.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+&lt;/script&gt;
+</pre>
+<p>这种方式只应该在测试阶段使用.</p>
+</div>
+<div class="section" id="browserify">
+<h3>使用browserify离线编译</h3>
+<p>使用browserify转化所有文件为一个bundle.js.  文件内要使用require/expects等.如下:</p>
+<pre class="literal-block">
+browserify -t [ babelify --presets [react] ] public/scripts/main.js --debug -o public/build/bundle.js
+</pre>
+<p>推荐的方式. 通过添加debug参数方便调试，正式部署要去掉.</p>
+</div>
+<div class="section" id="babelify">
+<h3>使用babelify离线编译</h3>
+<p>引入react/reactdom, 同时离线使用babel转化jsx:</p>
+<pre class="literal-block">
+&lt;script src=&quot;libs/react/0.14.5/react.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;libs/react/0.14.5/react-dom.js&quot;&gt;&lt;/script&gt;
+
+&lt;scirpt src=&quot;bundle.js&quot;&gt;&lt;/script&gt;
+
+babelify --presets react main.js -o bundle.js
+</pre>
+</div>
+</div>
+<div class="section" id="todo">
+<h2><strong>TODO</strong></h2>
+<ol class="arabic simple">
+<li>要熟悉babelify和browserify的使用。也可以更进一步考虑,grunt/glun工具</li>
+<li>了解如何在服务端渲染reactjs.</li>
+<li>flux为何物？</li>
+</ol>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

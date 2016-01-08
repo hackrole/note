@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ru-guo-zai-pytestzhong-shi-yong-pdbdiao-shi-dai-ma.html" rel="bookmark"
+                           title="Permalink to 如果在pytest中使用pdb调试代码">如果在pytest中使用pdb调试代码</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-11-01T00:00:00+08:00">
+                Published: 日 01 十一月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/pytest.html">py.test</a> <a href="/tag/python.html">python</a> <a href="/tag/pdb.html">pdb</a> <a href="/tag/tdd.html">TDD</a> <a href="/tag/test.html">test</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">how to use pdb in py.test</p>
+
+                <a class="readmore" href="/ru-guo-zai-pytestzhong-shi-yong-pdbdiao-shi-dai-ma.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/numpyzhong-shi-yong-bu-dui-cheng-shu-zu-chu-shi-hua-nparrayde-jie-guo.html" rel="bookmark"
+                           title="Permalink to numpy中使用不对称数组初始话np.array的结果">numpy中使用不对称数组初始话np.array的结果</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-10-29T00:00:00+08:00">
+                Published: 四 29 十月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/numpy.html">numpy</a> <a href="/tag/pydata.html">pydata</a> </p>
+</footer><!-- /.post-info -->                <p>numpy.array一般使用对齐数组初始化.
+初始化后, arr具有对应的shape, 可以使用多维数组的诸多特性.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">如果使用未对齐的数组或未完全对齐的数组初始化, arr只会对应的可以对齐的维度上,更低维度会作为list-object类型存储.</p>
+</div>
+<!-- code: python
+import pytest
+import numpy as np
+
+data1 = [[1, 2], [2, 3]]
+arr1 = np.array(data1)
+assert arr1.shape == (2, 2)
+assert 'int' in arr1.dtype
+assert arr1[1] == [2, 3]
+assert arr1[1, 1] == 3
+
+data2 = [[1], [2, 3 ...
+                <a class="readmore" href="/numpyzhong-shi-yong-bu-dui-cheng-shu-zu-chu-shi-hua-nparrayde-jie-guo.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pydatadi-jiu-zhang-bi-ji.html" rel="bookmark"
+                           title="Permalink to pydata第九章笔记">pydata第九章笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-10-27T00:00:00+08:00">
+                Published: 二 27 十月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/pydata.html">pydata</a> <a href="/tag/pandas.html">pandas</a> <a href="/tag/numpy.html">numpy</a> <a href="/tag/matplotlib.html">matplotlib</a> <a href="/tag/pandas-group.html">pandas-group</a> <a href="/tag/group.html">group</a> </p>
+</footer><!-- /.post-info -->                <p>分组可以分为三步.</p>
+
+                <a class="readmore" href="/pydatadi-jiu-zhang-bi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="/index2.html">&laquo;</a>
+    Page 3 / 3
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

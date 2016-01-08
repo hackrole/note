@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>redis数据结构介绍</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/redisshu-ju-jie-gou-jie-shao.html" rel="bookmark"
+           title="Permalink to redis数据结构介绍">redis数据结构介绍</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:31:57+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/data-type.html">data-type</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="id1">
+<h2>概述</h2>
+<p>redis并不是单纯的缓存服务器，而是被设计为一个数据结构服务器。为服务提供有用高效的数据类型.</p>
+<p>redis中主要包含如下数据类型:</p>
+<ol class="arabic simple">
+<li>字符串,二进制安全。</li>
+<li>列表list， 链表实现。不是array.</li>
+<li>集合set, 值不可重复.</li>
+<li>排序集合ordered-set. 同时存储一个value和一个score. score用于排序.</li>
+<li>字典hash, 类似python的字典和ruby的hash,但是field-key/field-value只能是字符串.</li>
+<li>bit-array或bitmaps.</li>
+<li>HyperLogLogs, 概率行数据结构. <strong>TODO</strong></li>
+</ol>
+<p>不同数据结构可以根据需要解决不同的任务集。</p>
+</div>
+<div class="section" id="id2">
+<h2>类型具体说明</h2>
+<div class="section" id="redis-key">
+<h3>redis-key</h3>
+<p>redis-key只能是字符串，并且是2进制安全。</p>
+<ol class="arabic simple">
+<li>空字符串也能做为key.</li>
+<li>太长的key不被推荐，compare性能不好.</li>
+<li>太短的key不好，可读性不好 u1000flw =&gt; user:1000:followers</li>
+<li>对键做良好的管理，引入命名空间和键前缀等概念. user:1000, comment:1234.replys</li>
+<li>最大长度512MB, 不会成为限制。</li>
+<li>exists判断key是否存在, del用于删除key, keys用于列出keys.type获取key类型.</li>
+<li>ttl/expire用于获取和设置过期时间. persist移除key的过期设置。pttl/pexpire返回/设置millsecond级别的过期时间.</li>
+</ol>
+</div>
+<div class="section" id="redis-string">
+<h3>redis-string</h3>
+<p>最简单的数据结构，应该也是最常用的数据结构(缓存).</p>
+<ol class="arabic simple">
+<li>通过get/set设置和换取</li>
+<li>set在没有key时会创建key,在key存在时做update.同时可以制定second/millsecond级别的过期时间.</li>
+<li>可以支持incr/incrby/decr/decrby，把字符串作为数字执行原子性的+/-.底层使用的是同一个命令。</li>
+<li>getset获取key的old-value, 同时设置为最新的value.</li>
+<li>mset/mget一次对多个key做操作.</li>
+</ol>
+</div>
+<div class="section" id="redis-list">
+<h3>redis-list</h3>
+<p>列表, 链表实现, 在列表中间插入/移除元素的复杂度为O(1), 查找元素的复杂度为O(N).</p>
+<ol class="arabic simple">
+<li>大多数操作都支持左右两个方向， lpush/rpush. l-&gt;head/r-&gt;end</li>
+<li>两个方向的push/pop可以作为队列/栈使用. lrange用于获取列表内容.常用的场景:
+A) 任务队列.
+B) 返回最新内容.</li>
+<li>ltrim用于截断list, 可以用来做mongodb的固定长度集合。不过需要自己手动调用.</li>
+<li>可用做堵塞队列(celery的实现依赖). brpop/blpop
+A) 可以监听多个list
+B) 可指定一个超时.
+C) 任务推送有顺序.
+D) brpoplpush/rpoplpush <strong>TODO</strong></li>
+<li>llen用于返回列表长度.</li>
+</ol>
+</div>
+<div class="section" id="redis-hash">
+<h3>redis-hash</h3>
+<p>redis上的hash实现,field/value只能是string.</p>
+<ol class="arabic simple">
+<li>hset/hget用于设置和获取field. 一次只能设置一个field.</li>
+<li>hmset/hmget可用于处理多field.</li>
+<li>hincrby用于递增.</li>
+</ol>
+<p>主要用处:
+1) 讲一系列key-value关联到一起。
+2) 内存的利用率比多key-value更高, <strong>XXX</strong>.</p>
+</div>
+<div class="section" id="redis-set">
+<h3>redis-set</h3>
+<p>集合, 支持并集/交集，判断元素是否在操作.</p>
+<ol class="arabic simple">
+<li>sadd用于添加</li>
+<li>smembers用于列出所有元素</li>
+<li>sismember 判断元素是否已存在</li>
+<li><strong>TODO</strong></li>
+</ol>
+</div>
+<div class="section" id="redis-sorted-set">
+<h3>redis-sorted-set</h3>
+<p>排序列表, 不是按插入顺序而是人为自定的score来拍寻。底层使用的是复合机构实现.</p>
+<ol class="arabic simple">
+<li>zadd用于添加</li>
+<li>zrange用于获取列表</li>
+<li>大多数命令都可以添加withscore,来返回score</li>
+<li><strong>TODO</strong> zrangebyscore/zrangebylex</li>
+</ol>
+</div>
+<div class="section" id="redis-bitmaps">
+<h3>redis-bitmaps</h3>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="redis-hyperloglogs">
+<h3>redis-HyperLogLogs</h3>
+<p><strong>TODO</strong></p>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

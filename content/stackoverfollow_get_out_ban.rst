@@ -1,10 +1,10 @@
 如何正确的使用stackoverflow
 ===========================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-01-07
-tags: stackoverflow,how-to-ask-a-question,ask-for-help
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:25:23
+:tags: stackoverflow,how-to-ask-a-question,ask-for-help
 
 关于屏蔽
 --------

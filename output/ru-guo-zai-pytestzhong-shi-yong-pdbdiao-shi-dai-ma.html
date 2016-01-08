@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>如果在pytest中使用pdb调试代码</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ru-guo-zai-pytestzhong-shi-yong-pdbdiao-shi-dai-ma.html" rel="bookmark"
+           title="Permalink to 如果在pytest中使用pdb调试代码">如果在pytest中使用pdb调试代码</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-11-01T00:00:00+08:00">
+                Published: 日 01 十一月 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/pytest.html">py.test</a> <a href="/tag/python.html">python</a> <a href="/tag/pdb.html">pdb</a> <a href="/tag/tdd.html">TDD</a> <a href="/tag/test.html">test</a> </p>
+</footer><!-- /.post-info -->      <p>写单元测试的过程其实也是调试代码的过程.
+单元测试保持代码可运行(快速而方便的), 是的我们可以观察跟踪代码流程,写出更高质量的代码.</p>
+<p>之前一直使用unitest2写单元测试,需要pdb的地方,可以直接</p>
+<dl class="docutils">
+<dt>..code:: python</dt>
+<dd>import ipdb; ipdb.set_trace()</dd>
+</dl>
+<p>这一方式在py.test中无法使用, 因为py.test默认会截取所有的输出.
+解决办法有多个.</p>
+<ol class="arabic">
+<li><p class="first">使用py.test --pdb这里只能在代码出错时进到pdb,实用性不强.</p>
+</li>
+<li><p class="first">使用py.test --capture=no 配合ipdb,没实际测过.</p>
+</li>
+<li><p class="first">使用pdbpp配合pytest.set_trace()使用.代码如下:</p>
+<dl class="docutils">
+<dt>..code:: python</dt>
+<dd><p class="first last">import pytest; pytest.set_trace()</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>第三种方法是目前最好的方法,不过有个问题,就是只用使用pdb调试,没法用到ipdb中更多方便的特性.
+通过安装pdbpp库可以解决,pdbpp是另一个提供很多类型ipdb功能的库,并且可以配合py.test使用.</p>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

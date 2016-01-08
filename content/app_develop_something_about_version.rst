@@ -1,7 +1,11 @@
 移动开发版本管理相关
 ====================
 
-:tag: app,version,协作
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08
+:tags: app, version, 协作
+
 
 before or afeter
 ----------------

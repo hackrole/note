@@ -1,7 +1,15 @@
 redis复制配置相关
 =================
 
-原内容来自redis官方文档: `redis-replication官方文档<http://redis.io/topics/replication>`_
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:31:05
+:tags: redis, redis_slave
+
+
+原内容来自redis官方文档::
+
+    redis-replication官方文档<http://redis.io/topics/replication>
 
 基本来说，只要在配置文件里加上::
 

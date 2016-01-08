@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>linux(ubuntu)下安装mongodb服务器</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/linuxubuntuxia-an-zhuang-mongodbfu-wu-qi.html" rel="bookmark"
+           title="Permalink to linux(ubuntu)下安装mongodb服务器">linux(ubuntu)下安装mongodb服务器</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:34:30+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/mongodb.html">mongodb</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="id1">
+<h2>概述</h2>
+<p>安装过程可以参考观望，文档很详细.</p>
+<p>ubuntu官网源有提供mongodb安装，但是一般版本都比较落后，更新不及时。
+所以可以采用mongodb提供的安装源，安装最新的mongodb.</p>
+<p>mongodb只为64-bit的长期支持版本提供安装源，即ubuntu12.04/ubuntu14.04. 其他版本也许可以使用，但是不推荐。</p>
+<p>mongodb官网有5个主要的包:
+1) mongodb-dev. meta-pacage. 自动安装其他四个包.
+2) mongodb-org-server. mongod-daemon以及配置文件/init脚本
+3) mongodb-org-mongos. mongos-daemon.
+4) mongodb-org-shell. mongo-shell
+5) mongodb-org-tools. mongoimport/mongodump/bsondump/mongoexport/retore/stat/perf/oplog等工具.</p>
+</div>
+<div class="section" id="id2">
+<h2>安装过程</h2>
+<p>具体过程如下:</p>
+<pre class="literal-block">
+# import mongodb GPK key
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
+# add source
+# 12.04
+echo &quot;deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+# 14.04
+echo &quot;deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+</pre>
+<p>如果想安装特定版本mongodb:</p>
+<pre class="literal-block">
+# 如果只mongodb-org=3.2.0，会安装最新版本mongodb. 后面的必须也制定。
+sudo apt-get install -y mongodb-org=3.2.0 mongodb-org-server=3.2.0 mongodb-org-shell=3.2.0 mongodb-org-mongos=3.2.0 mongodb-org-tools=3.2.0
+</pre>
+<p>如果想使用老版本mongodb，同时阻止upgrade更新:</p>
+<pre class="literal-block">
+echo &quot;mongodb-org hold&quot; | sudo dpkg --set-selections
+echo &quot;mongodb-org-server hold&quot; | sudo dpkg --set-selections
+echo &quot;mongodb-org-shell hold&quot; | sudo dpkg --set-selections
+echo &quot;mongodb-org-mongos hold&quot; | sudo dpkg --set-selections
+echo &quot;mongodb-org-tools hold&quot; | sudo dpkg --set-selections
+</pre>
+</div>
+<div class="section" id="mongodb">
+<h2>补充:手动安装mongodb</h2>
+<p>实例过程如下:</p>
+<pre class="literal-block">
+# 下载可用包.
+curl -O https://fastdl.mongodb.org/linux/mongodb-linux-i686-3.2.0.tgz
+
+# 解压
+tar -zxvf mongodb-linux-i686-3.2.0.tgz
+
+# copy to right locationi. and set $PATH.
+mkdir -p mongodb
+cp -R -n mongodb-linux-i686-3.2.0/ mongodb
+export PATH=&lt;mongodb-install-directory&gt;/bin:$PATH
+</pre>
+</div>
+<div class="section" id="id3">
+<h2>补充:源码安装</h2>
+<p>mongodb使用python pycons做自动构建。需要先安装pyconds.</p>
+<p><strong>TODO</strong></p>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

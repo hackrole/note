@@ -1,8 +1,11 @@
 如何设置vim options
 ====================
 
-:tags: vim,vim-options
 :author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-08 14:24:52
+:tags: vim,vim-options
+
 
 vim的set有很多讲究,暂时没时间整理
 
