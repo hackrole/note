@@ -20,7 +20,190 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/dai-ma-feng-ge-tong-gui-fan.html">代码风格统一规范</a></h1>
+                    <h1 class="entry-title"><a href="/shi-yong-supvisordqu-dai-linuxmo-ren-kai-ji-qi-dong-xiang.html">使用supvisord取代linux默认开机启动项</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:42:28+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/supvisord.html">supvisord</a> </p>
+</footer><!-- /.post-info --><p>linux做为开发环境, 经常需要安装一些第三方服务。
+如mongodb服务器，redis服务器, nginx服务器等.</p>
+<p>这些服务器如果是通过apt安装，默认是会开机启动,
+并且能够通过sudo /etc/init.d/&lt;name&gt; restart/stop/start来控制.
+不然就要自己写启动脚本，相当麻烦，并且危险.
+并且没法检测到经常意外挂掉，日志和通知也相对较弱.</p>
+<p>所以这里考虑用supervisord取代系统的开机启动任务.开机启动supervisor.
+由supervisor来启动后续进程。好处多多.</p>
+<ol class="arabic simple">
+<li>配置文件简单，改起来容易。可控制行强.</li>
+<li>自动重启功能。</li>
+<li>良好的日志和通知功能。</li>
+</ol>
+<p>需要注意的事项:</p>
+<ol class="arabic simple">
+<li>如果应用其他地方也需要启动supervisord，如启动一个web服务器的supervisord进程.
+则系统中会有两个supervisor进程。需要注意不引发问题.</li>
+<li>supervisord默认有自动重启，会导致通过kill杀掉的进程自动重启，需要注意。
+通过supervisorctl -c config stop &lt;NAME&gt;可以用来停止和启动，使用linux别名简化输入.</li>
+<li>考虑是否用可能有些进程不适合或不能用supervisor来操作.</li>
+<li>如何处理日志通知等也需要考虑.</li>
+<li>通过apt-get安装的应用需要先去掉系统中的启动项。</li>
+</ol>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/shi-yong-python-itertoolsku-lai-qu-dai-mongodbde-groupfen-zu-cao-zuo.html" rel="bookmark"
+                           title="Permalink to 使用python itertools库来取代mongodb的group分组操作.">使用python itertools库来取代mongodb的group分组操作.</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:40:50+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/mongodb.html">mongodb</a> <a href="/tag/db_group.html">db_group</a> </p>
+</footer><!-- /.post-info -->                <p>最近写项目用到mongodb数据库。后续要做后台管理的时候，有一个需要按（天/人）做聚合的需求(group_by)。</p>
+<p>最开始实现上用bson.code.Code配置mongodb自带的group命令做的。不过问题很多。</p>
+<div class="section" id="group">
+<h2>使用group命令的问题</h2>
+<ol class="arabic simple">
+<li>必须在python里混合编写js函数。</li>
+<li>调试起来及其麻烦, 真心麻烦。</li>
+<li>可扩展可维护行差，今天想按天，明天突然有想按月，或者就是要增加聚合字段或是修改聚合算法的规则。</li>
+</ol>
+<ul class="simple">
+<li>使用python的itertools实现</li>
+</ul>
+<p>后来也是和一朋友讨论后，决定用python itertools来实现.</p>
+<p>总的思路就是把数据先查出来，然后在python里自己做聚合.
+正好可以配合itertools提供的轮子简化下过程.</p>
+<p>** 好处</p>
+<ol class="arabic simple">
+<li>只用写python代码, 避免混和js的麻烦.</li>
+<li>调试方便.</li>
+<li>写单元测试也方便很多，不在需要依赖外部的mongodb数据库.</li>
+<li>可扩展和可维护行好了很多，因为全是python集合的操作，看着改就可以了。</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>坏处或可能的问题</h2>
+<p>1) 内存有可能会出问题.
+一次查处所有数据，在内存在分组。并且使用python，内存一定要考虑下。</p>
+<p>2) mongodb一次查处所有数据遍历有可能碰到的游标中断，数据量太大导致mongodb抛出异常
+虽然mongodb有游标的概念, 不过不太确定游标能否正确遍历大数据集合。会不会被异常中断</p>
+<ol class="arabic simple" start="3">
+<li>性能会相对差一些，不过由于后台不是频繁跑 ...</li></ol></div>
+                <a class="readmore" href="/shi-yong-python-itertoolsku-lai-qu-dai-mongodbde-groupfen-zu-cao-zuo.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pythonzhong-shi-yong-withlai-jian-shao-dai-ma-zhong-fu.html" rel="bookmark"
+                           title="Permalink to python中使用with来减少代码重复">python中使用with来减少代码重复</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:36:07+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="python-with">
+<h2>python with的执行流程</h2>
+<pre class="literal-block">
+#+BEGIN_SRC python
+with &lt;context&gt; as &lt;v&gt;:
+    &lt;do things or raise Exception&gt;
+#+END
+</pre>
+<p>with &lt;context&gt; as v:</p>
+<ol class="arabic simple">
+<li>先加载__exit__函数，如果context里没有实现，会在这里报错的</li>
+<li>执行__enter__方法,并把结果传给v</li>
+<li>执行用户代码,如果正常推出,使用(None, None, None)调用__exit__,
+如果代码抛出异常，使用(type, exception, traceback)调用__exit__</li>
+</ol>
+<p>由上可以看出通过在代码里抛出特定异常，在__exit__里在下异常检测，
+可以实现重用户代码向__exit__传递参数的作用.</p>
+</div>
+<div class="section" id="id1">
+<h2>例子</h2>
+<pre class="literal-block">
+#+BEGIN_SRC python
+
+
+#+END
+</pre>
+</div>
+
+                <a class="readmore" href="/pythonzhong-shi-yong-withlai-jian-shao-dai-ma-zhong-fu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pythonshu-ju-fen-xi-twitterxiang-guan.html" rel="bookmark"
+                           title="Permalink to python数据分析twitter相关">python数据分析twitter相关</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:35:14+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/data_analizer.html">data_analizer</a> <a href="/tag/social_data.html">social_data</a> </p>
+</footer><!-- /.post-info -->                <p>twitter提供了一系列的api使得可以通过api来分析twitter数据，获取最热话题等.
+主要用于社交化数据分析. python端有python-twitter模块包装了常用的twitter api.</p>
+<div class="section" id="id1">
+<h2>代理问题</h2>
+<p>国内由于长城网的关系，twitter被屏蔽. python-twitter也没法使用.
+所幸最近看issues, 代理问题是否已经有其他的commit解决，并合并.</p>
+<p>使用export http_proxy环境变量的方式来使用.</p>
+</div>
+<div class="section" id="twitter-python-twitter">
+<h2>区分twitter/python-twitter的区别</h2>
+<p>twitter是官网放出来的包, python-twitter是github上开源的代码。
+有时间比较下两者的区别和优劣.</p>
+</div>
+
+                <a class="readmore" href="/pythonshu-ju-fen-xi-twitterxiang-guan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dai-ma-feng-ge-tong-gui-fan.html" rel="bookmark"
+                           title="Permalink to 代码风格统一规范">代码风格统一规范</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-01-08T00:00:00+08:00">
                 Published: 五 08 一月 2016
@@ -31,7 +214,7 @@
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
 <p>tags: <a href="/tag/python.html">python</a> <a href="/tag/pep8.html">pep8</a> <a href="/tag/code.html">code</a> <a href="/tag/style.html">style</a> </p>
-</footer><!-- /.post-info --><p>代码建议统一使用pep8规范加上部分最佳实践。</p>
+</footer><!-- /.post-info -->                <p>代码建议统一使用pep8规范加上部分最佳实践。</p>
 <p>风格指南是关于一致性的。风格一致对一个项目更重要。</p>
 <p>Guido 的主要洞察力 (key insights) 之一是：代码更多是用来读而不是写。</p>
 <p>故本 指南致力于改善 Python 代码的可读性、使不同的 (wide spectrum) Python 代码 保持一致性。</p>
@@ -57,110 +240,10 @@ pep8 &lt;python文件&gt;
 <li><p class="first">绝不要混合使用 tab 和空格。建议打开IDE中的tab和空格(或至少显示行尾空格)显示。</p>
 </li>
 <li><p class="first">限制所有行的最大行宽为 79 字符。</p>
-<p>折叠长行的首选方法是使用 Python 支持的圆括号、方括号 (brackets) 和花括号 (braces) 内的行延续。</p>
-<p>如果需要，你可以在表达式周围增加一对额外的圆括号，但是 有时使用反斜杠看起来更好。确认恰当地缩进了延续的行.</p>
-</li>
-</ol>
-<ol class="arabic" start="6">
-<li><p class="first">用两行空行分割顶层函数和类的定义。 类内方法的定义用单个空行分割。</p>
-<p>在函数中使用空行时，请谨慎的用于表示一个逻辑段落 (logical sections)。</p>
-</li>
-<li><p class="first">python文件应统一使用utf8编码，并建议在文件头加生utf8声明。
-申明头如下:</p>
-<pre class="literal-block">
-## 格式一
-# -*- coding: utf-8 -*-
-## 格式二
-#!/usr/bin/env python
-# encoding: utf-8
-</pre>
-</li>
-</ol>
-</div>
-<div class="section" id="import">
-<h3>导入import</h3>
-<ol class="arabic">
-<li><p class="first">模块应在单行导入,模块内属性可以一行导入。</p>
-</li>
-<li><p class="first">Imports 通常被放置在文件的顶部，仅在模块注释和文档字符串之后，在模块的全局变量和常量之前。</p>
-</li>
-<li><p class="first">mports应该按照如下顺序成组安放, 你应该在每组导入之间放置一个空行。</p>
-<ol class="arabic simple">
-<li>标准库的导入</li>
-<li>相关的第三方包的导入</li>
-<li>本地应用/库的特定导入</li>
-</ol>
-</li>
-<li><p class="first">对于内部包的导入是非常不推荐使用相对导入的。对所有导入总是使用包的absolute improt.</p>
-<p>具体可以参见pep328.</p>
-</li>
-</ol>
-</div>
-<div class="section" id="id3">
-<h3>空格处理</h3>
-<p>空格问题大多可以通过pgp8工具检测出来，只要时间操作几次基本就能养出习惯。</p>
-<p>宠物的烦恼 (Pet Peeves) (注：即无伤大雅的小问题)</p>
-<ol class="arabic simple">
-<li>避免在下述情形中使用无关的空格.<ol class="arabic">
-<li>紧挨着圆括号、方括号和花括号</li>
-<li>紧贴在逗号、分号或冒号前</li>
-</ol>
-</li>
-<li>始终在这些二元运算符两边放置一个空格</li>
-<li>在数学运算符两边使用空格</li>
-<li>不要在用于指定关键字参数 (keyword argument) 或默认参数值的 '=' 号周围使用</li>
-<li>复合语句 (Compound statements) (多条语句写在同一行) 一般不推荐。</li>
-</ol>
-</div>
-<div class="section" id="id4">
-<h3>注释</h3>
-<p>同代码不一致的注释比没注释更差。当代码修改时，始终优先更新注释！注释应该是完整的句子。</p>
-<ol class="arabic">
-<li><p class="first">节俭使用行内注释。一个行内注释是和语句在同一行的注释。</p>
-<p>行内注释应该至少用两个空格和语句分开。 它们应该以一个 '#' 和单个空格开始</p>
-</li>
-<li><p class="first">为所有公共模块、函数、类和方法书写文档字符串。</p>
-<p>文档字符串对非公开的方法不是必要的，但你应该有一条注释来描述这个方法做什么；</p>
-<p>这条注释应该出现在 &quot;def&quot; 行之后</p>
-</li>
-</ol>
-</div>
-<div class="section" id="id5">
-<h3>命名风格</h3>
-<p>命名风格是为了保持代码的可读性.</p>
-<ol class="arabic">
-<li><p class="first">模块名应该是简短的、全部小写的名字。可以在模块名中使用下划线以提高可读性。</p>
-<p>Python包名也应该是简短的、全部小写的名字，尽管不推荐使用下划线。</p>
-</li>
-<li><p class="first">类名使用首字母大写单词串 (CapWords) 的约定.</p>
-<p>内部使用的类使用一个额外的前导下划线</p>
-</li>
-<li><p class="first">异常名同类命名约定。然而，你应该对异常名添加后缀 Error/Exception .</p>
-</li>
-<li><p class="first">函数名应该为小写，必要时可用下划线分隔单词以增加可读性</p>
-</li>
-<li><p class="first">对实例的方法，总是用 'self' 做第一个参数。
-对类的方法，总是用 'cls' 做第一个参数。</p>
-</li>
-<li><p class="first">方法名和实例变量 (Method Names and Instance Variables)</p>
-<p>采用函数命名规则：小写单词，必要时可用下划线分隔单词以增加可读性</p>
-</li>
-<li><p class="first">对 non-public方法和实例变量采用一个前导下划线</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>最佳实践</h2>
-<p>内容源自: <a class="reference external" href="https://www.python-guide.readthedocs.org/en/latest/writing/style/">Hitchhiker's Guide</a>.</p>
-<p>这里内容比较散乱，不太好整理.内容也不是必须要求，可以自行尝试实践。</p>
-</div>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>折叠长行的首选方法是使用 ...</p></li></ol></div></div>
+                <a class="readmore" href="/dai-ma-feng-ge-tong-gui-fan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

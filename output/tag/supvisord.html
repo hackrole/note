@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - supvisord</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/shi-yong-supvisordqu-dai-linuxmo-ren-kai-ji-qi-dong-xiang.html">使用supvisord取代linux默认开机启动项</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:42:28+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/supvisord.html">supvisord</a> </p>
+</footer><!-- /.post-info --><p>linux做为开发环境, 经常需要安装一些第三方服务。
+如mongodb服务器，redis服务器, nginx服务器等.</p>
+<p>这些服务器如果是通过apt安装，默认是会开机启动,
+并且能够通过sudo /etc/init.d/&lt;name&gt; restart/stop/start来控制.
+不然就要自己写启动脚本，相当麻烦，并且危险.
+并且没法检测到经常意外挂掉，日志和通知也相对较弱.</p>
+<p>所以这里考虑用supervisord取代系统的开机启动任务.开机启动supervisor.
+由supervisor来启动后续进程。好处多多.</p>
+<ol class="arabic simple">
+<li>配置文件简单，改起来容易。可控制行强.</li>
+<li>自动重启功能。</li>
+<li>良好的日志和通知功能。</li>
+</ol>
+<p>需要注意的事项:</p>
+<ol class="arabic simple">
+<li>如果应用其他地方也需要启动supervisord，如启动一个web服务器的supervisord进程.
+则系统中会有两个supervisor进程。需要注意不引发问题.</li>
+<li>supervisord默认有自动重启，会导致通过kill杀掉的进程自动重启，需要注意。
+通过supervisorctl -c config stop &lt;NAME&gt;可以用来停止和启动，使用linux别名简化输入.</li>
+<li>考虑是否用可能有些进程不适合或不能用supervisor来操作.</li>
+<li>如何处理日志通知等也需要考虑.</li>
+<li>通过apt-get安装的应用需要先去掉系统中的启动项。</li>
+</ol>
+                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

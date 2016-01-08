@@ -22,13 +22,13 @@
                     <ol id="posts-list" class="hfeed" start="9">
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/ru-he-she-zhi-vim-options.html" rel="bookmark"
-                           title="Permalink to 如何设置vim options">如何设置vim options</a></h1>
+                    <h1><a href="/pythonzhong-shi-yong-withlai-jian-shao-dai-ma-zhong-fu.html" rel="bookmark"
+                           title="Permalink to python中使用with来减少代码重复">python中使用with来减少代码重复</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:24:52+08:00">
+        <abbr class="published" title="2016-01-08T15:36:07+08:00">
                 Published: 五 08 一月 2016
         </abbr>
 
@@ -36,414 +36,431 @@
                 By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/vim.html">vim</a> <a href="/tag/vim-options.html">vim-options</a> </p>
-</footer><!-- /.post-info -->                <p>vim的set有很多讲究,暂时没时间整理</p>
-<p>可以通过:options看到已分类的所有options选项,方便设置</p>
-
-                <a class="readmore" href="/ru-he-she-zhi-vim-options.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/rubyxia-de-irbirubyru-he-shi-yong-bu-quan.html" rel="bookmark"
-                           title="Permalink to ruby下的irb/iruby如何使用补全">ruby下的irb/iruby如何使用补全</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T10:20:00+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/ruby.html">ruby</a> <a href="/tag/irb.html">irb</a> <a href="/tag/iruby.html">iruby</a> <a href="/tag/bond.html">bond</a> <a href="/tag/ruby_completion.html">ruby_completion</a> </p>
-</footer><!-- /.post-info -->                <div class="section" id="id1">
-<h2>概述</h2>
-<p>ruby补全需要先安装readline-dev包:</p>
+<p>tags: <a href="/tag/python.html">python</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="python-with">
+<h2>python with的执行流程</h2>
 <pre class="literal-block">
-sudo aptitude install libreadline6 libreadline6-dev.
+#+BEGIN_SRC python
+with &lt;context&gt; as &lt;v&gt;:
+    &lt;do things or raise Exception&gt;
+#+END
 </pre>
-<p>如果已经编译过ruby,并且不支持补全，需要先安装readline.然后重新编译ruby.</p>
-<div class="section" id="irb">
-<h3>irb补全</h3>
-<p>ruby下自带irb交互式环境， 开启irb补全需要将一下内容加入到 ~/.irbrc文件:</p>
-<pre class="literal-block">
-require 'irb/completion'
-</pre>
-</div>
-<div class="section" id="bond">
-<h3>bond补全</h3>
-<p>更好的补全: <a class="reference external" href="http://tagaholic.me/2009/07/22/better-irb-completion-with-bond.html">http://tagaholic.me/2009/07/22/better-irb-completion-with-bond.html</a></p>
-<p>bond是一个ruby-gems, 用来增强irb的补全功能.
-1) 需要安装bond-gem:</p>
-<pre class="literal-block">
-sudo gem install bond
-</pre>
-<ol class="arabic" start="2">
-<li><p class="first">需要修改~/.irbrc:</p>
-<pre class="literal-block">
-require 'bond'
-require 'bond/completion'
-</pre>
-</li>
-</ol>
-</div>
-<div class="section" id="iruby">
-<h3>iruby补全</h3>
-<p>iruby是ruby下配合ipython一个工具，可以使用jupyter notebook在web上编辑和保存.</p>
-<p>安装方式见官网:: <a class="reference external" href="https://github.com/SciRuby/iruby">https://github ...</a></p></div></div>
-                <a class="readmore" href="/rubyxia-de-irbirubyru-he-shi-yong-bu-quan.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/dai-ma-feng-ge-tong-gui-fan.html" rel="bookmark"
-                           title="Permalink to 代码风格统一规范">代码风格统一规范</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T00:00:00+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/pep8.html">pep8</a> <a href="/tag/code.html">code</a> <a href="/tag/style.html">style</a> </p>
-</footer><!-- /.post-info -->                <p>代码建议统一使用pep8规范加上部分最佳实践。</p>
-<p>风格指南是关于一致性的。风格一致对一个项目更重要。</p>
-<p>Guido 的主要洞察力 (key insights) 之一是：代码更多是用来读而不是写。</p>
-<p>故本 指南致力于改善 Python 代码的可读性、使不同的 (wide spectrum) Python 代码 保持一致性。</p>
-<div class="section" id="pep8">
-<h2>pep8规范</h2>
-<p>代码pep8规范可以使用python pep8工具做检查.</p>
-<p>安装方法:</p>
-<pre class="literal-block">
-pip install pep8
-</pre>
-<p>使用方法:</p>
-<pre class="literal-block">
-pep8 &lt;python文件&gt;
-</pre>
-<p>一般IDE工具都会有集成，可以在编写代码的工程中做pep8校验. 可自行google设置方法。</p>
-<div class="section" id="id2">
-<h3>代码布局</h3>
-<ol class="arabic">
-<li><p class="first">每级缩进用 4 个空格。</p>
-</li>
-<li><p class="first">建议使用4个空格代替tab,最流行的 Python 缩进方式是仅使用空格</p>
-</li>
-<li><p class="first">绝不要混合使用 tab 和空格。建议打开IDE中的tab和空格(或至少显示行尾空格)显示。</p>
-</li>
-<li><p class="first">限制所有行的最大行宽为 79 字符。</p>
-<p>折叠长行的首选方法是使用 ...</p></li></ol></div></div>
-                <a class="readmore" href="/dai-ma-feng-ge-tong-gui-fan.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/mongodbyu-di-fan-shi.html" rel="bookmark"
-                           title="Permalink to mongodb与第一范式">mongodb与第一范式</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T00:00:00+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->                <p>mongodb作为一个弱模型化的nosql数据库，被认为是不需要遵守SQL第一范式.
-但是这样的想法其实应该是错误的.</p>
-<div class="section" id="what-s-1nf">
-<h2>what's 1NF</h2>
-<p>第一范式, 一句话概括的话就是原子域约束.
-SQL中一个字段(column)里应该只存储不可在分(原子)的值。</p>
-<p>比如, A有5个号码. 我把5个号码连接起来存到一个字段，那就不是1NF.
-因为这个值是可分的，能被分成5个号码.而这5个号码应该存为5条记录.</p>
-</div>
-<div class="section" id="why-mongodb-not-1nf">
-<h2>why mongodb not 1NF</h2>
-<p>mongodb作为文档数据库，对数据模式要求很宽松.记录不必保持一直的模式.
-缺失字段和字段类型不同都可以.</p>
-<p>比如: A只有一个数据号，所以存为mobile: '&lt;mobile&gt;'. B有2个号码，所以存为 mobile: ['&lt;m1&gt;', '&lt;m2&gt;']
-当然这里与1NF完全无关系。略过。</p>
-<p>其次mongodb允许为字段存为列表和内嵌文档。如果一个字段里存了5个手机号的列表。是否明显违背了1NF</p>
-</div>
-<div class="section" id="why-mongodb-is-1nf">
-<h2>why mongodb is 1Nf</h2>
-<p>现在想想下 A姓名 王某某, 原子域 ...</p></div>
-                <a class="readmore" href="/mongodbyu-di-fan-shi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/yi-dong-kai-fa-ban-ben-guan-li-xiang-guan.html" rel="bookmark"
-                           title="Permalink to 移动开发版本管理相关">移动开发版本管理相关</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T00:00:00+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/app.html">app</a> <a href="/tag/version.html">version</a> <a href="/tag/xie-zuo.html">协作</a> </p>
-</footer><!-- /.post-info -->                <div class="section" id="before-or-afeter">
-<h2>before or afeter</h2>
-<p>做app开发，所有人都是倾向于尽一切可能把逻辑放到后台，
-什么提示文字，按钮图标等.</p>
-<p>但是仔细向来这种方式欠缺考虑.</p>
-<ol class="arabic">
-<li><p class="first">如果提示文字只因app版本有关, 那写在前端更好。避免后台:</p>
-<pre class="literal-block">
-if version == '1':
-    message = ''
-elif version == '2':
-    messagee = ''
-</pre>
-</li>
-<li><p class="first">很多时候app版本的负担总是让所有后端苦不堪言，代码日益退化,优化无门.
-究其原因在于后端太重，在c/s开发模式上坚持b/s思路。无视富客户端的发展趋势.</p>
-</li>
-<li><p class="first">很多东西写在后台是为了灵活，可配置，倒是所有的可配置都意味着必须配置.</p>
-</li>
-</ol>
-</div>
-
-                <a class="readmore" href="/yi-dong-kai-fa-ban-ben-guan-li-xiang-guan.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/androiodxia-ru-he-an-zhuang-he-dui-apkzuo-sign.html" rel="bookmark"
-                           title="Permalink to androiod下如何安装和对apk做sign">androiod下如何安装和对apk做sign</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-07T00:00:00+08:00">
-                Published: 四 07 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/android.html">android</a> <a href="/tag/apk_release.html">apk_release</a> <a href="/tag/apk_sign.html">apk_sign</a> <a href="/tag/react_native_release.html">react_native_release</a> </p>
-</footer><!-- /.post-info -->                <p>尝试react-native的时候想把观望的example装到手机上。
-但是只能装个debug版本，必须配合react-native server才能运行.
-随后实验了下。想安装不需要服务器的release版本大致如下:</p>
-<p><a class="reference external" href="http://stackoverflow.com/questions/34630401/how-to-build-a-release-version-of-react-native-examples">http://stackoverflow.com/questions/34630401/how-to-build-a-release-version-of-react-native-examples</a></p>
-<ol class="arabic">
-<li><p class="first">把js.bundle和apk文件一起打包.
-把react-native的js.bundle下载到android的asserts目录下.
-可以curl或react-native bundle.具体没研究太透。</p>
-</li>
-<li><p class="first">去掉调试模式.
-调用 gralde assembleRelease. 而不是gralde installDebug.</p>
-</li>
-<li><dl class="first docutils">
-<dt>之后对apk做签名, 具体如下:</dt>
-<dd><p class="first last"><a class="reference external" href="https://developer.android.com/tools/publishing/app-signing.html">https://developer.android.com/tools/publishing/app-signing.html</a>
-<a class="reference external" href="http://facebook.github.io/react-native/docs/signed-apk-android.html">http://facebook.github.io/react-native/docs/signed-apk-android.html</a></p>
-</dd>
-</dl>
-</li>
-</ol>
-<p><strong>TODO</strong> 有时间好好研究下android的签名打包的工具和流程</p>
-<p><strong>TODO</strong> 有时间窒息看下react-native的命令和运行机制</p>
-
-                <a class="readmore" href="/androiodxia-ru-he-an-zhuang-he-dui-apkzuo-sign.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/redisgao-ke-yong-jian-kong-sentinelpei-zhi-he-shi-yong.html" rel="bookmark"
-                           title="Permalink to redis高可用监控sentinel配置和使用">redis高可用监控sentinel配置和使用</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-12-31T00:00:00+08:00">
-                Published: 四 31 十二月 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/redis-sentinel.html">redis-sentinel</a> <a href="/tag/high-avaliable.html">high-avaliable</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">如何通过配置sentinel实现redis集群高可用</p>
-
-                <a class="readmore" href="/redisgao-ke-yong-jian-kong-sentinelpei-zhi-he-shi-yong.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/redisfen-pian-xiao-ji.html" rel="bookmark"
-                           title="Permalink to redis分片小记">redis分片小记</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-12-30T00:00:00+08:00">
-                Published: 三 30 十二月 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/partition.html">partition</a> <a href="/tag/redis-partition.html">redis-partition</a> </p>
-</footer><!-- /.post-info -->                <p>介绍redis分片相关内容.</p>
-<div class="section" id="id1">
-<h2>分片相关</h2>
-<p>分片是将数据分布到不同的redis实例上, 让每个redis服务实例只保存部分数据。</p>
-<div class="section" id="id2">
-<h3>为何需要分片</h3>
+<p>with &lt;context&gt; as v:</p>
 <ol class="arabic simple">
-<li>突破单机的内存和磁盘存储限制.</li>
-<li>复用多机的cpu计算和网络传输能力。</li>
+<li>先加载__exit__函数，如果context里没有实现，会在这里报错的</li>
+<li>执行__enter__方法,并把结果传给v</li>
+<li>执行用户代码,如果正常推出,使用(None, None, None)调用__exit__,
+如果代码抛出异常，使用(type, exception, traceback)调用__exit__</li>
+</ol>
+<p>由上可以看出通过在代码里抛出特定异常，在__exit__里在下异常检测，
+可以实现重用户代码向__exit__传递参数的作用.</p>
+</div>
+<div class="section" id="id1">
+<h2>例子</h2>
+<pre class="literal-block">
+#+BEGIN_SRC python
+
+
+#+END
+</pre>
+</div>
+
+                <a class="readmore" href="/pythonzhong-shi-yong-withlai-jian-shao-dai-ma-zhong-fu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pythonshu-ju-fen-xi-twitterxiang-guan.html" rel="bookmark"
+                           title="Permalink to python数据分析twitter相关">python数据分析twitter相关</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:35:14+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/data_analizer.html">data_analizer</a> <a href="/tag/social_data.html">social_data</a> </p>
+</footer><!-- /.post-info -->                <p>twitter提供了一系列的api使得可以通过api来分析twitter数据，获取最热话题等.
+主要用于社交化数据分析. python端有python-twitter模块包装了常用的twitter api.</p>
+<div class="section" id="id1">
+<h2>代理问题</h2>
+<p>国内由于长城网的关系，twitter被屏蔽. python-twitter也没法使用.
+所幸最近看issues, 代理问题是否已经有其他的commit解决，并合并.</p>
+<p>使用export http_proxy环境变量的方式来使用.</p>
+</div>
+<div class="section" id="twitter-python-twitter">
+<h2>区分twitter/python-twitter的区别</h2>
+<p>twitter是官网放出来的包, python-twitter是github上开源的代码。
+有时间比较下两者的区别和优劣.</p>
+</div>
+
+                <a class="readmore" href="/pythonshu-ju-fen-xi-twitterxiang-guan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/django-generic-viewshi-yong-bi-ji.html" rel="bookmark"
+                           title="Permalink to django generic-view使用笔记">django generic-view使用笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:32:35+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <p>做了一个django app, 由于数据库使用mongodb, 所以没法使用django-admin. 就自己写了个admin.
+起初用的是最简单的一个视图一个函数，forms/generic-view都没用。但是问题很明显，容易出现bug，代码重复度很高。</p>
+<p>后来改用django-generic view配合forms, 总的来是开发效率和代码质量确实会有不错的提升，但是相对的，代码逻辑被分散在各处，
+即便是自己写的代码，过一段时间回头看都有点看不太懂。</p>
+<p>所以这里坐下笔记，整理下django generic-view的功能和流程, 以及自己开发过程中的一些感想，以备后用.</p>
+<div class="section" id="django-rest-framework">
+<h2>与django-rest-framework的对比</h2>
+<p>django-rest-framework里也有类似generic-view的概念。
+两者的目的比较相似，都是为了减少重复代码，加快开发速度.</p>
+<p>比较大的区别是:  适用目标不同.
+django-rest-framework的目标是api接口，所以使用了get/post/delete/put/等method, 设计上就想是对一个model的CURD操作的映射。
+django-generic-view的目标是web界面，所以只使用了get/post方法，设计上也不是一眼就能看出每个类的目的。</p>
+</div>
+<div class="section" id="id1">
+<h2>django-generic-view主要组成</h2>
+<div class="section" id="view-templateview-redirectview-staticview">
+<h3>最基础的View/TemplateView/RedirectView/StaticView等</h3>
+</div>
+<div class="section" id="listview">
+<h3>listView</h3>
+<p>提供对象列表视图</p>
+</div>
+<div class="section" id="detailview">
+<h3>detailView</h3>
+<p>单个对象的详情视图 ...</p></div></div>
+                <a class="readmore" href="/django-generic-viewshi-yong-bi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/muscabi-ji.html" rel="bookmark"
+                           title="Permalink to musca笔记">musca笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:31:41+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/musca.html">musca</a> <a href="/tag/linux.html">linux</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>简介</h2>
+<p>musca 是一个平铺式的窗口管理工具(WM). 使用纯键盘操作.</p>
+</div>
+<div class="section" id="id2">
+<h2>安装</h2>
+<div class="section" id="debian-7">
+<h3>debian 7</h3>
+<ol class="arabic simple">
+<li>下载dmenu源码，编译安装</li>
+<li>下载musca源码，编译安装</li>
+<li>创建/usr/share/sessions/musca.desktop文件</li>
+</ol>
+</div>
+<div class="section" id="ubuntu">
+<h3>ubuntu高版本下</h3>
+<p>基本同debian,不过要修改配置文件把*.c放到-l前面才能编译通过,不过仍然有不少警告.</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>使用</h2>
+<div class="section" id="id4">
+<h3>基本键位</h3>
+<div class="line-block">
+<div class="line">key                    | desc                  |</div>
+<div class="line">W-t                    | open a terimal        |</div>
+<div class="line">W-h                    | split h               |</div>
+<div class="line">W-v                    | split v               |</div>
+<div class="line">W-r                    | close split           |</div>
+<div class="line">W-o                    | only split            |</div>
+<div class="line">W-g                    | show/switch win-group |</div>
+<div class="line">W-m                    | exec musca ...</div></div></div></div>
+                <a class="readmore" href="/muscabi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/mnesiayong-hu-shou-ce-guan-fang-wen-dang.html" rel="bookmark"
+                           title="Permalink to mnesia用户手册(官方文档)">mnesia用户手册(官方文档)</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:30:37+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/erlang.html">erlang</a> <a href="/tag/mnesia.html">mnesia</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>mnesia用户手册</h2>
+<p>mnesia是一个分布式数据库</p>
+<div class="section" id="id2">
+<h3>介绍</h3>
+<p>本文档描述mnesia数据库, mnesia是一个分布式数据库系统.
+是OTP系统的一部分.</p>
+</div>
+<div class="section" id="id3">
+<h3>关于mnesia</h3>
+</div>
+</div>
+
+                <a class="readmore" href="/mnesiayong-hu-shou-ce-guan-fang-wen-dang.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/miao-yu-lian-zhu.html" rel="bookmark"
+                           title="Permalink to 妙语连珠">妙语连珠</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:30:06+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/dongman.html">dongman</a> <a href="/tag/dream.html">dream</a> </p>
+</footer><!-- /.post-info -->                <ul class="simple">
+<li>但凡有想抓在手中的东西,必须要有弄脏双手的觉悟.</li>
+</ul>
+
+                <a class="readmore" href="/miao-yu-lian-zhu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/httpxie-yi-yu-restful-apishe-ji.html" rel="bookmark"
+                           title="Permalink to http协议与restful-api设计">http协议与restful-api设计</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:25:47+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/http.html">http</a> <a href="/tag/restful.html">restful</a> <a href="/tag/api.html">api</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="http">
+<h2>http简介</h2>
+<div class="section" id="id1">
+<h3>http请求过程</h3>
+<ol class="arabic simple">
+<li>基于tcp3次握手</li>
+<li>发送http请求获取http响应</li>
+<li>断链接</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>http基本概念</h3>
+<div class="section" id="uri-identify">
+<h4>URI identify</h4>
+<ol class="arabic simple">
+<li>URL location<ol class="loweralpha">
+<li>方案</li>
+<li>用户</li>
+<li>密码</li>
+<li>主机</li>
+<li>断后</li>
+<li>路径</li>
+<li>参数</li>
+<li>查询</li>
+<li>片段</li>
+</ol>
+</li>
+<li>URN name 未流行</li>
 </ol>
 </div>
 <div class="section" id="id3">
-<h3>分片方法</h3>
-<p>分片有不同的实现方式, 如</p>
+<h4>http方法</h4>
 <ol class="arabic simple">
-<li>范围分片, R0(1-10000), R1(10001-2000)...
-缺点: 需要记录键的对应情况，所以比较低效, redis中不建议这种方式.</li>
-<li>hash分片. 对每个key通过hash函数，计算到对应的实例。
-redis中部分client和proxy实现了一致性hash来做分片处理。</li>
+<li>GET</li>
+<li>POST</li>
+<li>delete</li>
+<li>PUT</li>
+<li>head</li>
+<li>options</li>
+<li>trace</li>
+<li>patch</li>
 </ol>
+<div class="section" id="webdev">
+<h5>webDev扩展</h5>
+<p>lock/copy/move</p>
+</div>
 </div>
 <div class="section" id="id4">
-<h3>分片实现层面</h3>
-<p>分片可以做不同层面实现.</p>
-<ol class="arabic">
-<li><p class="first">客户端, 直接在客户端选择正确的实例完成操作。部分redis-client库实现这一功能.</p>
-</li>
-<li><p class="first">proxy, 类似mogos. 客户端链接到proxy, 由proxy代为转发到正确的redis实例上. 比如twemproxy:</p>
-<pre class="literal-block">
-https://github.com/twitter/twemproxy
-</pre>
-</li>
-<li><p class="first">查询路由. 查询被发到集群中任一台实例上, 由实例来转发到正确的实例上.
-redis集群实现了一个混合风格的查询路由，需要配合client端使用(不是由redis来做定位，而是重定向client来实现).</p>
-</li>
-</ol>
-</div>
-<div class="section" id="id5">
-<h3>分片的缺点</h3>
+<h4>http状态</h4>
 <ol class="arabic simple">
-<li>跨越多个key的操作通常都不能使用, 部分操作可以通过间接的方式实现.</li>
-<li>跨越多个key的事务无法被支持.</li>
-<li>XXX ...</li></ol></div></div>
-                <a class="readmore" href="/redisfen-pian-xiao-ji.html">read more</a>
+<li>100/101-&gt; procotol update</li>
+<li>200 ok/201 created/202 accept/204 not content</li>
+<li>300错选 ...</li></ol></div></div></div>
+                <a class="readmore" href="/httpxie-yi-yu-restful-apishe-ji.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/redisji-qun-jiao-cheng-zheng-li.html" rel="bookmark"
-                           title="Permalink to redis集群教程整理">redis集群教程整理</a></h1>
+                    <h1><a href="/ru-he-yue-du-yuan-ma.html" rel="bookmark"
+                           title="Permalink to 如何阅读源码">如何阅读源码</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2015-12-30T00:00:00+08:00">
-                Published: 三 30 十二月 2015
+        <abbr class="published" title="2016-01-08T15:24:45+08:00">
+                Published: 五 08 一月 2016
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/redis-cluster.html">redis-cluster</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/high-avaliable.html">high-avaliable</a> </p>
-</footer><!-- /.post-info -->                <p>redis集群相关内容, 讲解如何设置集群，对集群做测试和常规操作。
-不涵盖redis集群的细节，只从用户的角度讲如何使用redis集群, 以及redis的高可用性和一致性相关内容。
-更具体内容参见:</p>
-<pre class="literal-block">
-http://redis.io/topics/cluster-spec
-</pre>
-<div class="section" id="id1">
-<h2>redis集群的作用</h2>
-<ol class="arabic simple">
-<li>自动把数据分布到多台redis实例上.</li>
-<li>再部分节点失败后，保持可用性。再大多数redis节点失败后,redis集群仍然会失败.</li>
-</ol>
-</div>
-<div class="section" id="redistcp">
-<h2>redis集群tcp端口</h2>
-<p>redis集群需要所有节点开启两个端口.</p>
-<ol class="arabic simple">
-<li>normal-port. 如6379. 用于客户端的请求处理。</li>
-<li>high-port(normal-port+10000). 如16379.
-用于集群内节点间使用2进制协议交换数据，
-同时完成节点的错误检测，配置更新，故障转移认证等.</li>
-</ol>
-<p>确定开启这两个端口，并正确的设置防火墙。不然集群可以无法正常工作.</p>
-</div>
-<div class="section" id="redisdocker">
-<h2>redis集群与docker</h2>
-<p>redis集群无法的NAT网络下使用。</p>
-<p>配合docker使用时，需要开启docker host-networking-mode. 具体参见docker相关文档。</p>
+<p>tags: <a href="/tag/read_source_code.html">read_source_code</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="c">
+<h2>如何阅读c源码项目</h2>
+<ul class="simple">
+<li>makefile强化</li>
+<li>gcc基础/autotools了解</li>
+<li>文档/实现说明/doxygen/网络资源</li>
+<li>gdb/traceback/ main函数开始</li>
+<li>编译调试运行</li>
+<li>手动写，尝试，时间</li>
+</ul>
 </div>
 <div class="section" id="id2">
-<h2>redis集群数据共享方式</h2>
-<p>redis集群不是通过一致性hash实现. 而且通过hash-slot概念实现(hash槽)
-hash槽实现方式: CRC16(key) % 16384. 所以redis集群最多只能包含16384个实例。
-每个redis实例都是复制一部分hash槽 ...</p></div>
-                <a class="readmore" href="/redisji-qun-jiao-cheng-zheng-li.html">read more</a>
+<h2>阅读计划</h2>
+<div class="section" id="redis">
+<h3>redis</h3>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="python2-7">
+<h3>python2.7</h3>
+<p><strong>TODO</strong></p>
+</div>
+</div>
+
+                <a class="readmore" href="/ru-he-yue-du-yuan-ma.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/ru-he-guan-li-ge-ren-bi-ji-he-ji-hua.html" rel="bookmark"
-                           title="Permalink to 如何管理个人笔记和计划">如何管理个人笔记和计划</a></h1>
+                    <h1><a href="/get_obj_or_404zhu-yi.html" rel="bookmark"
+                           title="Permalink to get_obj_or_404注意">get_obj_or_404注意</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2015-11-05T00:00:00+08:00">
-                Published: 四 05 十一月 2015
+        <abbr class="published" title="2016-01-08T15:22:47+08:00">
+                Published: 五 08 一月 2016
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/note.html">note</a> <a href="/tag/learn.html">learn</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">个人笔记和计划的管理和组织方式</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/model.html">model</a> </p>
+</footer><!-- /.post-info -->                <p>在写get_obj_or_404时的注意事项.</p>
+<div class="section" id="querysetmodel">
+<h2>最好使用queryset而不是model，这样有更好的灵活性.</h2>
+<pre class="literal-block">
+# BEGIN_SRC python
+# object example
+def get_obj_or_404(model, **kw):
+    condition = Q(**kw)
+    try:
+        return model.objects.get(condition)
+    except:
+        raise NotFound(&quot;404, not found&quot;)
+# queryset example
+def get_obj_or_404(queryset, **kw):
+    condition = Q(**kw)
+    try:
+        return queryset.get(condition)
+    except:
+        raise NotFound(&quot;404, not found&quot;)
+#+END
+</pre>
+</div>
+<div class="section" id="exception">
+<h2>exception处理</h2>
+<ol class="arabic simple">
+<li>对可能的异常要分开处理，如 ...</li></ol></div>
+                <a class="readmore" href="/get_obj_or_404zhu-yi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-                <a class="readmore" href="/ru-he-guan-li-ge-ren-bi-ji-he-ji-hua.html">read more</a>
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/golang15bian-yi-shi-bai-ji-gvman-zhuang-golangbao-cuo.html" rel="bookmark"
+                           title="Permalink to golang1.5编译失败及gvm安装golang报错">golang1.5编译失败及gvm安装golang报错</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:22:11+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/golang.html">golang</a> <a href="/tag/gvm.html">gvm</a> <a href="/tag/golang15.html">golang1.5</a> </p>
+</footer><!-- /.post-info -->                <p>golang现在使用两套编译安装策略。</p>
+<p>golang1.4使用gcc编译。
+golang1.5需要使用golang1.4编译</p>
+<p>所以使用上需要先下载golang1.4编译安装。然后设置GOROOT_BOOTSTRAP变量为go1.4的主目录。</p>
+<p>之后就可以编译golang1.5或是使用gvm安装golang了。</p>
+<ol class="arabic simple">
+<li>gvm使用前需要source ~/.gvm/bin/gvm.</li>
+<li>gvm使用时最好配置下https代理，不然会很慢.</li>
+</ol>
+
+                <a class="readmore" href="/golang15bian-yi-shi-bai-ji-gvman-zhuang-golangbao-cuo.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
         <a href="/index.html">&laquo;</a>
-    Page 2 / 3
+    Page 2 / 6
         <a href="/index3.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

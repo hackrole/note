@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - django</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/django-generic-viewshi-yong-bi-ji.html">django generic-view使用笔记</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:32:35+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info --><p>做了一个django app, 由于数据库使用mongodb, 所以没法使用django-admin. 就自己写了个admin.
+起初用的是最简单的一个视图一个函数，forms/generic-view都没用。但是问题很明显，容易出现bug，代码重复度很高。</p>
+<p>后来改用django-generic view配合forms, 总的来是开发效率和代码质量确实会有不错的提升，但是相对的，代码逻辑被分散在各处，
+即便是自己写的代码，过一段时间回头看都有点看不太懂。</p>
+<p>所以这里坐下笔记，整理下django generic-view的功能和流程, 以及自己开发过程中的一些感想，以备后用.</p>
+<div class="section" id="django-rest-framework">
+<h2>与django-rest-framework的对比</h2>
+<p>django-rest-framework里也有类似generic-view的概念。
+两者的目的比较相似，都是为了减少重复代码，加快开发速度.</p>
+<p>比较大的区别是:  适用目标不同.
+django-rest-framework的目标是api接口，所以使用了get/post/delete/put/等method, 设计上就想是对一个model的CURD操作的映射。
+django-generic-view的目标是web界面，所以只使用了get/post方法，设计上也不是一眼就能看出每个类的目的。</p>
+</div>
+<div class="section" id="id1">
+<h2>django-generic-view主要组成</h2>
+<div class="section" id="view-templateview-redirectview-staticview">
+<h3>最基础的View/TemplateView/RedirectView/StaticView等</h3>
+</div>
+<div class="section" id="listview">
+<h3>listView</h3>
+<p>提供对象列表视图</p>
+</div>
+<div class="section" id="detailview">
+<h3>detailView</h3>
+<p>单个对象的详情视图</p>
+</div>
+<div class="section" id="formview-createview-updateview-deleteview">
+<h3>formView/createView/updateView/deleteView</h3>
+<p>用于编辑信息的视图</p>
+</div>
+<div class="section" id="yearview-monthview">
+<h3>yearView/monthView等暂时没理解</h3>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>django-generic_view内部流程</h2>
+<div class="section" id="id3">
+<h3>listView</h3>
+<p>实现了默认的get方法，
+先调用get_queryset获取queryset, 之后通过paginate_querset对queryset进行分页.
+之后通过调用get_context_data获取一些必要的context, 并把view/request放入其中，
+之后调用render_to_response返回页面.</p>
+<ol class="arabic simple">
+<li>get_queryset默认返回但强的queryset属性，或者model.objects.all.</li>
+<li>可以重写get_queryset来返回特定的查询，结果会被设置到self.object_list.</li>
+<li>可以通过分页相关的属性或方法设置分页相关的流程。</li>
+<li>通过get_context_data可以获取额外的属性输出到页面.</li>
+<li>render_to_response使用templateMixin来输出结果.</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>detailView</h3>
+<p>实现默认的get方法.
+先调用get_object方法获取对象,
+之后通过get_context_data获取必要的context,
+之后返回render_to_response方法</p>
+<ol class="arabic simple">
+<li>get_object默认会调用get_queryset来获取对象.</li>
+<li>可以通过定义slug_field等，设置get_object查询条件.</li>
+<li>通过定义get_context_data设置额外的页面属性.</li>
+</ol>
+</div>
+<div class="section" id="formview">
+<h3>formView</h3>
+<p>实现默认的get方法，
+通过get_form_class返回默认的form类，.
+通过get_form来获取form实例，其中会调用get_initial(), get_prefix()获取form initial.
+然后通过get_context_data获取必要的页面属性
+之后通过render_to_response返回页面</p>
+<ol class="arabic simple">
+<li>可以通过get_form_class这里返回特殊choices的form等.</li>
+<li>通过get_initial可以为form表单设置初始化值。</li>
+<li>get_prefix作用还不明确</li>
+<li>通过get_context_data可以设置额外属性,比较enums.choices</li>
+</ol>
+<p>实现默认的post方法
+前面和get方法类似，通过get_form_class/get_form获取form实例。
+之后调用form.is_valid,
+如果成功，调用form_valid, 默认的实现会调用form.save()，然后redirect到success_url.
+如果失败, 调用form_invalid, 默认实现或返回的form页面，此时form实例会携带错误信息.</p>
+<ol class="arabic simple">
+<li>需要在页面上输出form的错误信息</li>
+<li>需要在form中实现save方法完成保存.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="createview-updateview-deleteview">
+<h2>createView/updateview/deleteview</h2>
+<p>使用modelForm实现, 暂时没看。</p>
+</div>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/get_obj_or_404zhu-yi.html" rel="bookmark"
+                           title="Permalink to get_obj_or_404注意">get_obj_or_404注意</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:22:47+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/model.html">model</a> </p>
+</footer><!-- /.post-info -->                <p>在写get_obj_or_404时的注意事项.</p>
+<div class="section" id="querysetmodel">
+<h2>最好使用queryset而不是model，这样有更好的灵活性.</h2>
+<pre class="literal-block">
+# BEGIN_SRC python
+# object example
+def get_obj_or_404(model, **kw):
+    condition = Q(**kw)
+    try:
+        return model.objects.get(condition)
+    except:
+        raise NotFound(&quot;404, not found&quot;)
+# queryset example
+def get_obj_or_404(queryset, **kw):
+    condition = Q(**kw)
+    try:
+        return queryset.get(condition)
+    except:
+        raise NotFound(&quot;404, not found&quot;)
+#+END
+</pre>
+</div>
+<div class="section" id="exception">
+<h2>exception处理</h2>
+<ol class="arabic simple">
+<li>对可能的异常要分开处理，如 ...</li></ol></div>
+                <a class="readmore" href="/get_obj_or_404zhu-yi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/djangoxiang-mu-zi-ding-xiang-xia-gou-zao-fang-shi.html" rel="bookmark"
+                           title="Permalink to django项目自顶向下构造方式">django项目自顶向下构造方式</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:06:20+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>自顶向下构建</h2>
+<div class="section" id="id2">
+<h3>在项目中严格遵守自顶向下的分层</h3>
+<ol class="arabic simple">
+<li>底层为高层提供服务和必要的细节屏蔽, 高层调用低层服务.</li>
+<li>同层的服务可以调用, 但也需要注意定义顺序,并避免循环调用的问题.</li>
+<li>更低一层不允许调用更高一层的服务.</li>
+<li>高层可以在必要的时候越过部分底层, 调用更底层服务.</li>
+<li>上层应该及可能把不易变更的操作委托给下层处理, 但是易于变更的操作应及可能在高层处理.</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>好处</h3>
+<ol class="arabic simple">
+<li>代码和逻辑更清晰,易于扩展和维护</li>
+<li>避免循环引用的问题.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>django的构建分层</h2>
+<div class="section" id="id5">
+<h3>分层列表</h3>
+<ol class="arabic simple">
+<li>模板层</li>
+<li>视图层</li>
+<li>持久话层</li>
+<li>form层(数据校验和渲染层)</li>
+<li>utils层</li>
+<li>rules层(业务逻辑层, 负责处理表的联动和业务判断等)</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>分层规则</h3>
+<ol class="arabic simple">
+<li>utils层处于最底层, 提供通用帮助函数/类.</li>
+<li>持久话层处于utils之上的最低层, 可能分为enums/和模型, 其中enums应该划分到utils层, 或介于utils层和持久化层之间.</li>
+<li>rules 层处于 持久化层 之上</li>
+<li>form层处于rules层之上,必要时可以越过rules, 直接使用持久化层</li>
+<li>视图层处于用户逻辑的最高层, 通过form层/rules层完成需要的功能.</li>
+<li>模板层处于 视图层和form层之间,但实际上应该对下应该是断层.</li>
+<li>比较难处理的是包装器和hooks等 ...</li></ol></div></div>
+                <a class="readmore" href="/djangoxiang-mu-zi-ding-xiang-xia-gou-zao-fang-shi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>elisp keymap相关</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/elisp-keymapxiang-guan.html" rel="bookmark"
+           title="Permalink to elisp keymap相关">elisp keymap相关</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:58:24+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> <a href="/tag/emacs.html">emacs</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="elisp">
+<h2>elisp按键序列概念</h2>
+<p>elisp按键在elisp中有两种表达方式:</p>
+<p>1&gt; 字符串 &quot;C-x1&quot;</p>
+<p>2&gt; 列表vector [?C-x ?1]</p>
+<p>函数(kbd keseq-string)返回字符串对应的按键序列(字符串或列表形式)</p>
+<p>功能键用 &lt;&gt;表示, &lt;RET&gt; &lt;SPC&gt; &lt;F1&gt;等</p>
+</div>
+<div class="section" id="keymap">
+<h2>keymap基本概念</h2>
+<p>keymap是一个中lisp内的数据结构，用于绑定多个按键序列到对应的command上</p>
+<p>按键序列可以分为两种</p>
+<p>1&gt; prefix key 前缀键,如 C-x</p>
+<p>2&gt; complete key 完整的按键,如 x, C-k, C-x C-q</p>
+<p>定义一个complete key前，需要定义所有需要的prefix key.</p>
+</div>
+<div class="section" id="id1">
+<h2>一般都会有多个keymap处于激活状态，分类如下</h2>
+<p>1&gt; global keymap (shared by all buffers)</p>
+<p>2&gt; local keymap (通常由major mode设置)</p>
+<p>3&gt; zero or many minor keymap(通常有minor mode提供)</p>
+<p>local keymap会覆盖global keymap, minor keymap会覆盖local keymap和global-keymap</p>
+</div>
+<div class="section" id="create-keymap-and-keymap-format">
+<h2>create keymap and keymap format</h2>
+<div class="section" id="keymap-format">
+<h3>keymap format</h3>
+<p><strong>TODO</strong></p>
+<p>函数(keymapp symbal)用于判断指定symbal是否为keymap</p>
+</div>
+<div class="section" id="create-keymap">
+<h3>create keymap</h3>
+<div class="line-block">
+<div class="line">function                             | desc                                               | others                                   |</div>
+<div class="line">(make-sparse-keymap &amp;optional prompt | create and return a new keymap with no entries     | the usually keymap you need              |</div>
+<div class="line">(make-keymap &amp;optional prompt)       | create and return a new keymap with char-tables    | use this if you want bind a lots of keys |</div>
+<div class="line">(copy-keymap keymap)                 | return a copy of keymap, recursive copy sub keymap | recursive copy fails on function keymap  |</div>
+</div>
+<p>新建keymap的两个函数都可选的有一个prompt参数，用于设置menu使用，一般不设置</p>
+<p>一般使用sparse来新建keymap做按键绑定，按键较多时可以考虑keymap</p>
+<p>keymap结构里可以递归的包含其他keymaps</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>keymap继承</h2>
+<p>keymap可以继承其他keymap(单继承，多继承有其他实现方式),继承的逻辑和一般的类继承类似</p>
+<div class="line-block">
+<div class="line">function                          | desc                                                                                 | others |</div>
+<div class="line">(keymap-parent keymap)            | return the keymap's parent keymap, nil if no                                         |        |</div>
+<div class="line">(set-keymap-parent keymap parent) | set the keymap parent to parent, if nil, do nothing, recursive set the parent parent |        |</div>
+</div>
+<p>一般用sparse keymap指定parent,non-sparse也可以制定不过因为所有键都会被重写，一般没有意义.</p>
+<p>多继承用make-composed-keymap,</p>
+<div class="line-block">
+<div class="line">function                                     | desc                                                                     | others |</div>
+<div class="line">(make-composed-keymap maps &amp;optional parent) | return a new keymap, whose key is first find in (first maps then parent) |        |</div>
+</div>
+<p>例如:</p>
+<pre class="literal-block">
+(set-keymap-parent map (make-composed-keymap button-buffer-map special-mode-map))
+</pre>
+</div>
+<div class="section" id="prefix-key">
+<h2>定义prefix key</h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="id3">
+<h2>定义按键前缀</h2>
+<p><strong>TODO</strong></p>
+<p>(define-prefix-comamnd symbal &amp;optional mapvar prompt)</p>
+</div>
+<div class="section" id="active-keymaps">
+<h2>active keymaps</h2>
+<p><strong>TODO</strong></p>
+<div class="line-block">
+<div class="line">function                | desc |</div>
+<div class="line">current-global-map      |      |</div>
+<div class="line">current-local-map       |      |</div>
+<div class="line">current-monor-mode-maps |      |</div>
+<div class="line">use-global-map          |      |</div>
+<div class="line">use-local-map           |      |</div>
+</div>
+</div>
+<div class="section" id="key-lookup">
+<h2>key lookup</h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="change-remapping-translation-bind-keymaps">
+<h2>change/remapping/translation/bind keymaps</h2>
+<div class="section" id="remap-command">
+<h3>remap command</h3>
+</div>
+<div class="section" id="keymaps-for-translating-sequences">
+<h3>keymaps for translating sequences</h3>
+</div>
+<div class="section" id="command-for-binding-keys">
+<h3>command for binding keys</h3>
+<div class="line-block">
+<div class="line">function         | desc |</div>
+<div class="line">global-set-key   |      |</div>
+<div class="line">global-unset-key |      |</div>
+<div class="line">local-set-key    |      |</div>
+<div class="line">local-unset-key  |      |</div>
+<div class="line">define-key       |      |</div>
+</div>
+</div>
+</div>
+<div class="section" id="scanning-keymaps">
+<h2>scanning keymaps</h2>
+</div>
+<div class="section" id="menu-keymaps">
+<h2>menu keymaps</h2>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>django项目自顶向下构造方式</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/djangoxiang-mu-zi-ding-xiang-xia-gou-zao-fang-shi.html" rel="bookmark"
+           title="Permalink to django项目自顶向下构造方式">django项目自顶向下构造方式</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:06:20+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/django.html">django</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="id1">
+<h2>自顶向下构建</h2>
+<div class="section" id="id2">
+<h3>在项目中严格遵守自顶向下的分层</h3>
+<ol class="arabic simple">
+<li>底层为高层提供服务和必要的细节屏蔽, 高层调用低层服务.</li>
+<li>同层的服务可以调用, 但也需要注意定义顺序,并避免循环调用的问题.</li>
+<li>更低一层不允许调用更高一层的服务.</li>
+<li>高层可以在必要的时候越过部分底层, 调用更底层服务.</li>
+<li>上层应该及可能把不易变更的操作委托给下层处理, 但是易于变更的操作应及可能在高层处理.</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>好处</h3>
+<ol class="arabic simple">
+<li>代码和逻辑更清晰,易于扩展和维护</li>
+<li>避免循环引用的问题.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>django的构建分层</h2>
+<div class="section" id="id5">
+<h3>分层列表</h3>
+<ol class="arabic simple">
+<li>模板层</li>
+<li>视图层</li>
+<li>持久话层</li>
+<li>form层(数据校验和渲染层)</li>
+<li>utils层</li>
+<li>rules层(业务逻辑层, 负责处理表的联动和业务判断等)</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>分层规则</h3>
+<ol class="arabic simple">
+<li>utils层处于最底层, 提供通用帮助函数/类.</li>
+<li>持久话层处于utils之上的最低层, 可能分为enums/和模型, 其中enums应该划分到utils层, 或介于utils层和持久化层之间.</li>
+<li>rules 层处于 持久化层 之上</li>
+<li>form层处于rules层之上,必要时可以越过rules, 直接使用持久化层</li>
+<li>视图层处于用户逻辑的最高层, 通过form层/rules层完成需要的功能.</li>
+<li>模板层处于 视图层和form层之间,但实际上应该对下应该是断层.</li>
+<li>比较难处理的是包装器和hooks等, 这些逻辑穿插在多个层中, 根据功能可以分到utils/rules之中. 实现上应该考虑再次拆分为两个层</li>
+<li>celery离线任务应该处于rules层, 不应该在持久化层调用, 避免持久化层操作过载.</li>
+</ol>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

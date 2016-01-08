@@ -58,7 +58,6 @@ create keymap
 ~~~~~~~~~~~~~
 
 | function                             | desc                                               | others                                   |
-|--------------------------------------+----------------------------------------------------+------------------------------------------|
 | (make-sparse-keymap &optional prompt | create and return a new keymap with no entries     | the usually keymap you need              |
 | (make-keymap &optional prompt)       | create and return a new keymap with char-tables    | use this if you want bind a lots of keys |
 | (copy-keymap keymap)                 | return a copy of keymap, recursive copy sub keymap | recursive copy fails on function keymap  |
@@ -109,7 +108,6 @@ active keymaps
 **TODO**
 
 | function                | desc |
-|-------------------------+------|
 | current-global-map      |      |
 | current-local-map       |      |
 | current-monor-mode-maps |      |
@@ -134,7 +132,6 @@ command for binding keys
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 | function         | desc |
-|------------------+------|
 | global-set-key   |      |
 | global-unset-key |      |
 | local-set-key    |      |

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - misc</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ru-he-mock-requestsmo-kuai.html" rel="bookmark"
+                           title="Permalink to 如何mock requests模块">如何mock requests模块</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:33:44+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/requests.html">requests</a> <a href="/tag/mock.html">mock</a> <a href="/tag/unittest.html">unittest</a> </p>
+</footer><!-- /.post-info -->                <p>requests模块是非常好用的python http处理模块，使用场景很长广。
+但是暂时不能自己创建Response导致mock不太方便.</p>
+<p>通过搜索发现了两个lib可以处理.</p>
+<p>httpretty/responses</p>
+<p>httpretty模块是模仿ruby的FakeWeb所写.
+responses模块是作者在使用httpretty时遇到问题，最后自己实现的一个less-featury版本.</p>
+<p>两个模块亲测都可以使用，而且语法很相似，可以使用decoreate/with-context/start()+stop()语法，
+使用很方便.</p>
+<p>并且可以对不同的url,设置mock为不同的response,支持url正则语法等.</p>
+<p>responses只有几百行代码，有时间可以读读源码.</p>
+<p>通过httpretty，知道还有一个新的pip库curding, 具体待研究</p>
+
+                <a class="readmore" href="/ru-he-mock-requestsmo-kuai.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/androidkai-fa-qi-bu.html" rel="bookmark"
+                           title="Permalink to android开发起步">android开发起步</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:32:47+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/android.html">android</a> <a href="/tag/android-sdk.html">android-sdk</a> <a href="/tag/get-started.html">get-started</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">linux(ubuntu)下搭建android开发环境.</p>
+
+                <a class="readmore" href="/androidkai-fa-qi-bu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/redisshu-ju-jie-gou-jie-shao.html" rel="bookmark"
+                           title="Permalink to redis数据结构介绍">redis数据结构介绍</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:31:57+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/data-type.html">data-type</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">redis中string/list/hash/set/sorted-set/bit介绍</p>
+
+                <a class="readmore" href="/redisshu-ju-jie-gou-jie-shao.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/redisfu-zhi-pei-zhi-xiang-guan.html" rel="bookmark"
+                           title="Permalink to redis复制配置相关">redis复制配置相关</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:31:05+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/redis_slave.html">redis_slave</a> </p>
+</footer><!-- /.post-info -->                <p>原内容来自redis官方文档:</p>
+<pre class="literal-block">
+redis-replication官方文档&lt;http://redis.io/topics/replication&gt;
+</pre>
+<p>基本来说，只要在配置文件里加上:</p>
+<pre class="literal-block">
+slaveof &lt;ip&gt; &lt;port&gt;
+</pre>
+<p>就可以完成配置.</p>
+<p>如下配置可能有用:</p>
+<pre class="literal-block">
+repl-diskless-sync (不使用磁盘同步)
+repl-diskless-sync-delay (同步前的延时, 以等待其他的要链接的slave)
+</pre>
+<div class="section" id="id1">
+<h2>安全问题</h2>
+<p>如果redis开启复制特性，同时master节点关闭持久化特性。
+这时应该避免master节点的自动重启，避免slave节点上的数据被重启的master节点清空。</p>
+</div>
+<div class="section" id="id2">
+<h2>同步策略</h2>
+<p>redis默认使用磁盘同步, 数据被存到RDB file文件, 之后通过同步该文件做full-sync.</p>
+<p>但是如果磁盘太慢会导致性能不好，2.8新增直接通过socket来同步的方式.(该方式目前仍然是实验阶段)</p>
+</div>
+<div class="section" id="id3">
+<h2>只读复制</h2>
+<p>redis默认slave是只读的,所有写操作会报错.
+通过如下方式可以打开读写:</p>
+<pre class="literal-block">
+slave-read-only no (配置文件)
+config set slave-read-only no (redis-cli运行时)
+</pre>
+<p>即便是只读slave也不应该暴露在公网下.
+debug/config等命令仍会带来完全问题(使用rename-command配置)</p>
+<p>读写slave在较少场景下会有用 ...</p></div>
+                <a class="readmore" href="/redisfu-zhi-pei-zhi-xiang-guan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/reactqi-bu-xu-zhi.html" rel="bookmark"
+                           title="Permalink to react起步须知">react起步须知</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:26:01+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/react.html">react</a> <a href="/tag/browserify-debug.html">browserify-debug</a> <a href="/tag/react-get-started.html">react-get-started</a> </p>
+</footer><!-- /.post-info -->                <p class="first last">总结react起步需要的内容.</p>
+
+                <a class="readmore" href="/reactqi-bu-xu-zhi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ru-he-zheng-que-de-shi-yong-stackoverflow.html" rel="bookmark"
+                           title="Permalink to 如何正确的使用stackoverflow">如何正确的使用stackoverflow</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:25:23+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/stackoverflow.html">stackoverflow</a> <a href="/tag/how-to-ask-a-question.html">how-to-ask-a-question</a> <a href="/tag/ask-for-help.html">ask-for-help</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>关于屏蔽</h2>
+<p>stackoverflow会自动屏蔽那些问了太多低质量问题的用户，阻止他们继续提出问题。
+具体算法没有公开。但是基本是根据用户问题里的down-voted/zero-voted/deleted-posts量来定。
+一两个低质量的问题不会被屏蔽。</p>
+<p>被屏蔽后不能提问题，但是不影响其他功能.</p>
+</div>
+<div class="section" id="baned">
+<h2>如何脱离baned</h2>
+<p>只有作出一定的贡献才能脱离baned. baned是永久的，不会超时。</p>
+<ol class="arabic simple">
+<li>不要问已存在的问题，问之前先试试stackoverflow的搜索功能.</li>
+<li>注意问题的语法和单词拼写检查.</li>
+<li>适当的格式化代码，保持可读性.</li>
+<li>提供及可能多的细节，和已做的努力。</li>
+<li>大声读出你的问题，确保能让他人理解你的问题.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>良好的提问习惯</h2>
+<ol class="arabic simple">
+<li>search and research. 保持search记录，让其他人知道为什么你的问题与他人的问题有所不同.</li>
+<li>写一个好的标题.
+1) 简短准确的概述你的问题，并和其他的问题标题有所不同.
+2) 拼写检查，语法,标点很重要.
+3) 如果你不好总结你的标题，可以在最后处理.</li>
+<li>在贴代码和异常前，先描述你的问题。让其他人能更容易理解你的问题.</li>
+<li>帮助他人重现你的问题.
+1) 代码要尽可能短小，不包含太多无关内容.
+2) 借助jsfiddle.com等第三方代码分享平台 ...</li></ol></div>
+                <a class="readmore" href="/ru-he-zheng-que-de-shi-yong-stackoverflow.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ru-he-she-zhi-vim-options.html" rel="bookmark"
+                           title="Permalink to 如何设置vim options">如何设置vim options</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:24:52+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/vim.html">vim</a> <a href="/tag/vim-options.html">vim-options</a> </p>
+</footer><!-- /.post-info -->                <p>vim的set有很多讲究,暂时没时间整理</p>
+<p>可以通过:options看到已分类的所有options选项,方便设置</p>
+
+                <a class="readmore" href="/ru-he-she-zhi-vim-options.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/rubyxia-de-irbirubyru-he-shi-yong-bu-quan.html" rel="bookmark"
+                           title="Permalink to ruby下的irb/iruby如何使用补全">ruby下的irb/iruby如何使用补全</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T10:20:00+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/ruby.html">ruby</a> <a href="/tag/irb.html">irb</a> <a href="/tag/iruby.html">iruby</a> <a href="/tag/bond.html">bond</a> <a href="/tag/ruby_completion.html">ruby_completion</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>概述</h2>
+<p>ruby补全需要先安装readline-dev包:</p>
+<pre class="literal-block">
+sudo aptitude install libreadline6 libreadline6-dev.
+</pre>
+<p>如果已经编译过ruby,并且不支持补全，需要先安装readline.然后重新编译ruby.</p>
+<div class="section" id="irb">
+<h3>irb补全</h3>
+<p>ruby下自带irb交互式环境， 开启irb补全需要将一下内容加入到 ~/.irbrc文件:</p>
+<pre class="literal-block">
+require 'irb/completion'
+</pre>
+</div>
+<div class="section" id="bond">
+<h3>bond补全</h3>
+<p>更好的补全: <a class="reference external" href="http://tagaholic.me/2009/07/22/better-irb-completion-with-bond.html">http://tagaholic.me/2009/07/22/better-irb-completion-with-bond.html</a></p>
+<p>bond是一个ruby-gems, 用来增强irb的补全功能.
+1) 需要安装bond-gem:</p>
+<pre class="literal-block">
+sudo gem install bond
+</pre>
+<ol class="arabic" start="2">
+<li><p class="first">需要修改~/.irbrc:</p>
+<pre class="literal-block">
+require 'bond'
+require 'bond/completion'
+</pre>
+</li>
+</ol>
+</div>
+<div class="section" id="iruby">
+<h3>iruby补全</h3>
+<p>iruby是ruby下配合ipython一个工具，可以使用jupyter notebook在web上编辑和保存.</p>
+<p>安装方式见官网:: <a class="reference external" href="https://github.com/SciRuby/iruby">https://github ...</a></p></div></div>
+                <a class="readmore" href="/rubyxia-de-irbirubyru-he-shi-yong-bu-quan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dai-ma-feng-ge-tong-gui-fan.html" rel="bookmark"
+                           title="Permalink to 代码风格统一规范">代码风格统一规范</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T00:00:00+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/pep8.html">pep8</a> <a href="/tag/code.html">code</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <p>代码建议统一使用pep8规范加上部分最佳实践。</p>
+<p>风格指南是关于一致性的。风格一致对一个项目更重要。</p>
+<p>Guido 的主要洞察力 (key insights) 之一是：代码更多是用来读而不是写。</p>
+<p>故本 指南致力于改善 Python 代码的可读性、使不同的 (wide spectrum) Python 代码 保持一致性。</p>
+<div class="section" id="pep8">
+<h2>pep8规范</h2>
+<p>代码pep8规范可以使用python pep8工具做检查.</p>
+<p>安装方法:</p>
+<pre class="literal-block">
+pip install pep8
+</pre>
+<p>使用方法:</p>
+<pre class="literal-block">
+pep8 &lt;python文件&gt;
+</pre>
+<p>一般IDE工具都会有集成，可以在编写代码的工程中做pep8校验. 可自行google设置方法。</p>
+<div class="section" id="id2">
+<h3>代码布局</h3>
+<ol class="arabic">
+<li><p class="first">每级缩进用 4 个空格。</p>
+</li>
+<li><p class="first">建议使用4个空格代替tab,最流行的 Python 缩进方式是仅使用空格</p>
+</li>
+<li><p class="first">绝不要混合使用 tab 和空格。建议打开IDE中的tab和空格(或至少显示行尾空格)显示。</p>
+</li>
+<li><p class="first">限制所有行的最大行宽为 79 字符。</p>
+<p>折叠长行的首选方法是使用 ...</p></li></ol></div></div>
+                <a class="readmore" href="/dai-ma-feng-ge-tong-gui-fan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/mongodbyu-di-fan-shi.html" rel="bookmark"
+                           title="Permalink to mongodb与第一范式">mongodb与第一范式</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T00:00:00+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <p>mongodb作为一个弱模型化的nosql数据库，被认为是不需要遵守SQL第一范式.
+但是这样的想法其实应该是错误的.</p>
+<div class="section" id="what-s-1nf">
+<h2>what's 1NF</h2>
+<p>第一范式, 一句话概括的话就是原子域约束.
+SQL中一个字段(column)里应该只存储不可在分(原子)的值。</p>
+<p>比如, A有5个号码. 我把5个号码连接起来存到一个字段，那就不是1NF.
+因为这个值是可分的，能被分成5个号码.而这5个号码应该存为5条记录.</p>
+</div>
+<div class="section" id="why-mongodb-not-1nf">
+<h2>why mongodb not 1NF</h2>
+<p>mongodb作为文档数据库，对数据模式要求很宽松.记录不必保持一直的模式.
+缺失字段和字段类型不同都可以.</p>
+<p>比如: A只有一个数据号，所以存为mobile: '&lt;mobile&gt;'. B有2个号码，所以存为 mobile: ['&lt;m1&gt;', '&lt;m2&gt;']
+当然这里与1NF完全无关系。略过。</p>
+<p>其次mongodb允许为字段存为列表和内嵌文档。如果一个字段里存了5个手机号的列表。是否明显违背了1NF</p>
+</div>
+<div class="section" id="why-mongodb-is-1nf">
+<h2>why mongodb is 1Nf</h2>
+<p>现在想想下 A姓名 王某某, 原子域 ...</p></div>
+                <a class="readmore" href="/mongodbyu-di-fan-shi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="/category/misc4.html">&laquo;</a>
+    Page 5 / 6
+        <a href="/category/misc6.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

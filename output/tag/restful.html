@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - restful</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/httpxie-yi-yu-restful-apishe-ji.html">http协议与restful-api设计</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:25:47+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/http.html">http</a> <a href="/tag/restful.html">restful</a> <a href="/tag/api.html">api</a> </p>
+</footer><!-- /.post-info --><div class="section" id="http">
+<h2>http简介</h2>
+<div class="section" id="id1">
+<h3>http请求过程</h3>
+<ol class="arabic simple">
+<li>基于tcp3次握手</li>
+<li>发送http请求获取http响应</li>
+<li>断链接</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>http基本概念</h3>
+<div class="section" id="uri-identify">
+<h4>URI identify</h4>
+<ol class="arabic simple">
+<li>URL location<ol class="loweralpha">
+<li>方案</li>
+<li>用户</li>
+<li>密码</li>
+<li>主机</li>
+<li>断后</li>
+<li>路径</li>
+<li>参数</li>
+<li>查询</li>
+<li>片段</li>
+</ol>
+</li>
+<li>URN name 未流行</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h4>http方法</h4>
+<ol class="arabic simple">
+<li>GET</li>
+<li>POST</li>
+<li>delete</li>
+<li>PUT</li>
+<li>head</li>
+<li>options</li>
+<li>trace</li>
+<li>patch</li>
+</ol>
+<div class="section" id="webdev">
+<h5>webDev扩展</h5>
+<p>lock/copy/move</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>http状态</h4>
+<ol class="arabic simple">
+<li>100/101-&gt; procotol update</li>
+<li>200 ok/201 created/202 accept/204 not content</li>
+<li>300错选/301永久move/302 303 307临时move/304 not modify</li>
+<li>400bad request/401not auth/403 forbidenn/404 not found/405 method not allow/410 gone</li>
+<li>500 error/501 not implement/502bad gate/503 service unable/504 timeout</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h4>http首部</h4>
+<ol class="arabic simple">
+<li>content-type</li>
+<li>etags</li>
+<li>expires</li>
+<li>if-modify-since</li>
+<li>location</li>
+<li>authuration</li>
+<li>set-cookies</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h4>http组件</h4>
+<ol class="arabic simple">
+<li>代理</li>
+<li>缓存</li>
+<li>网关</li>
+<li>隧道</li>
+</ol>
+</div>
+<div class="section" id="http-rfc">
+<h4>http版本 rfc</h4>
+<ol class="arabic simple">
+<li>0.9</li>
+<li>1.0</li>
+<li>1.1</li>
+<li>NG(2.0)未流行</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="rest">
+<h2>rest概念</h2>
+<div class="section" id="id7">
+<h3>可见性</h3>
+<ol class="arabic simple">
+<li>无状态</li>
+<li>统一接口</li>
+<li>媒体类型</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h3>安全方法／幂等方法</h3>
+</div>
+<div class="section" id="url">
+<h3>设置资源url</h3>
+<ol class="arabic simple">
+<li>识别资源</li>
+<li>资源粒度</li>
+<li>复合资源</li>
+<li>计算资源</li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h3>链通性</h3>
+</div>
+</div>
+                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

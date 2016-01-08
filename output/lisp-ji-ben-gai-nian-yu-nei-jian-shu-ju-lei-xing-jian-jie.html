@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>lisp 基本概念与内建数据类型简介</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/lisp-ji-ben-gai-nian-yu-nei-jian-shu-ju-lei-xing-jian-jie.html" rel="bookmark"
+           title="Permalink to lisp 基本概念与内建数据类型简介">lisp 基本概念与内建数据类型简介</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:56:20+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="id1">
+<h2>lisp的基本特性</h2>
+<ul class="simple">
+<li>变量不需要提前声明</li>
+<li>几种基本类型(integer,list, buffer等)是内建实现</li>
+<li>通过函数判断数据类型，可以属于多个类型，但只能属于一种你基本类型</li>
+</ul>
+</div>
+<div class="section" id="integer-type">
+<h2>integer type</h2>
+<ul class="simple">
+<li>在32位机器中,  range(-2**29 to -2**29 -1)</li>
+<li>lisp函数不做溢出判断，程序要注意溢出危险</li>
+</ul>
+</div>
+<div class="section" id="float-type">
+<h2>float type</h2>
+<ul class="simple">
+<li>使用c语言double实现</li>
+</ul>
+</div>
+<div class="section" id="char-type">
+<h2>char type</h2>
+<ul class="simple">
+<li>使用integer表示</li>
+<li>range(0-4194303)</li>
+<li>读入语法形式 ?a, ?A ?\ ?( ?a</li>
+</ul>
+<p>...</p>
+</div>
+<div class="section" id="symbol-type">
+<h2>symbol type</h2>
+<ul class="simple">
+<li>unique唯一性</li>
+<li>:开头为常量</li>
+</ul>
+</div>
+<div class="section" id="sequence-types">
+<h2>sequence types</h2>
+<ul class="simple">
+<li>包含list和arrays两种类型</li>
+</ul>
+<div class="section" id="list-type-arrays-type">
+<h3>list type 与 arrays type</h3>
+<ul class="simple">
+<li>list可以包含任意对象</li>
+<li>list长度可以任意调整</li>
+</ul>
+</div>
+</div>
+<div class="section" id="cons-cell-and-list-type">
+<h2>cons cell and list type</h2>
+<p><strong>TODO</strong></p>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

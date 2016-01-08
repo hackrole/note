@@ -20,9 +20,9 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/vimbian-liang-xiang-guan.html">vim变量相关</a></h1>
+                    <h1 class="entry-title"><a href="/appyaml-configue-for-google-app-engine.html">app.yaml configue for google app engine</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:35:44+08:00">
+        <abbr class="published" title="2016-01-08T15:51:45+08:00">
                 Published: 五 08 一月 2016
         </abbr>
 
@@ -30,22 +30,153 @@
                 By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/vim.html">vim</a> <a href="/tag/vimscript.html">vimscript</a> </p>
-</footer><!-- /.post-info --><div class="section" id="id1">
-<h2>概述</h2>
-<p>vim里的变量通过let定义.</p>
-<p>变量类型:</p>
+<p>tags: <a href="/tag/gae.html">GAE</a> <a href="/tag/yaml.html">yaml</a> </p>
+</footer><!-- /.post-info --><div class="section" id="elements">
+<h2>elements</h2>
+<div class="section" id="application">
+<h3>application</h3>
+<p>application id
+应用程序id, gae id</p>
+</div>
+<div class="section" id="version">
+<h3>version</h3>
+<p>应用程序版本号,用于多版本管理和切换</p>
+</div>
+<div class="section" id="runtime">
+<h3>runtime</h3>
+<p>运行环境, 如python27</p>
+</div>
+<div class="section" id="handlers">
+<h3>handlers</h3>
+<p>路由配置,最重要的配置项
+参考  script handler与static handler:</p>
+<pre class="literal-block">
+handlers:
+1. url: /images
+   static_dir: static/images
+2. url: /.*
+   script: hello.app
+</pre>
+</div>
+<div class="section" id="api-version">
+<h3>api_version</h3>
+</div>
+<div class="section" id="threadsafe">
+<h3>threadsafe</h3>
+</div>
+<div class="section" id="default-expiration">
+<h3>default_expiration</h3>
+<p>静态文件默认缓存时间
+例子:
+default_expiration: &quot;4d 5h&quot;</p>
+</div>
+</div>
+<div class="section" id="script-heandler">
+<h2>script heandler</h2>
+<div class="section" id="example">
+<h3>example</h3>
+<pre class="literal-block">
+handlers:
+  url: /list/(.*?)/(.*)
+    script: hello.app
+    login:
+    autho_fail_action:
+    secure:
+</pre>
+</div>
+</div>
+<div class="section" id="static-handler">
+<h2>static handler</h2>
+<div class="section" id="id1">
+<h3>elements</h3>
+<div class="section" id="directory">
+<h4>Directory:</h4>
 <ol class="arabic simple">
-<li>基本变量. let a = 'hello'</li>
-<li>选项 let &amp;number = 1. let &amp;l:number=1</li>
-<li>寄存器 let &#64;a='hello'</li>
+<li>url</li>
+<li>static_dir</li>
+<li>application_readable: make the app can read the files</li>
+<li>mime_type</li>
+<li>http_headers</li>
+<li>expiration</li>
 </ol>
-<p>变量的作用域:</p>
+</div>
+<div class="section" id="file">
+<h4>FIle:</h4>
 <ol class="arabic simple">
-<li>script. let s:a = 'hello'</li>
-<li>global. let g:a = 'hello'</li>
-<li>buffer. let b:a = 'hello'</li>
+<li>url</li>
+<li>static_files: 使用12正则匹配</li>
+<li>upload: ??</li>
+<li>application_readable:</li>
+<li>mimetype</li>
+<li>http_headers</li>
+<li>expiration</li>
 </ol>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>example</h3>
+</div>
+</div>
+<div class="section" id="builtin-handlers">
+<h2>builtin handlers</h2>
+<div class="section" id="id3">
+<h3>例子</h3>
+<pre class="literal-block">
+builtions:
+1. datasotore_admin: on
+2. appstats: on
+</pre>
+</div>
+<div class="section" id="id4">
+<h3>??</h3>
+<ol class="arabic simple">
+<li>/_ah/admin</li>
+<li>/_ah/stats/</li>
+<li>/_ah/datastore_admin</li>
+<li>/_ah/remote_api</li>
+<li>/_ah/queue/deferred</li>
+</ol>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>includes</h2>
+</div>
+<div class="section" id="libraries">
+<h2>libraries</h2>
+<pre class="literal-block">
+- name: jinja2
+  version: latest
+</pre>
+</div>
+<div class="section" id="admin-console-custom-page">
+<h2>admin console custom page</h2>
+<pre class="literal-block">
+admin_console:
+  pages:
+  - name:
+     url:
+</pre>
+</div>
+<div class="section" id="error-handlers">
+<h2>error_handlers</h2>
+</div>
+<div class="section" id="rewriters">
+<h2>Rewriters</h2>
+</div>
+<div class="section" id="id5">
+<h2>总结</h2>
+<div class="line-block">
+<div class="line">title        | status         | desc |</div>
+<div class="line">Rewrite      | TODO           |      |</div>
+<div class="line">includes     | TODO           |      |</div>
+<div class="line">/_ah         | TODO           |      |</div>
+<div class="line">skip_files   | not understadn |      |</div>
+<div class="line">Env variable | os.environment |      |</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>待整理</h2>
+<p><strong>TODO</strong></p>
 </div>
                 </article>
             </aside><!-- /#featured -->
@@ -56,13 +187,13 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/redischi-jiu-hua-pei-zhi-xiang-guan.html" rel="bookmark"
-                           title="Permalink to redis持久化配置相关">redis持久化配置相关</a></h1>
+                    <h1><a href="/chu-li-jin-qian-fu-dian-shu-wen-ti.html" rel="bookmark"
+                           title="Permalink to 处理金钱浮点数问题.">处理金钱浮点数问题.</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:35:13+08:00">
+        <abbr class="published" title="2016-01-08T15:48:59+08:00">
                 Published: 五 08 一月 2016
         </abbr>
 
@@ -70,306 +201,403 @@
                 By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
         </address>
 <p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/redis_persistence.html">redis_persistence</a> <a href="/tag/redischi-jiu-hua.html">redis持久化</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">redis持久化配置相关</p>
-
-                <a class="readmore" href="/redischi-jiu-hua-pei-zhi-xiang-guan.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/redisfu-wu-guan-li-xu-yao.html" rel="bookmark"
-                           title="Permalink to redis服务管理需要">redis服务管理需要</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:34:49+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> </p>
-</footer><!-- /.post-info -->                <p>介绍一些redis部署时的注意事项</p>
-<div class="section" id="id1">
-<h2>注意事项</h2>
-<ol class="arabic simple">
-<li>建议使用linux部署。</li>
-<li>sysctl vm.overcommit_memory=1 或者 vm.overcommit_memory = 1 (/etc/sysctl.conf)</li>
-<li>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</li>
-<li>设置一个和内存一样大或更大的swap分区，不然redis有可能在内存不足时被系统杀死。</li>
-<li>设置一个明确的maxmemory. 这样redis会在内存到限后抛出错误，而不会falling.</li>
-<li>在写比较重的场景下需要有大约2倍于normal的内存。这些是来在内存中保留那些需要被写回磁盘的数据.</li>
-<li>配置supervisor类工具时，设置 daemonize no</li>
-<li>开启slave特性时，即便不使用持久化特性,redis也会perform RDB save. 除非使用实验性的diskless-sync.</li>
-<li>开启slaev特性时，要确保要么开发master节点的保存特性，要么关闭master节点的自动重启。</li>
-<li>注意开发redis安全相关配置. require-pass/rewrite-command/bind-ip</li>
-</ol>
-</div>
-<div class="section" id="aws">
-<h2>aws注意事项</h2>
-<ol class="arabic simple">
-<li>使用HWS实例，不要使用pv实例</li>
-<li>不要使用太老的实例。 m3 ...</li></ol></div>
-                <a class="readmore" href="/redisfu-wu-guan-li-xu-yao.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/linuxubuntuxia-an-zhuang-mongodbfu-wu-qi.html" rel="bookmark"
-                           title="Permalink to linux(ubuntu)下安装mongodb服务器">linux(ubuntu)下安装mongodb服务器</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:34:30+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/mongodb.html">mongodb</a> </p>
-</footer><!-- /.post-info -->                <div class="section" id="id1">
-<h2>概述</h2>
-<p>安装过程可以参考观望，文档很详细.</p>
-<p>ubuntu官网源有提供mongodb安装，但是一般版本都比较落后，更新不及时。
-所以可以采用mongodb提供的安装源，安装最新的mongodb.</p>
-<p>mongodb只为64-bit的长期支持版本提供安装源，即ubuntu12.04/ubuntu14.04. 其他版本也许可以使用，但是不推荐。</p>
-<p>mongodb官网有5个主要的包:
-1) mongodb-dev. meta-pacage. 自动安装其他四个包.
-2) mongodb-org-server. mongod-daemon以及配置文件/init脚本
-3) mongodb-org-mongos. mongos-daemon.
-4) mongodb-org-shell. mongo-shell
-5) mongodb-org-tools. mongoimport/mongodump/bsondump/mongoexport/retore/stat/perf/oplog等工具.</p>
-</div>
-<div class="section" id="id2">
-<h2>安装过程</h2>
-<p>具体过程如下:</p>
-<pre class="literal-block">
-# import mongodb GPK key
-sudo apt-key adv --keyserver ...</pre></div>
-                <a class="readmore" href="/linuxubuntuxia-an-zhuang-mongodbfu-wu-qi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ru-he-mock-requestsmo-kuai.html" rel="bookmark"
-                           title="Permalink to 如何mock requests模块">如何mock requests模块</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:33:44+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/requests.html">requests</a> <a href="/tag/mock.html">mock</a> <a href="/tag/unittest.html">unittest</a> </p>
-</footer><!-- /.post-info -->                <p>requests模块是非常好用的python http处理模块，使用场景很长广。
-但是暂时不能自己创建Response导致mock不太方便.</p>
-<p>通过搜索发现了两个lib可以处理.</p>
-<p>httpretty/responses</p>
-<p>httpretty模块是模仿ruby的FakeWeb所写.
-responses模块是作者在使用httpretty时遇到问题，最后自己实现的一个less-featury版本.</p>
-<p>两个模块亲测都可以使用，而且语法很相似，可以使用decoreate/with-context/start()+stop()语法，
-使用很方便.</p>
-<p>并且可以对不同的url,设置mock为不同的response,支持url正则语法等.</p>
-<p>responses只有几百行代码，有时间可以读读源码.</p>
-<p>通过httpretty，知道还有一个新的pip库curding, 具体待研究</p>
-
-                <a class="readmore" href="/ru-he-mock-requestsmo-kuai.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/androidkai-fa-qi-bu.html" rel="bookmark"
-                           title="Permalink to android开发起步">android开发起步</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:32:47+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/android.html">android</a> <a href="/tag/android-sdk.html">android-sdk</a> <a href="/tag/get-started.html">get-started</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">linux(ubuntu)下搭建android开发环境.</p>
-
-                <a class="readmore" href="/androidkai-fa-qi-bu.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/redisshu-ju-jie-gou-jie-shao.html" rel="bookmark"
-                           title="Permalink to redis数据结构介绍">redis数据结构介绍</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:31:57+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/data-type.html">data-type</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">redis中string/list/hash/set/sorted-set/bit介绍</p>
-
-                <a class="readmore" href="/redisshu-ju-jie-gou-jie-shao.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/redisfu-zhi-pei-zhi-xiang-guan.html" rel="bookmark"
-                           title="Permalink to redis复制配置相关">redis复制配置相关</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:31:05+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/redis.html">redis</a> <a href="/tag/redis_slave.html">redis_slave</a> </p>
-</footer><!-- /.post-info -->                <p>原内容来自redis官方文档:</p>
-<pre class="literal-block">
-redis-replication官方文档&lt;http://redis.io/topics/replication&gt;
-</pre>
-<p>基本来说，只要在配置文件里加上:</p>
-<pre class="literal-block">
-slaveof &lt;ip&gt; &lt;port&gt;
-</pre>
-<p>就可以完成配置.</p>
-<p>如下配置可能有用:</p>
-<pre class="literal-block">
-repl-diskless-sync (不使用磁盘同步)
-repl-diskless-sync-delay (同步前的延时, 以等待其他的要链接的slave)
-</pre>
-<div class="section" id="id1">
-<h2>安全问题</h2>
-<p>如果redis开启复制特性，同时master节点关闭持久化特性。
-这时应该避免master节点的自动重启，避免slave节点上的数据被重启的master节点清空。</p>
-</div>
-<div class="section" id="id2">
-<h2>同步策略</h2>
-<p>redis默认使用磁盘同步, 数据被存到RDB file文件, 之后通过同步该文件做full-sync.</p>
-<p>但是如果磁盘太慢会导致性能不好，2.8新增直接通过socket来同步的方式.(该方式目前仍然是实验阶段)</p>
+<p>tags: <a href="/tag/decimal.html">decimal</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id2">
+<h2>方案一</h2>
+<p>用int型表示金钱，100元表示为10000,结果在除以100</p>
 </div>
 <div class="section" id="id3">
-<h2>只读复制</h2>
-<p>redis默认slave是只读的,所有写操作会报错.
-通过如下方式可以打开读写:</p>
-<pre class="literal-block">
-slave-read-only no (配置文件)
-config set slave-read-only no (redis-cli运行时)
-</pre>
-<p>即便是只读slave也不应该暴露在公网下.
-debug/config等命令仍会带来完全问题(使用rename-command配置)</p>
-<p>读写slave在较少场景下会有用 ...</p></div>
-                <a class="readmore" href="/redisfu-zhi-pei-zhi-xiang-guan.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/reactqi-bu-xu-zhi.html" rel="bookmark"
-                           title="Permalink to react起步须知">react起步须知</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:26:01+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/react.html">react</a> <a href="/tag/browserify-debug.html">browserify-debug</a> <a href="/tag/react-get-started.html">react-get-started</a> </p>
-</footer><!-- /.post-info -->                <p class="first last">总结react起步需要的内容.</p>
-
-                <a class="readmore" href="/reactqi-bu-xu-zhi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ru-he-zheng-que-de-shi-yong-stackoverflow.html" rel="bookmark"
-                           title="Permalink to 如何正确的使用stackoverflow">如何正确的使用stackoverflow</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-01-08T14:25:23+08:00">
-                Published: 五 08 一月 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-<p>tags: <a href="/tag/stackoverflow.html">stackoverflow</a> <a href="/tag/how-to-ask-a-question.html">how-to-ask-a-question</a> <a href="/tag/ask-for-help.html">ask-for-help</a> </p>
-</footer><!-- /.post-info -->                <div class="section" id="id1">
-<h2>关于屏蔽</h2>
-<p>stackoverflow会自动屏蔽那些问了太多低质量问题的用户，阻止他们继续提出问题。
-具体算法没有公开。但是基本是根据用户问题里的down-voted/zero-voted/deleted-posts量来定。
-一两个低质量的问题不会被屏蔽。</p>
-<p>被屏蔽后不能提问题，但是不影响其他功能.</p>
+<h2>方案二</h2>
+<p>寻找没有浮点数异常的类库或是编程语言decimal</p>
 </div>
-<div class="section" id="baned">
-<h2>如何脱离baned</h2>
-<p>只有作出一定的贡献才能脱离baned. baned是永久的，不会超时。</p>
+<div class="section" id="id4">
+<h2>方案三</h2>
+<p>手动处理，不推荐</p>
+</div>
+
+                <a class="readmore" href="/chu-li-jin-qian-fu-dian-shu-wen-ti.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/modelshi-xian-gan-xiang.html" rel="bookmark"
+                           title="Permalink to model实现感想">model实现感想</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:46:56+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/db.html">db</a> <a href="/tag/model.html">model</a> </p>
+</footer><!-- /.post-info -->                <p>model，即模型，业务模型。
+具体的大多数的后端开发领域，应该被叫数据模型,即将业务逻辑以某种形式存入特定的数据库中,</p>
+<p>在数据层和业务层一般会有一个model层,稍大一些的项目都会考虑使用AR映射也架设model层，
+而不是手写几个操作数据库的函数。</p>
+<p>AR的好处
+在小的系统中,数据库处理较少,业务相对稳定的地方，AR并没有太多好书，反而会增加系统的复杂度，
+性能也较原生的sql差不少, 无用操作较多，会无故的增加代码量也即工作量.</p>
+<p>但是，在中，大型系统中，数据处理很多，业务不仅变化快，而且业务逻辑复杂，原声sql几乎可以认为是不能作为解决方案.
+这时便体现出AR的好处了.</p>
 <ol class="arabic simple">
-<li>不要问已存在的问题，问之前先试试stackoverflow的搜索功能.</li>
-<li>注意问题的语法和单词拼写检查.</li>
-<li>适当的格式化代码，保持可读性.</li>
-<li>提供及可能多的细节，和已做的努力。</li>
-<li>大声读出你的问题，确保能让他人理解你的问题.</li>
+<li>CURD包装，不在需要为所有操作写CURD,甚至在涉及多张表的操作中也能通过外键来完成, 工作效率与工作量上的质的变化</li>
+<li>代码可读性和可维护性提高</li>
+<li>良好设计的AR model可以很好的封装业务逻辑，减少程序错误。</li>
+<li>设计良好的AR类甚至可以改善错误调试，性能调试，日志记录等功能.</li>
+<li>注意AR model层一般和实际的业务逻辑仍有不少差异性，常见的实现中会在Controller层与model层添加一个中间层，
+完成更复杂的业务处理,以协调变化controll和model层的变化</li>
+</ol>
+<div class="section" id="arar">
+<h2>设计一个AR或是一些现有AR要考虑的问题</h2>
+<div class="section" id="id1">
+<h3>如何处理model类间的映射关系</h3>
+<ol class="arabic simple">
+<li>如何处理数据库中1v1, 1vN, Nv1,NvN映射关系</li>
+<li>如何处理外键关联查询，(延时载入与一次查询 ...</li></ol></div></div>
+                <a class="readmore" href="/modelshi-xian-gan-xiang.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/wei-shi-yao-bu-ying-gai-shuo-wo-bu-dong.html" rel="bookmark"
+                           title="Permalink to 为什么不应该说我不懂">为什么不应该说我不懂</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:45:53+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/team.html">team</a> </p>
+</footer><!-- /.post-info -->                <p>我不懂我管，多任性多潇洒？？</p>
+<p>去年开始，和人一起创业。我负责后台，招了几个前端负责写手机前端。</p>
+<p>合作过程中总是会出现写莫名其妙的bug, 当时我的态度也是我不懂我不管。然后呢.</p>
+<div class="section" id="id2">
+<h2>我不懂我不管的麻烦</h2>
+<div class="section" id="id3">
+<h3>支付宝之坑</h3>
+<p>当时做支付宝，看过文档大致懂了流程后就开始写，没多久搞完，但是前端总是跟我说不行,
+我没办法，不停的问技术客服，不停的看文档，想着是否那地方写错了。甚至最后没办法，
+把N长的一个字符串考到编辑器上，肉眼比对有没有？眼差点赔进去有没有？
+其中痛苦和煎熬真是不可为外人道。</p>
+<p>然后呢，最后支付宝客服信誓旦旦的跟我保证我的字符串没问题，前端跟我叫有问题。
+无奈，本机装个eclipse, 把支付宝的demo装到手机上，把支付字符串写死到程序里，
+居然跑通了.</p>
+<p>然后，气急败坏的找前端麻烦，没多久告诉说，他打开了保护模式，说但是好像是这个引起的。</p>
+<p>一肚子火气能怪谁？
+我不懂我不管，他也不懂他也不懂。
+一个皮球来回丢，最后苦的还是自己。</p>
+</div>
+<div class="section" id="id4">
+<h3>网络异常之伤</h3>
+<p>创业继续，不久产品好像一个问题。无处不再的网络异常.
+很多东西莫名奇妙的一点就报个错，网络异常.</p>
+<p>当时，产品天天缠着说这体验太差了 ...</p></div></div>
+                <a class="readmore" href="/wei-shi-yao-bu-ying-gai-shuo-wo-bu-dong.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/vimcha-jian-synaticspei-zhi.html" rel="bookmark"
+                           title="Permalink to vim插件Synatics配置">vim插件Synatics配置</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:44:44+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/vim.html">vim</a> <a href="/tag/syntics.html">syntics</a> </p>
+</footer><!-- /.post-info -->                <p>synatics是一个通用的语法检查插件,通过调用外部命令完成语法检查,之后合并多个语法检查的结果,将结果显示在quick-issue上.</p>
+<div class="section" id="mode-map">
+<h2>mode-map配置</h2>
+<p>synatics有两种模式, active/passive
+active模式下会自动运行语法检查
+passive模式下需要手动运行语法检查</p>
+<p>:SynaticsCheck
+:SynacticsCheck &lt;checkers: (pyling flake8)&gt;</p>
+<p>使用
+:SynaticsToggleMode切换模式,
+g:synatics_mode_map来配置默认情况.</p>
+<div class="section" id="id1">
+<h3>注意</h3>
+<ol class="arabic simple">
+<li>设置g:synatics_check_on_open/g:synatics_check_on_wq开启或关闭自动语法检查</li>
 </ol>
 </div>
+</div>
 <div class="section" id="id2">
-<h2>良好的提问习惯</h2>
+<h2>配置分类</h2>
+<p>synatics配置分为两种, 全局配置(配置synatics行为)/插件配置(配置单一莫个文件类型或checker)</p>
+</div>
+
+                <a class="readmore" href="/vimcha-jian-synaticspei-zhi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/vimzhong-bu-ying-gai-shi-yong-de-an-jian-ying-she.html" rel="bookmark"
+                           title="Permalink to vim中不应该使用的按键映射">vim中不应该使用的按键映射</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:43:03+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/vim.html">vim</a> <a href="/tag/keybind.html">keybind</a> </p>
+</footer><!-- /.post-info -->                <p>vim由于历史原因,按键映射存在一些问题, 这些问题直到7.4还未能被处理. 恐怕最迟要等vim8.0.
+详细内容可以参见 vim-google-group: <a class="reference external" href="https://groups.google.com/forum/#!topic/vim_dev/Ym6D-kWIsyo">https://groups.google.com/forum/#!topic/vim_dev/Ym6D-kWIsyo</a></p>
+<div class="section" id="id1">
+<h2>不应该使用的按键</h2>
+<ul class="simple">
+<li>Ctrl+数字 常常会无法识别,不应该使用</li>
+<li>Ctrl+字母 无法区分大小写,需要注意</li>
+<li>&lt;C-i&gt;和&lt;tab&gt;冲突, emacs中也有其问题</li>
+<li>&lt;C-m&gt;和&lt;tab&gt;冲突, emacs中也有其问题</li>
+<li>&lt;C-&gt;</li>
+<li>&lt;C-;&gt;</li>
+<li>系统内部按键</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>建议的vim按键</h2>
+<ul class="simple">
+<li>功能键和组合功能键&lt;f2-n&gt;/&lt;C/S/M-f2-n&gt;</li>
+<li>&lt;A-字母键&gt;</li>
+<li>&lt;leader&gt;前置键位</li>
+<li>&lt;C-字母&gt;留做系统键位</li>
+</ul>
+</div>
+
+                <a class="readmore" href="/vimzhong-bu-ying-gai-shi-yong-de-an-jian-ying-she.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/shi-yong-supvisordqu-dai-linuxmo-ren-kai-ji-qi-dong-xiang.html" rel="bookmark"
+                           title="Permalink to 使用supvisord取代linux默认开机启动项">使用supvisord取代linux默认开机启动项</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:42:28+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/supvisord.html">supvisord</a> </p>
+</footer><!-- /.post-info -->                <p>linux做为开发环境, 经常需要安装一些第三方服务。
+如mongodb服务器，redis服务器, nginx服务器等.</p>
+<p>这些服务器如果是通过apt安装，默认是会开机启动,
+并且能够通过sudo /etc/init.d/&lt;name&gt; restart/stop/start来控制.
+不然就要自己写启动脚本，相当麻烦，并且危险.
+并且没法检测到经常意外挂掉，日志和通知也相对较弱.</p>
+<p>所以这里考虑用supervisord取代系统的开机启动任务.开机启动supervisor.
+由supervisor来启动后续进程。好处多多.</p>
 <ol class="arabic simple">
-<li>search and research. 保持search记录，让其他人知道为什么你的问题与他人的问题有所不同.</li>
-<li>写一个好的标题.
-1) 简短准确的概述你的问题，并和其他的问题标题有所不同.
-2) 拼写检查，语法,标点很重要.
-3) 如果你不好总结你的标题，可以在最后处理.</li>
-<li>在贴代码和异常前，先描述你的问题。让其他人能更容易理解你的问题.</li>
-<li>帮助他人重现你的问题.
-1) 代码要尽可能短小，不包含太多无关内容.
-2) 借助jsfiddle.com等第三方代码分享平台 ...</li></ol></div>
-                <a class="readmore" href="/ru-he-zheng-que-de-shi-yong-stackoverflow.html">read more</a>
+<li>配置文件简单，改起来容易。可控制行强.</li>
+<li>自动重启功能。</li>
+<li>良好的日志和通知功能。</li>
+</ol>
+<p>需要注意的事项:</p>
+<ol class="arabic simple">
+<li>如果应用其他地方也需要启动supervisord，如启动一个web服务器的supervisord进程.
+则系统中会有两个supervisor进程。需要注意不引发问题.</li>
+<li>supervisord默认有自动重启，会导致通过kill杀掉的进程自动重启，需要注意。
+通过supervisorctl -c config stop &lt;NAME&gt;可以用来停止和启动，使用linux别名简化输入.</li>
+<li>考虑是否用可能有些进程不适合或不能用supervisor来操作.</li>
+<li>如何处理日志通知等也需要考虑.</li>
+<li>通过apt-get安装的应用需要先去掉系统中的启动项。</li>
+</ol>
+
+                <a class="readmore" href="/shi-yong-supvisordqu-dai-linuxmo-ren-kai-ji-qi-dong-xiang.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/shi-yong-python-itertoolsku-lai-qu-dai-mongodbde-groupfen-zu-cao-zuo.html" rel="bookmark"
+                           title="Permalink to 使用python itertools库来取代mongodb的group分组操作.">使用python itertools库来取代mongodb的group分组操作.</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:40:50+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/mongodb.html">mongodb</a> <a href="/tag/db_group.html">db_group</a> </p>
+</footer><!-- /.post-info -->                <p>最近写项目用到mongodb数据库。后续要做后台管理的时候，有一个需要按（天/人）做聚合的需求(group_by)。</p>
+<p>最开始实现上用bson.code.Code配置mongodb自带的group命令做的。不过问题很多。</p>
+<div class="section" id="group">
+<h2>使用group命令的问题</h2>
+<ol class="arabic simple">
+<li>必须在python里混合编写js函数。</li>
+<li>调试起来及其麻烦, 真心麻烦。</li>
+<li>可扩展可维护行差，今天想按天，明天突然有想按月，或者就是要增加聚合字段或是修改聚合算法的规则。</li>
+</ol>
+<ul class="simple">
+<li>使用python的itertools实现</li>
+</ul>
+<p>后来也是和一朋友讨论后，决定用python itertools来实现.</p>
+<p>总的思路就是把数据先查出来，然后在python里自己做聚合.
+正好可以配合itertools提供的轮子简化下过程.</p>
+<p>** 好处</p>
+<ol class="arabic simple">
+<li>只用写python代码, 避免混和js的麻烦.</li>
+<li>调试方便.</li>
+<li>写单元测试也方便很多，不在需要依赖外部的mongodb数据库.</li>
+<li>可扩展和可维护行好了很多，因为全是python集合的操作，看着改就可以了。</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>坏处或可能的问题</h2>
+<p>1) 内存有可能会出问题.
+一次查处所有数据，在内存在分组。并且使用python，内存一定要考虑下。</p>
+<p>2) mongodb一次查处所有数据遍历有可能碰到的游标中断，数据量太大导致mongodb抛出异常
+虽然mongodb有游标的概念, 不过不太确定游标能否正确遍历大数据集合。会不会被异常中断</p>
+<ol class="arabic simple" start="3">
+<li>性能会相对差一些，不过由于后台不是频繁跑 ...</li></ol></div>
+                <a class="readmore" href="/shi-yong-python-itertoolsku-lai-qu-dai-mongodbde-groupfen-zu-cao-zuo.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/svnyu-gitbi-jiao.html" rel="bookmark"
+                           title="Permalink to svn与git比较">svn与git比较</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:38:55+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/git.html">git</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>svn比git的优势</h2>
+<div class="section" id="windows">
+<h3>最明显也是唯一无争议的优势: windows下的良好支持</h3>
+<p>这点也是绝大多数公司或个人(尤其是windows用户)选择svn的最主要原因,</p>
+<p>对公司而言，上手快，找个员工会用鼠标就能教会，成本低。</p>
+<p>对个人，尤其新手而言，门槛低。</p>
+</div>
+<div class="section" id="id2">
+<h3>集中管理权限控制</h3>
+<p>这点其实很有争议:</p>
+<p>一来通过版本管理管据来管理代码安全，本就有 月报带中 之嫌。</p>
+<p>二来git也支持权限管理，并且权限管理一点都不比svn差，不过配置需要点水平.</p>
+<p>唯一可以说的就是让某个脑袋不清楚的老板觉得自己代码在被 安全的集中管理着</p>
+</div>
+<div class="section" id="clone">
+<h3>支持目录子树clone</h3>
+<p>这其实是个缺点，要说为啥。有句话是这么说的</p>
+<p>用svn一辈子就不想去建分支，玩git写一行代码就想开发分支.</p>
+<p>svn的这一功能被菜鸟用来做为是分支的一种替代，这问题有点坑跌我就不愿说了</p>
+</div>
+<div class="section" id="id3">
+<h3>支持空目录</h3>
+<p>这点或许是git的失误，一直没高明白为啥git要不支持空目录</p>
+</div>
+</div>
+<div class="section" id="gitsvn">
+<h2>git比svn的优势</h2>
+<div class="section" id="id4">
+<h3>功能强大</h3>
+</div>
+<div class="section" id="id5">
+<h3>分布式管理，支持离线提交</h3>
+</div>
+<div class="section" id="id6">
+<h3>速度快</h3>
+</div>
+<div class="section" id="geek">
+<h3>geek氛围浓厚，自由共享的精神</h3>
+</div>
+<div class="section" id="id7">
+<h3>强大的分支支持</h3>
+</div>
+</div>
+
+                <a class="readmore" href="/svnyu-gitbi-jiao.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/du-ren-yue-shen-hua.html" rel="bookmark"
+                           title="Permalink to 读人月神话">读人月神话</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:37:30+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/team.html">team</a> <a href="/tag/style.html">style</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id2">
+<h2>前面的废话</h2>
+<p>最初入手这本书是在2012年末，当时受同事的蛊惑买书上瘾。拿着实习生微薄的收入，玩命的买书。
+但烦经典的有名的，恨不得统统纳入收藏。人月神话这书也是在那是入手的，因为名气太大，到处都是好评和推荐。</p>
+<p>我买书买的多，却不都有时间读。但是基本刚买来会仔细阅读下前言和推荐序，还有导论部分。
+随后就会随便翻翻内容，觉得感兴趣并且有时间就会慢慢看完，没时间可能就会放放想起来在翻翻。</p>
+<p>初翻这本书只能说相当失望。毕竟当时还只是初出茅芦的小子，只对一些“酷炫牛逼”的技术和工具颇有热情。
+而这本书全是如何管理项目/如何团队协作，自然看的昏昏欲睡。随丢之一旁。</p>
+<p>时过境迁，经历了易步python的洗礼，看过了叮咚小区的办公室政治，
+也尝过因固执不愿在技术方案上妥协而从沙舟被踢出局。
+一年创业路上也是磕磕碰碰。
+时过3载，在重翻这本人月神话，说不出到不明的感情。</p>
+</div>
+
+                <a class="readmore" href="/du-ren-yue-shen-hua.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 3
+    Page 1 / 6
         <a href="/category/misc2.html">&raquo;</a>
 </p>
                 </section><!-- /#content -->

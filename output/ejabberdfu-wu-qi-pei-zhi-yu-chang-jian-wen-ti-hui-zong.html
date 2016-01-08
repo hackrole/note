@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>ejabberd服务器配置与常见问题汇总</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ejabberdfu-wu-qi-pei-zhi-yu-chang-jian-wen-ti-hui-zong.html" rel="bookmark"
+           title="Permalink to ejabberd服务器配置与常见问题汇总">ejabberd服务器配置与常见问题汇总</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:51:58+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/ejabberd.html">ejabberd</a> </p>
+</footer><!-- /.post-info -->      <div class="section" id="pt-getserver">
+<h2>pt-get安装后无法启动server</h2>
+<ol class="arabic simple">
+<li>查看下/etc/ejabberd/目录下文件的所有者和文件权限</li>
+<li>查看下/var/log/ejabberd/目录下的文件所有者和文件权限</li>
+<li>ps aux | grep ejabberd 查看是否有运行中的ejabberd服务</li>
+</ol>
+</div>
+<div class="section" id="admin">
+<h2>admin登录失败</h2>
+<ol class="arabic">
+<li><p class="first">用户名应使用admin&#64;localhost,而不是admin</p>
+</li>
+<li><p class="first">调用sudo ejabberdctl register admin localhost admin</p>
+</li>
+<li><p class="first">检查/etc/ejabberd/ejabberd.cfg配置文件:</p>
+<pre class="literal-block">
+1) {acl, admin, {user, &quot;admin&quot;, &quot;localhost&quot;}}.
+
+2) {hosts, [&quot;localhost&quot;, &quot;192.168.1.106&quot;]}.
+
+3) {access, configure, [{allow, admin}]}.
+
+4)   {5280, ejabberd_http, [
+         %%{request_handlers,
+         %% [
+         %%  {[&quot;pub&quot;, &quot;archive&quot;], mod_http_fileserver}
+         %% ]},
+         %%captcha,
+         http_bind,
+         http_poll,
+         web_admin
+        ]}
+</pre>
+</li>
+</ol>
+<div class="section" id="id1">
+<h3>配置外部认证</h3>
+<ol class="arabic simple">
+<li>配置 auth_method: ext, ext_auth_path: '',</li>
+<li>重启服务查看日志，外部日志是否正常</li>
+<li>ejabberdctl check* 检查是否生效</li>
+<li>外部认证书写可以参考官网</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>配置离线推送</h2>
+<ol class="arabic simple">
+<li>编写一个erlang模块，注册offline-hooks.</li>
+<li>在offline-hooks里调用apns的http方法</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>编写扩展模块</h2>
+</div>
+<div class="section" id="python-sleekxmpp">
+<h2>python sleekxmpp</h2>
+<div class="section" id="client">
+<h3>机器人client.</h3>
+<p>sleekxmpp.ClientXmpp</p>
+<div class="section" id="server-component">
+<h4>server component</h4>
+<p>sleekxmpp.ComponentXmpp</p>
+</div>
+</div>
+<div class="section" id="filter-hooks">
+<h3>全局的filter/hooks</h3>
+<div class="section" id="new-plugin-extension-stanze">
+<h4>new plugin/extension/stanze</h4>
+</div>
+</div>
+<div class="section" id="erlang-mode">
+<h3>erlang mode</h3>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

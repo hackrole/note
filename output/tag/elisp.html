@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+        <title>hackrole's note - elisp</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">hackrole's note </a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/elispbian-liang-xiang-guan.html">elisp变量相关</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T15:02:21+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> </p>
+</footer><!-- /.post-info --><div class="section" id="id1">
+<h2>全局变量</h2>
+<p>setq</p>
+<p>set</p>
+</div>
+<div class="section" id="id2">
+<h2>常量</h2>
+<p>t</p>
+<p>nil</p>
+<p>keyword(:)</p>
+<p>(keywordp)
+(defconst)</p>
+</div>
+<div class="section" id="id3">
+<h2>局部变量</h2>
+<p>let
+let*</p>
+<p>(shodow/setq)</p>
+<p>buffer local/terminal local</p>
+</div>
+<div class="section" id="id4">
+<h2>变量命名规范</h2>
+<p>-hook
+-function
+-functions
+-form
+-forms
+-predicate
+-flag
+-program
+-command
+-switches</p>
+</div>
+                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/elisp-keymapxiang-guan.html" rel="bookmark"
+                           title="Permalink to elisp keymap相关">elisp keymap相关</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:58:24+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> <a href="/tag/emacs.html">emacs</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="elisp">
+<h2>elisp按键序列概念</h2>
+<p>elisp按键在elisp中有两种表达方式:</p>
+<p>1&gt; 字符串 &quot;C-x1&quot;</p>
+<p>2&gt; 列表vector [?C-x ?1]</p>
+<p>函数(kbd keseq-string)返回字符串对应的按键序列(字符串或列表形式)</p>
+<p>功能键用 &lt;&gt;表示, &lt;RET&gt; &lt;SPC&gt; &lt;F1&gt;等</p>
+</div>
+<div class="section" id="keymap">
+<h2>keymap基本概念</h2>
+<p>keymap是一个中lisp内的数据结构，用于绑定多个按键序列到对应的command上</p>
+<p>按键序列可以分为两种</p>
+<p>1&gt; prefix key 前缀键,如 C-x</p>
+<p>2&gt; complete key 完整的按键,如 x, C-k, C-x C-q</p>
+<p>定义一个complete key前，需要定义所有需要的prefix key.</p>
+</div>
+<div class="section" id="id1">
+<h2>一般都会有多个keymap处于激活状态，分类如下</h2>
+<p>1&gt; global keymap (shared by ...</p></div>
+                <a class="readmore" href="/elisp-keymapxiang-guan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/lisp-ji-ben-gai-nian-yu-nei-jian-shu-ju-lei-xing-jian-jie.html" rel="bookmark"
+                           title="Permalink to lisp 基本概念与内建数据类型简介">lisp 基本概念与内建数据类型简介</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:56:20+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="id1">
+<h2>lisp的基本特性</h2>
+<ul class="simple">
+<li>变量不需要提前声明</li>
+<li>几种基本类型(integer,list, buffer等)是内建实现</li>
+<li>通过函数判断数据类型，可以属于多个类型，但只能属于一种你基本类型</li>
+</ul>
+</div>
+<div class="section" id="integer-type">
+<h2>integer type</h2>
+<ul class="simple">
+<li>在32位机器中,  range(-2**29 to -2**29 -1)</li>
+<li>lisp函数不做溢出判断，程序要注意溢出危险</li>
+</ul>
+</div>
+<div class="section" id="float-type">
+<h2>float type</h2>
+<ul class="simple">
+<li>使用c语言double实现</li>
+</ul>
+</div>
+<div class="section" id="char-type">
+<h2>char type</h2>
+<ul class="simple">
+<li>使用integer表示</li>
+<li>range(0-4194303)</li>
+<li>读入语法形式 ?a, ?A ?\ ?( ?a</li>
+</ul>
+<p>...</p>
+</div>
+<div class="section" id="symbol-type">
+<h2>symbol type</h2>
+<ul class="simple">
+<li>unique唯一性</li>
+<li>:开头为常量</li>
+</ul>
+</div>
+<div class="section" id="sequence-types">
+<h2>sequence types</h2>
+<ul class="simple">
+<li>包含list和arrays两种类型</li>
+</ul>
+<div class="section" id="list-type-arrays-type">
+<h3>list type 与 arrays type</h3>
+<ul class="simple">
+<li>list可以包含任意对象</li>
+<li>list长度可以任意调整</li>
+</ul>
+</div>
+</div>
+<div class="section" id="cons-cell-and-list-type">
+<h2>cons cell ...</h2></div>
+                <a class="readmore" href="/lisp-ji-ben-gai-nian-yu-nei-jian-shu-ju-lei-xing-jian-jie.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/elisp-bufferchu-li-xiang-guan.html" rel="bookmark"
+                           title="Permalink to elisp buffer处理相关">elisp buffer处理相关</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-01-08T14:55:08+08:00">
+                Published: 五 08 一月 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hackrole.html">hackrole</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/elisp.html">elisp</a> <a href="/tag/emacs.html">emacs</a> </p>
+</footer><!-- /.post-info -->                <div class="section" id="buffer">
+<h2>buffer基本概念</h2>
+<p>buffer是一个elisp对象，包含一些必要的属性,
+部分属性可以直接通过变量访问,部分属性要通过函数才能访问</p>
+<p>buffer一般会关联一个打开的文件，也可不关联</p>
+<p>buffer都有一个唯一name属性</p>
+<p>buffer-local变量使得可以对不同buffer保存不同的状态等</p>
+<p>bufferp函数测试symbal是否为buffer</p>
+</div>
+<div class="section" id="id1">
+<h2>buffer基本属性</h2>
+</div>
+<div class="section" id="the-current-buffer">
+<h2>the current buffer</h2>
+</div>
+<div class="section" id="buffer-name">
+<h2>buffer name</h2>
+<div class="section" id="buffer-file-name">
+<h3>buffer file name</h3>
+</div>
+<div class="section" id="buffer-modify">
+<h3>buffer modify</h3>
+</div>
+<div class="section" id="read-only-buffer">
+<h3>read-only buffer</h3>
+</div>
+<div class="section" id="buffer-list">
+<h3>buffer list</h3>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>buffer操作函数</h2>
+</div>
+
+                <a class="readmore" href="/elisp-bufferchu-li-xiang-guan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
