@@ -4,3 +4,4 @@
 hr-blog/output/*
 hr-blog/cache/*
 *.pyc
+/output/*
