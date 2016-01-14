@@ -1,10 +1,21 @@
-ruby koans笔记
-==============
+ruby koans笔记:基本类型
+=======================
 
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-14 11:41:08
 :tags: ruby, ruby_koans, get_started
+
+boolean
+-------
+
+ruby中除 nil/false 外其他都为true. **不同与python** ::
+
+    []  # true
+    ""  # true
+    {}  # true
+    nil  # false
+    false  # false
 
 string
 ------
@@ -44,6 +55,8 @@ symbal
 原子, 类似lisp里的symbal实现. 在ruby使用比较频繁。多数可以作为string的替代.
 
 **TODO**
+
+to_s/to_sym 用于在string/symbal之间转换
 
 array
 -----
@@ -92,3 +105,30 @@ hash.new可以跟一个block.这样可以每次重建默认值，避免上面的
     h['b'] << 'world'
     puts h['a'] # ['hello']
     puts h['b'] # ['world']
+
+constant常量
+------------
+
+ruby里的常量暂时还没完全理解. **TODO**
+
+常量使用大写字母， 可以修改，但是会有警告. **python里不会有警告** ::
+
+    LOG = 4
+    LOG = 2
+
+可以在类内部定义常量, 通过命名空间做引用::
+
+    LOG = 4
+
+    class A
+      LOG = 2
+
+      LOG == 2
+      ::LOG == 4
+    end
+
+    LOG == 4
+    ::LOG == 4
+    A::LOG == 2
+
+class继承也会继承常量。

@@ -1,0 +1,200 @@
+ruby koans笔记:流程控制
+=======================
+
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-14 14:16:28
+:tags: ruby, ruby_koans
+
+if/unless
+---------
+
+ruby支持if/unless(if not)::
+
+  if true
+    :true
+  else
+    :false
+  end
+
+  if true
+    :true
+  elseif :false
+    :false
+  end
+
+  unless true
+    :true
+  end
+
+ruby是面向表达式， if/unless也是表达式，会返回一个结果::
+
+    a = if true
+          :true
+        else
+          :false
+        end
+
+ruby 支持if倒缀语法::
+
+    a = :true if true
+
+ruby支持三元元算符, ?: **python中不支持**
+
+while/for
+---------
+
+ruby只有for...in循环::
+
+    for i in [1, 2, 3]
+    end
+
+ruby使用break/next 取代break/continue
+
+method
+------
+
+ruby方法支持*args和named argument. 但是好像不支持**kw.
+named argument应该是最近加入的支持.
+
+ruby带*args和named arg的方法class方法返回Array, **很奇怪** ::
+
+    def a(*args):
+    end
+    a.class  # => Array
+    def b(b=:name)
+    end
+    b.class  # => Array
+
+ruby里有private/public的作用域限制。
+并且方法默认为public.属性默认为private.
+
+ruby里私有方法不能用self调用, **很奇怪** ::
+
+    class A
+      def a
+      end
+      private :a
+      def b
+        a  # this works ok
+        self.a  # would raise
+      end
+
+ruby里的类和module都想是一个命名空间::
+
+    class A
+      class B
+        LOG = 'log'
+      end
+    end
+    ::A::B::LOG
+    A::B
+
+exceptions
+----------
+
+ruby里处理exception的关键子与大多数程序很不同::
+
+    begin
+      fail "Oops"
+      raise RuntimeError, "Oops"
+      raise RuntimeError("Oops")
+    rescue RuntimeError => ex
+      result = :exception
+    ensure
+      result = :ensure
+    end
+
+ruby里的异常结构::
+
+    RuntimeError -> StandardError -> Exceptin -> Object
+
+block代码块
+-----------
+ruby有两个代码块，单行和多行::
+
+  [].map {|dd| }
+  [].map do |dd|
+  end
+
+
+函数内通过yield调用block, yield可以传值到block. yield返回block的返回值::
+
+    def f()
+      yield
+      yield("world")
+      a = yield("hello")
+
+block没有创建新的作用域，所以会改变外部作用域::
+
+    a = 10
+    [].map {|b| a = 11} 
+    a == 11
+
+可以使用block_given?判断是否有block::
+
+    def a()
+      if block_given?
+        :block
+      else
+        :no-block
+      end
+
+block可以通过使用lambda定义，并赋值给变量, 并可以使用两中方式调用::
+
+    a = lambda {|n| n + 1}
+    a.call(10)
+    a[10]
+
+block可以直接传入方法, 方法也可以显式定义block::
+
+    def m(&block)
+    end
+
+    a = lambda {|n| n+1}
+    m(&a)
+
+lambda和proc的区别. 是否没区别. **TODO**
+估计proc是lambda的简写形式::
+
+    proc = -> {|n| n + 1}
+
+
+sandwich代码
+------------
+
+感觉类似python的with, 但是用法感觉很不同::
+
+    def a()
+      f = open("tt")
+    ensure
+      f.close if f
+    end
+
+配合代码块来抽象代码::
+
+    def a()
+      f = open("tt")
+      yield(f)
+    ensure
+      f.close if f
+    end
+
+    def b()
+      a do |f|
+        f.read
+      end
+    end
+
+iterater迭代
+------------
+
+ruby中大多数的集合都支持这些迭代，从Enumatable module扩展来.
+
+each 用于遍历.
+map/collect 类似python map.
+select/find_all 类似python filter.
+find 返回第一个可用
+inject 类似python reduce
+
+ruby中很多迭代都是配合代码块使用. 包括File.open/File.read等.
