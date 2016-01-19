@@ -26,15 +26,15 @@ ruby支持三种字符串字面量.
 
 2) here-document::
 
-   a = <<EOF
-       hello world
+    a = <<EOF
+        hello world
        EOF
 
 3) flex-quote::
 
-   a = %{flex world}
-   b = %!flex world!
-   c = %(flex world)
+    a = %{flex world}
+    b = %!flex world!
+    c = %(flex world)
 
 string可以支持array的分片操作.
 
