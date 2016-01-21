@@ -1,33 +1,36 @@
-#+Author: hackrole
-#+Email: daipeng123456@gmail.com
-#+Date: 2014-01-10
-#+TITLE: lua入门
+lua入门
+=======
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-01-20 16:42:32
+:status: draft
+:tags: lua
 
+lua简介
+-------
 
-* lua简介
+运行lua
 
-* 运行lua
-** 文件运行
-直接运行lua文件
-** 交互运行
-lua解释器使用
-dofile()可以加载外部文件
+1) 直接运行lua文件
 
-* 类型
+2) 交互运行,lua解释器使用.
+   dofile()可以加载外部文件
+
+类型
+~~~~
+
 lua支持8中基本类型, 可以通过type()函数来测试给定变量的类型
-** nil
-** boolean
-true or false
 
-出false和nil外，其他值都为true(0/空串)
-** number
-int/float
-无浮点数精度问题
+1) nil
 
-** string
-8为字节串，可以表达所有形式字符
+2) boolean. true or false
+   出false和nil外，其他值都为true(0/空串)
 
-[[]] 用来创建多行字符串
+3) number. int/float
+   无浮点数精度问题
+
+4) string 8为字节串.
+   可以表达所有形式字符. [[]] 用来创建多行字符串
 
 lua会自动在int和string中完成转换
 

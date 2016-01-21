@@ -7,7 +7,7 @@
 :status: draft
 :tags: write
 
-本文是对 `图灵社区文章<http://www.ituring.com.cn/article/210924>`_ 的整理。
+本文是对 图灵社区文章<http://www.ituring.com.cn/article/210924> 的整理。
 
 why this
 --------

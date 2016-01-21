@@ -3,7 +3,8 @@ elisp keymap相关
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 14:58:24
+:date: 2014-04-02 14:58:24
+:status: draft
 :tags: elisp, emacs
 
 

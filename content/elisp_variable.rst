@@ -3,7 +3,8 @@ elisp变量相关
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:02:21
+:date: 2014-07-08 15:02:21
+:status: draft
 :tags: elisp
 
 全局变量
