@@ -13,7 +13,7 @@ DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
 production = 'daipeng@note.hackrole.com:22'
-dest_path = '/var/www'
+dest_path = '/var/www/hr-note'
 
 # Rackspace Cloud Files configuration settings
 env.cloudfiles_username = 'my_rackspace_username'

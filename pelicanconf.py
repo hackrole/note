@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'hackrole'
 SITENAME = u"hackrole's note"
-SITEURL = ''
+SITEURL = 'http://note.hackrole.com'
 
 PATH = 'content'
 
@@ -21,7 +21,7 @@ AUTHOR_FEED_RSS = None
 
 
 # theme
-THEME = 'pelican-alchemy'
+THEME = 'aboutwilson'
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -36,4 +36,4 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
