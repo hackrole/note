@@ -23,14 +23,14 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # static path for favion.icon
-# STATIC_PATHS = [
-    # 'static/favicon.ico',
-# ]
-# EXTRA_PATH_METADATA = {
-    # 'static/favicon.ico': {
-        # 'path': 'favicon.ico'
-    # },
-# }
+STATIC_PATHS = [
+    'static/favicon.ico',
+]
+EXTRA_PATH_METADATA = {
+    'static/favicon.ico': {
+        'path': 'favicon.ico'
+    },
+}
 
 # theme
 THEME = 'aboutwilson'
@@ -57,6 +57,12 @@ PLUGINS = [
 DISQUS_SITENAME = u'http://note.hackrole.com/'
 DISQUS_PUBLIC_KEY = u'X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7MW3G0qsDOpEwklaAcR3oVcG0uv'
 DISQUS_SECRET_KEY = u'za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icnoyxmqxSOaATH6MoFROXlrrFQqA'
+
+# add templates for sitemaps
+DIRECT_TEMPLATES = ('index', 'tags', 'categories',
+                    'archives', 'sitemap', 'drafts')
+SITEMAP_SAVE_AS = 'sitemap.xml'
+DRAFTS_SAVE_AS = 'drafts.html'
 
 # page size
 DEFAULT_PAGINATION = 5
