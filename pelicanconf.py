@@ -22,6 +22,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# static path for favion.icon
+# STATIC_PATHS = [
+    # 'static/favicon.ico',
+# ]
+# EXTRA_PATH_METADATA = {
+    # 'static/favicon.ico': {
+        # 'path': 'favicon.ico'
+    # },
+# }
 
 # theme
 THEME = 'aboutwilson'
@@ -37,6 +46,19 @@ SOCIAL = [
     ('coding', 'https://coding.net/u/hackrole'),
 ]
 
+PLUGIN_PATHS = [
+    '/home/daipeng/hr-conf/pelican-plugins',
+]
+PLUGINS = [
+    # u"disqus_static",
+]
+
+# disqus comment
+DISQUS_SITENAME = u'http://note.hackrole.com/'
+DISQUS_PUBLIC_KEY = u'X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7MW3G0qsDOpEwklaAcR3oVcG0uv'
+DISQUS_SECRET_KEY = u'za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icnoyxmqxSOaATH6MoFROXlrrFQqA'
+
+# page size
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
