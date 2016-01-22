@@ -25,9 +25,11 @@ rvm是通过修改环境变量的方式, 所以配合gvim等时会有些不方�
 
 vim/gvim如果有+ruby特性，在找不到 libruby-*.so.* 时，是无法启动.
 
-解决方法：
-sudo aptitude purge ruby vim-common vim vim-gnome
-sudo aptitude install ruby vim vim-gnome
+解决方法.
+.. code-block:: ruby
+
+    sudo aptitude purge ruby vim-common vim vim-gnome
+    sudo aptitude install ruby vim vim-gnome
 
 卸载ruby导致emacs启动报错问题
 -----------------------------
@@ -40,7 +42,7 @@ ldd实用命令
 
 解决ruby问题时，偶尔发现的一个帖子. **TODO** 帖子url
 
-通过::
+.. code-block:: shell
 
     ldd `which vim`
 

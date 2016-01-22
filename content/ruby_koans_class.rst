@@ -4,7 +4,7 @@ ruby koans:类相关
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-14 15:26:33
-:tags: ruby, ruby_koans
+:tags: ruby, koans
 
 
 属性
@@ -16,7 +16,8 @@ ruby使用如下如下约定:
 
 2) 类变量 @@
 
-::
+.. code-block:: ruby
+   :linenos: inline
 
     class A
       def initialize(name, world)
@@ -26,7 +27,9 @@ ruby使用如下如下约定:
     end
 
 
-ruby属性默认不可访问, 通过定义get/set方法， 或attr_read/attr_access使其可访问::
+ruby属性默认不可访问, 通过定义get/set方法， 或attr_read/attr_access使其可访问.
+
+.. code-block:: ruby
 
     class A
       def name
@@ -39,9 +42,11 @@ ruby属性默认不可访问, 通过定义get/set方法， 或attr_read/attr_acc
       attr_access :name
     end
 
-通过一些特定方法可以访问本不可访问的属性::
+通过一些特定方法可以访问本不可访问的属性
 
-    a.instance_variables  #[:name]
+.. code-block:: ruby
+
+    a.instance_variables  # [:name]
     a.instance_variables_get("@name")
     a.instance_variables_eval("@name")
     a.instance_variables_eval { @name }
@@ -57,7 +62,9 @@ open-class打开类
 
 也被叫做monkey-patch, 用不好会导致难以调试的bug. 应该慎用.
 
-ruby可以在必要时修改已有类，增加方法或改变既有方法::
+ruby可以在必要时修改已有类，增加方法或改变既有方法
+
+.. code-block:: ruby
 
     class A
     end
@@ -75,7 +82,9 @@ ruby可以在必要时修改已有类，增加方法或改变既有方法::
 继承
 ----
 
-使用如下方式继承::
+使用如下方式继承.
+
+.. code-block:: ruby
 
     class A < Object
     end
@@ -87,7 +96,9 @@ ruby可以在必要时修改已有类，增加方法或改变既有方法::
 module与多继承
 --------------
 
-ruby使用Minix(module)实现多继承::
+ruby使用Minix(module)实现多继承
+
+.. code-block: ruby
 
     module A
       def name
@@ -108,7 +119,9 @@ scope作用域
 ruby作用域使用从内到外的查找顺序.
 只用类和方法会新建作用域，block不会新建作用域.
 
-使用::语法来访问不同的作用域::
+使用::语法来访问不同的作用域.
+
+.. code-block: ruby
 
   ::global
 
@@ -122,7 +135,9 @@ class method方法
 
 ruby类也是一个对象, **类python**
 
-可以为对象定义方法::
+可以为对象定义方法.
+
+.. code-block:: ruby
 
     a = Object.new
     def a.wag
@@ -131,7 +146,9 @@ ruby类也是一个对象, **类python**
 
 ruby里类和实例不共享方法和属性，类也是个对象。相当与对象模板.
 
-使用如下方式定义类方法::
+使用如下方式定义类方法.
+
+.. code-block:: ruby
 
     class Dog
       def Dog.name
@@ -154,14 +171,18 @@ class也是一个表达式，返回最后一个表达式的结果.
 
 ruby所有的方法调用都是基于消息发送.
 
-可以使用send方法显式发送消息, 通过这种方式能调用private方法和属性::
+可以使用send方法显式发送消息, 通过这种方式能调用private方法和属性
+
+.. code-block:: ruby
 
     a = Object.new
     a.send(:to_s)
 
 ruby提供了send/__send__两个方法都可以发送消息.
 
-使用respond_to?方法返回对象是否能接受莫消息::
+使用respond_to?方法返回对象是否能接受莫消息.
+
+.. code-block:: ruby
 
     a = Object.new
     a.respond_to?(:to_s)

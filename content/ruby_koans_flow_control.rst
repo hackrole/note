@@ -4,12 +4,14 @@ ruby koans笔记:流程控制
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-14 14:16:28
-:tags: ruby, ruby_koans
+:tags: ruby, koans
 
 if/unless
 ---------
 
-ruby支持if/unless(if not)::
+ruby支持if/unless(if not).
+
+.. code-block:: ruby
 
   if true
     :true
@@ -27,7 +29,9 @@ ruby支持if/unless(if not)::
     :true
   end
 
-ruby是面向表达式， if/unless也是表达式，会返回一个结果::
+ruby是面向表达式， if/unless也是表达式，会返回一个结果
+
+.. code-block:: ruby
 
     a = if true
           :true
@@ -35,7 +39,9 @@ ruby是面向表达式， if/unless也是表达式，会返回一个结果::
           :false
         end
 
-ruby 支持if倒缀语法::
+ruby 支持if倒缀语法
+
+.. code-block:: ruby
 
     a = :true if true
 
@@ -44,7 +50,9 @@ ruby支持三元元算符, ?: **python中不支持**
 while/for
 ---------
 
-ruby只有for...in循环::
+ruby只有for...in循环
+
+.. code-block:: ruby
 
     for i in [1, 2, 3]
     end
@@ -57,7 +65,9 @@ method
 ruby方法支持*args和named argument. 但是好像不支持**kw.
 named argument应该是最近加入的支持.
 
-ruby带*args和named arg的方法class方法返回Array, **很奇怪** ::
+ruby带*args和named arg的方法class方法返回Array, **很奇怪**
+
+.. code-block:: ruby
 
     def a(*args):
     end
@@ -69,7 +79,9 @@ ruby带*args和named arg的方法class方法返回Array, **很奇怪** ::
 ruby里有private/public的作用域限制。
 并且方法默认为public.属性默认为private.
 
-ruby里私有方法不能用self调用, **很奇怪** ::
+ruby里私有方法不能用self调用, **很奇怪** 
+
+.. code-block:: ruby
 
     class A
       def a
@@ -80,7 +92,9 @@ ruby里私有方法不能用self调用, **很奇怪** ::
         self.a  # would raise
       end
 
-ruby里的类和module都想是一个命名空间::
+ruby里的类和module都想是一个命名空间
+
+.. code-block:: ruby
 
     class A
       class B
@@ -93,7 +107,9 @@ ruby里的类和module都想是一个命名空间::
 exceptions
 ----------
 
-ruby里处理exception的关键子与大多数程序很不同::
+ruby里处理exception的关键子与大多数程序很不同
+
+.. code-block:: ruby
 
     begin
       fail "Oops"
@@ -105,33 +121,43 @@ ruby里处理exception的关键子与大多数程序很不同::
       result = :ensure
     end
 
-ruby里的异常结构::
+ruby里的异常结构
+
+.. code-block:: shell
 
     RuntimeError -> StandardError -> Exceptin -> Object
 
 block代码块
 -----------
-ruby有两个代码块，单行和多行::
+ruby有两个代码块，单行和多行
 
-  [].map {|dd| }
-  [].map do |dd|
-  end
+.. code-block:: ruby
+
+   [].map {|dd| }
+   [].map do |dd|
+   end
 
 
-函数内通过yield调用block, yield可以传值到block. yield返回block的返回值::
+函数内通过yield调用block, yield可以传值到block. yield返回block的返回值
+
+.. code-block:: ruby
 
     def f()
       yield
       yield("world")
       a = yield("hello")
 
-block没有创建新的作用域，所以会改变外部作用域::
+block没有创建新的作用域，所以会改变外部作用域
+
+.. code-block:: ruby
 
     a = 10
     [].map {|b| a = 11} 
     a == 11
 
-可以使用block_given?判断是否有block::
+可以使用block_given?判断是否有block
+
+.. code-block:: ruby
 
     def a()
       if block_given?
@@ -140,13 +166,17 @@ block没有创建新的作用域，所以会改变外部作用域::
         :no-block
       end
 
-block可以通过使用lambda定义，并赋值给变量, 并可以使用两中方式调用::
+block可以通过使用lambda定义，并赋值给变量, 并可以使用两中方式调用
+
+.. code-block:: ruby
 
     a = lambda {|n| n + 1}
     a.call(10)
     a[10]
 
-block可以直接传入方法, 方法也可以显式定义block::
+block可以直接传入方法, 方法也可以显式定义block
+
+.. code-block:: ruby
 
     def m(&block)
     end
@@ -155,7 +185,9 @@ block可以直接传入方法, 方法也可以显式定义block::
     m(&a)
 
 lambda和proc的区别. 是否没区别. **TODO**
-估计proc是lambda的简写形式::
+估计proc是lambda的简写形式
+
+.. code-block:: ruby
 
     proc = -> {|n| n + 1}
 
@@ -163,7 +195,9 @@ lambda和proc的区别. 是否没区别. **TODO**
 sandwich代码
 ------------
 
-感觉类似python的with, 但是用法感觉很不同::
+感觉类似python的with, 但是用法感觉很不同
+
+.. code-block:: ruby
 
     def a()
       f = open("tt")
@@ -171,7 +205,9 @@ sandwich代码
       f.close if f
     end
 
-配合代码块来抽象代码::
+配合代码块来抽象代码
+
+.. code-block:: ruby
 
     def a()
       f = open("tt")
