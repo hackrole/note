@@ -3,8 +3,9 @@ ejabberd服务器配置与常见问题汇总
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 14:51:58
-:tags: ejabberd,
+:date: 2014-08-08 14:51:58
+:status: draft
+:tags: ejabberd
 
 pt-get安装后无法启动server
 --------------------------
@@ -24,15 +25,17 @@ admin登录失败
 
 2) 调用sudo ejabberdctl register admin localhost admin
 
-3) 检查/etc/ejabberd/ejabberd.cfg配置文件::
+3) 检查/etc/ejabberd/ejabberd.cfg配置文件.
 
-    1) {acl, admin, {user, "admin", "localhost"}}.
+.. code-block:: erlang
 
-    2) {hosts, ["localhost", "192.168.1.106"]}.
+    {acl, admin, {user, "admin", "localhost"}}.
 
-    3) {access, configure, [{allow, admin}]}.
+    {hosts, ["localhost", "192.168.1.106"]}.
 
-    4)   {5280, ejabberd_http, [
+    {access, configure, [{allow, admin}]}.
+
+    {5280, ejabberd_http, [
              %%{request_handlers,
              %% [
              %%  {["pub", "archive"], mod_http_fileserver}

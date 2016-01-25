@@ -3,19 +3,18 @@ python中使用with来减少代码重复
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:36:07
+:date: 2015-09-10 15:36:07
+:status: draft
 :tags: python
 
 
 python with的执行流程
 ---------------------
 
-::
+.. code-block:: python
 
-    #+BEGIN_SRC python
     with <context> as <v>:
         <do things or raise Exception>
-    #+END
 
 with <context> as v:
 
@@ -31,9 +30,7 @@ with <context> as v:
 
 例子
 ----
-::
 
-    #+BEGIN_SRC python
+.. code-block:: python
 
-
-    #+END
+   pass

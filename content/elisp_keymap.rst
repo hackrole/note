@@ -3,9 +3,9 @@ elisp keymap相关
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2014-04-02 14:58:24
+:date: 2014-01-03 14:58:24
 :status: draft
-:tags: elisp, emacs
+:tags: elisp, emacs, lisp
 
 
 elisp按键序列概念

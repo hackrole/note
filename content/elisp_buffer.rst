@@ -3,7 +3,8 @@ elisp buffer处理相关
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 14:55:08
+:date: 2014-01-02 14:55:08
+:status: draft
 :tags: elisp, emacs
 
 buffer基本概念

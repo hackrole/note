@@ -3,7 +3,8 @@ git小计
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:15:38
+:date: 2014-12-12 15:15:38
+:status: draft
 :tags: git
 :summary: 简单记下git使用中碰到的问题和解决思路.
 

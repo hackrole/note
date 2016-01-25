@@ -3,7 +3,7 @@ lisp 基本概念与内建数据类型简介
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2014-08-07 14:56:20
+:date: 2013-12-23 14:56:20
 :status: draft
 :tags: elisp
 

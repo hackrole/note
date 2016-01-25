@@ -3,7 +3,8 @@
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:24:45
+:date: 2013-09-11 15:24:45
+:status: draft
 :tags: read_source_code, style
 
 如何阅读c源码项目

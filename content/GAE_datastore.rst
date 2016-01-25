@@ -3,7 +3,8 @@ GAE datastore相关
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:12:17
+:date: 2013-09-13 15:12:17
+:status: draft
 :tags: GAE, datastore
 
 about Key

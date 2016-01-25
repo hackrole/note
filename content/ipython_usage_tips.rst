@@ -3,7 +3,7 @@ ipython使用技巧
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-19 17:18:33
+:date: 2014-03-21 17:18:33
 :status: draft
 :tags: python, ipython, tools
 

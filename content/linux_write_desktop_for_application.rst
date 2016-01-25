@@ -1,9 +1,9 @@
-linux下为应用写个.desktop文件
-=============================
+linux下为应用写个desktop文件
+============================
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-20 16:27:53
+:date: 2014-05-05 16:27:53
 :status: draft
 :tags: linux
 

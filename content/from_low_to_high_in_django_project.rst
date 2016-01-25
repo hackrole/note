@@ -3,7 +3,7 @@ django项目自顶向下构造方式
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:06:20
+:date: 2015-04-24 15:06:20
 :tags: django, style
 
 自顶向下构建

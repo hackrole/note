@@ -3,7 +3,7 @@ docker入门
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 14:49:44
+:date: 2015-06-04 14:49:44
 :tags: docker, vagrant
 
 

@@ -2,7 +2,8 @@ mnesia用户手册(官方文档)
 ========================
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:30:37
+:date: 2014-12-24 15:30:37
+:status: draft
 :tags: erlang, mnesia
 
 

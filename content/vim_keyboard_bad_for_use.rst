@@ -2,8 +2,8 @@ vim中不应该使用的按键映射
 =========================
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:43:03
-:tags: vim, keybind
+:date: 2015-05-07 15:43:03
+:tags: vim, key-binding
 
 
 vim由于历史原因,按键映射存在一些问题, 这些问题直到7.4还未能被处理. 恐怕最迟要等vim8.0.

@@ -3,7 +3,8 @@ golang入门
 
 :author: hackrole
 :email: daipeng123456@gmail.com
-:date: 2016-01-08 15:17:04
+:date: 2014-04-21 15:17:04
+:status: draft
 :tags: golang
 
 golang特点
