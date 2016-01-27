@@ -25,6 +25,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# ignore directory and files
+IGNORE_FILES = ['note', ]
+
 # static path for favion.icon
 STATIC_PATHS = [
     'static/favicon.ico',
