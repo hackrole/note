@@ -19,4 +19,4 @@ set使用
 
 4) set no<options> 取消options设置.
 
-.. [1] set detail with :h :set
+.. [1] see detail with :h :set
