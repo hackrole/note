@@ -22,6 +22,14 @@ chrome extension调试
 
 6) 使用console.table可以输出更好用的调试数据，在处理列表字典时有用。
 
+7) chrome://extension页面如果插件报错，会有个按钮可以看到异常堆栈。
+
+.. image:: /static/chrome_debug_extension_page.jpg
+   :alt: extension_page
+
+.. image:: /static/chrome_debug_show_error.jpg
+   :alt: show_error
+
 参考链接
 --------
 
