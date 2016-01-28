@@ -30,7 +30,7 @@ IGNORE_FILES = ['note', ]
 
 # static path for favion.icon
 STATIC_PATHS = [
-    'static/favicon.ico',
+    'static',
 ]
 EXTRA_PATH_METADATA = {
     'static/favicon.ico': {
