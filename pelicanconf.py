@@ -56,16 +56,32 @@ PLUGIN_PATHS = [
     '/home/daipeng/hr-conf/pelican-plugins',
 ]
 PLUGINS = [
-    u"disqus_static",
-    u"series",
+    "disqus_static",
+    "series",
+    # "sitemap",
 ]
 
 # disqus comment
-DISQUS_SITENAME = u"hackrole"
-DISQUS_PUBLIC_KEY = (u'X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7M'
-                     u'W3G0qsDOpEwklaAcR3oVcG0uv')
-DISQUS_SECRET_KEY = (u'za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icno'
+DISQUS_SITENAME = "hackrole"
+DISQUS_PUBLIC_KEY = ('X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7M'
+                     'W3G0qsDOpEwklaAcR3oVcG0uv')
+DISQUS_SECRET_KEY = ('za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icno'
                      'yxmqxSOaATH6MoFROXlrrFQqA')
+
+# define sitemap
+# SITEMAP = {
+#     'format': 'xml',
+#     'priorities': {
+#         'articles': 0.5,
+#         'indexes': 0.5,
+#         'pages': 0.5
+#     },
+#     'changefreqs': {
+#         'articles': 'monthly',
+#         'indexes': 'daily',
+#         'pages': 'monthly'
+#     }
+# }
 
 # add templates for sitemaps
 DIRECT_TEMPLATES = ('index', 'tags', 'categories',
