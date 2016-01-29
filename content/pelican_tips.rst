@@ -24,7 +24,7 @@ pelican使用tips
 设置时间默认的格式
 ------------------
 
-默认的时间格式看着挺不习惯. 在pelicanconf.py里配置加入如下配置修改.
+默认的时间格式看着挺不习惯. 在pelicanconf.py里加入如下配置修改.
 
 .. code-block:: python
 
@@ -34,7 +34,7 @@ pelican使用tips
 使用文件名做url
 ---------------
 
-默认情况下pelican生成的页面使用article的标题的中文拼音在页面的url.
+默认情况下pelican生成的页面使用article的标题的中文拼音做页面的url.
 
 如果你博客的标题是 **chrome_开发tips**, 文件名是 **chrome_dev_tips**.
 默认情况下生成的文件名为 **chrome_kai_fa_tips.html**.
@@ -135,6 +135,11 @@ pelican使用tips
 
 插件管理及常用插件
 ------------------
+
+**TODO**
+
+文章serial
+----------
 
 **TODO**
 
