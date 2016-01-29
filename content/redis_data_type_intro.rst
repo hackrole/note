@@ -48,9 +48,13 @@ redis-string
 最简单的数据结构，应该也是最常用的数据结构(缓存).
 
 1) 通过get/set设置和换取
+
 2) set在没有key时会创建key,在key存在时做update.同时可以制定second/millsecond级别的过期时间.
+
 3) 可以支持incr/incrby/decr/decrby，把字符串作为数字执行原子性的+/-.底层使用的是同一个命令。
+
 4) getset获取key的old-value, 同时设置为最新的value.
+
 5) mset/mget一次对多个key做操作.
 
 redis-list
@@ -58,15 +62,24 @@ redis-list
 
 列表, 链表实现, 在列表中间插入/移除元素的复杂度为O(1), 查找元素的复杂度为O(N).
 
-1) 大多数操作都支持左右两个方向， lpush/rpush. l->head/r->end
+1) 大多数操作都支持左右两个方向， lpush/rpush. l->list前缀/r->reverse-order
+
 2) 两个方向的push/pop可以作为队列/栈使用. lrange用于获取列表内容.常用的场景: 
+
    A) 任务队列.
+
    B) 返回最新内容.
+
 3) ltrim用于截断list, 可以用来做mongodb的固定长度集合。不过需要自己手动调用.
+
 4) 可用做堵塞队列(celery的实现依赖). brpop/blpop
+
    A) 可以监听多个list
+
    B) 可指定一个超时.
+
    C) 任务推送有顺序.
+
    D) brpoplpush/rpoplpush **TODO**
 
 5) llen用于返回列表长度.
@@ -77,11 +90,15 @@ redis-hash
 redis上的hash实现,field/value只能是string.
 
 1) hset/hget用于设置和获取field. 一次只能设置一个field.
+
 2) hmset/hmget可用于处理多field.
+
 3) hincrby用于递增.
 
 主要用处:
+
 1) 讲一系列key-value关联到一起。
+
 2) 内存的利用率比多key-value更高, **XXX**.
 
 redis-set
@@ -90,8 +107,11 @@ redis-set
 集合, 支持并集/交集，判断元素是否在操作.
 
 1) sadd用于添加
+
 2) smembers用于列出所有元素
+
 3) sismember 判断元素是否已存在
+
 4) **TODO**
 
 redis-sorted-set
@@ -100,8 +120,11 @@ redis-sorted-set
 排序列表, 不是按插入顺序而是人为自定的score来拍寻。底层使用的是复合机构实现.
 
 1) zadd用于添加
+
 2) zrange用于获取列表
+
 3) 大多数命令都可以添加withscore,来返回score
+
 4) **TODO** zrangebyscore/zrangebylex
 
 redis-bitmaps
