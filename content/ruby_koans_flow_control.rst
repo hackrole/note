@@ -4,6 +4,8 @@ ruby koans笔记:流程控制
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-14 14:16:28
+:series: ruby koans note
+:series_index: 2
 :tags: ruby, koans
 
 if/unless

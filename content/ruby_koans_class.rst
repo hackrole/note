@@ -4,6 +4,8 @@ ruby koans:类相关
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-14 15:26:33
+:series: ruby koans note
+:series_index: 3
 :tags: ruby, koans
 
 

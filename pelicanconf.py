@@ -56,13 +56,16 @@ PLUGIN_PATHS = [
     '/home/daipeng/hr-conf/pelican-plugins',
 ]
 PLUGINS = [
-    # u"disqus_static",
+    u"disqus_static",
+    u"series",
 ]
 
 # disqus comment
-DISQUS_SITENAME = u'http://note.hackrole.com/'
-DISQUS_PUBLIC_KEY = u'X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7MW3G0qsDOpEwklaAcR3oVcG0uv'
-DISQUS_SECRET_KEY = u'za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icnoyxmqxSOaATH6MoFROXlrrFQqA'
+DISQUS_SITENAME = u"hackrole"
+DISQUS_PUBLIC_KEY = (u'X83kWZqXZ1xbOxi0QS2P9qnbxerhA5C59a80O7M'
+                     u'W3G0qsDOpEwklaAcR3oVcG0uv')
+DISQUS_SECRET_KEY = (u'za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icno'
+                     'yxmqxSOaATH6MoFROXlrrFQqA')
 
 # add templates for sitemaps
 DIRECT_TEMPLATES = ('index', 'tags', 'categories',
