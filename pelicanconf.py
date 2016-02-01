@@ -59,6 +59,7 @@ PLUGINS = [
     "disqus_static",
     "series",
     # "sitemap",
+    "plantuml",
 ]
 
 # disqus comment
