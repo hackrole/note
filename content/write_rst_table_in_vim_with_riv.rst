@@ -4,13 +4,13 @@ vim中使用riv插件输出表格
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-02-02 16:29:59
-:status: publish
+:status: published
 :tags: vim, riv, rst
 
 使用
 ----
 
-严格来是应该是使用rst里支持的directives来写表格.
+严格来说, 是使用rst里支持的directives来写表格.
 
 想对于默认的表格写起来方便很多，而且不用烦心对齐的问题.
 
@@ -53,7 +53,7 @@ vim中使用riv插件输出表格
           - 1.99
           - On a stick!
 
-想对于要写这么表格，方便太多了:
+想对于要这么写表格，方便太多了:
 
 .. image:: /static/vim_riv_old_table.jpg
     :alt: rst old table
