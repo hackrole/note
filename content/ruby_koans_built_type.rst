@@ -34,7 +34,7 @@ ruby支持三种字符串字面量.
 
     a = <<EOF
         hello world
-       EOF
+    EOF
 
 3) flex-quote.
 
