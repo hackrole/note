@@ -10,6 +10,7 @@ intro
 -----
 
 nerdcomment是一个vim插件，提供多种文件类型的代码注释功能. 同时设置了写常用的快捷按键。
+
 项目地址: https://github.com/scrooloose/nerdcommenter.git
 
 常用的按键有:
@@ -31,8 +32,12 @@ nerdcomment是一个vim插件，提供多种文件类型的代码注释功能. �
 配合python使用tips
 ------------------
 
-第一个是要设置 `let g:NERDSpaceDelims = 1`.
-然后， 注释的时候会在#后加入一个空格，这样代码做pep8的时候就不会报警告了. 如图.
+添加空格
+~~~~~~~~
+
+设置 `let g:NERDSpaceDelims = 1`.
+
+之后注释的时候会在#后加入一个空格，这样代码做pep8的时候就不会报警告了. 如图.
 
 设置前:
 
@@ -44,8 +49,14 @@ nerdcomment是一个vim插件，提供多种文件类型的代码注释功能. �
 .. image:: /static/vim-nerdcomment/good-delims.jpg
     :alt: good-pep8
 
-其次是使用<leader>cl取代<leader>c<space>. 我一般也是用<leader>c<space>用了好久。
-但是注释出来的效果不是很好。看了好久文档总算是找个了解决办法.效果如下.
+
+注释对齐
+~~~~~~~~
+
+使用 `<leader>cl` 取代 `<leader>c<space>`.
+
+我一般也是用 `<leader>c<space>` 。但是注释出来的效果不是很好
+看了好久文档总算是找个了解决办法.效果如下.
 
 <leader>c<space>
 
@@ -57,3 +68,14 @@ nerdcomment是一个vim插件，提供多种文件类型的代码注释功能. �
 .. image:: /static/vim-nerdcomment/good-align.jpg
     :alt: good-pep8
 
+需要注意 `<leader>cl` 只能添加注释不能取消注释， 取消可以使用<leader>c<space>.
+
+行内注释
+--------
+
+python pep8里建议行内注释要前要加两个空格, 默认注释只加了一个.
+可以通过 `<leader>ca` 来做切换(注意命令行的提示信息).
+
+之后使用 `<leader>c$` 和 `<leader>cA` 来添加行内注释.
+
+不过总体来是使用起来不太方便，而且效果不太满意。有时间再看看。
