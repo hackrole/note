@@ -60,6 +60,7 @@ PLUGINS = [
     "series",
     # "sitemap",
     "plantuml",
+    # 'ga_page_view',
 ]
 
 # disqus comment
