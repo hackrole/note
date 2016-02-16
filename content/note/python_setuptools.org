@@ -1,0 +1,10 @@
+#+TITLE: python setuptools笔记
+
+
+* include data files
+
+* declare dependencies
+
+* dynamic discovery service and plugins
+
+* automatic script create
