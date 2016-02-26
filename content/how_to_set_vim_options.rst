@@ -31,9 +31,11 @@ vim里的options一般分为如下:
 set常用用法
 -----------
 
+set用法比较多， 一些用法不太常用，简单总结如下. 
+
 .. list-table:: set用法
     :class: table
-    :name: list-table
+    :name: set-usage
 
     * - commands
       - describe
@@ -61,9 +63,11 @@ set常用用法
       - no
 
 
+同时要注意set的作用域问题，避免全局影响.
+
 .. list-table:: set作用域问题
     :class: table
-    :name: list-table
+    :name: set-scope
 
     * - commands
       - describe
@@ -75,4 +79,3 @@ set常用用法
       - global and local
 
 不同的options有时是全局唯一的，有的会只到当前窗口或缓存区生效.
-
