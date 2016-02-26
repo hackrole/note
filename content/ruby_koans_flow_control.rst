@@ -109,7 +109,7 @@ ruby里的类和module都想是一个命名空间
 exceptions
 ----------
 
-ruby里处理exception的关键子与大多数程序很不同
+ruby里处理exception的关键字与大多数程序很不同
 
 .. code-block:: ruby
 
@@ -131,7 +131,7 @@ ruby里的异常结构
 
 block代码块
 -----------
-ruby有两个代码块，单行和多行
+ruby有两种代码块写法，单行和多行
 
 .. code-block:: ruby
 

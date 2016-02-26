@@ -1,4 +1,4 @@
-redis服务管理需要
+redis服务管理需知
 =================
 
 :author: hackrole
@@ -29,7 +29,7 @@ redis服务管理需要
 
 8) 开启slave特性时，即便不使用持久化特性,redis也会perform RDB save. 除非使用实验性的diskless-sync.
 
-9) 开启slaev特性时，要确保要么开发master节点的保存特性，要么关闭master节点的自动重启。
+9) 开启slave特性时，要确保要么打开master节点的保存特性，要么关闭master节点的自动重启。
 
 10) 注意开发redis安全相关配置. require-pass/rewrite-command/bind-ip
 
