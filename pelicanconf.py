@@ -1,6 +1,13 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+
+# pylint: disable=missing-docstring
+
 from __future__ import unicode_literals
+
+from os import path
+
+# 项目跟目录
+BASE_DIR = path.dirname(path.realpath(__file__))
 
 AUTHOR = u'hackrole'
 SITENAME = u"hackrole's note"
@@ -39,7 +46,7 @@ EXTRA_PATH_METADATA = {
 }
 
 # theme
-THEME = 'aboutwilson'
+THEME = path.join(BASE_DIR, 'themes/aboutwilson')
 
 # Blogroll
 LINKS = [
@@ -53,9 +60,10 @@ SOCIAL = [
 ]
 
 PLUGIN_PATHS = [
-    '/home/daipeng/hr-conf/pelican-plugins',
+    path.join(BASE_DIR, "plugins"),
 ]
 PLUGINS = [
+    # need: pip install disqus-python
     "disqus_static",
     "series",
     # "sitemap",
@@ -86,10 +94,12 @@ DISQUS_SECRET_KEY = ('za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icno'
 # }
 
 # add templates for sitemaps
-DIRECT_TEMPLATES = ('index', 'tags', 'categories',
-                    'archives', 'sitemap', 'drafts')
-SITEMAP_SAVE_AS = 'sitemap.xml'
-DRAFTS_SAVE_AS = 'drafts.html'
+# TODO tmp remove sitemap and drafts
+# DIRECT_TEMPLATES = ('index', 'tags', 'categories',
+#                     'archives', 'sitemap', 'drafts')
+# SITEMAP_SAVE_AS = 'sitemap.xml'
+# DRAFTS_SAVE_AS = 'drafts.html'
+DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
 
 # page size
 DEFAULT_PAGINATION = 5
