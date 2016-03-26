@@ -1,0 +1,2 @@
+pelican==3.6.3
+disqus-python==0.4.2
