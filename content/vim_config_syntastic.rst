@@ -5,7 +5,6 @@
 :email: daipeng123456@gmail.com
 :date: 2016-02-02 14:55:23
 :serials: vim-syntastic
-:series_index: 1
 :status: draft
 :tags: vim
 
