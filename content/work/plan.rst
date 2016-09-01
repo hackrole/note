@@ -9,6 +9,8 @@ genpoint
 
 gen start point project
 
+参考 nodejs yeoman
+
 config-server
 ~~~~~~~~~~~~~
 
@@ -18,6 +20,20 @@ config-server
 
 
 3) 微服务，静默失败
+
+smart bookmark
+~~~~~~~~~~~~~~
+
+chrome bookmark extension
+
+1) not category. only tags
+
+2) good search
+
+3) tags相似检测
+
+4) 网页排名
+
 
 ipassword
 ~~~~~~~~~
