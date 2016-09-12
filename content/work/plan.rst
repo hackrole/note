@@ -44,6 +44,17 @@ ios app to manager your password.
 
 2) use react-native to write it.
 
+learn staff
+-----------
+
+
+js
+~~
+D3.js
+百度chart库
+angular-ui-router
+
+
 others
 ------
 
