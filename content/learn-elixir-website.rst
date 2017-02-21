@@ -41,7 +41,7 @@ type list
 
 8) char-list/Port/Reference/PID
 
-几本运算
+基础运算
 ~~~~~~~~
 
 div 整除
@@ -92,7 +92,7 @@ String Module utils
 add = fn a, b -> a + b end
 add.(1, 2)
 is_function(add)
-is_function(add, 2)o
+is_function(add, 2)
 
 调用需要加 .(),和命名函数做区分
 
@@ -136,7 +136,7 @@ String.length *_length线性时间
 "foo" <> "bar"
 
 and/or/not 只接受boolean,短路运算
-||/&&/! 接受所有类型值,false/nil外都没true
+||/&&/! 接受所有类型值,false/nil外都为true
 
 弱类型
 1 == 1.0
@@ -192,7 +192,7 @@ guards中可以使用的表达式
 比较运算/布尔运算(only and/or/not)/算术运算/<>/in/type_check function/plus some function(bit_size)
 
 用户可以自定义guards, 参考BitWise.
-guards出错不会跑异常，支持让guards失败
+guards出错不会跑异常，只会让guards失败
 
 匿名函数也可以有多case和guards,参数个数需一样
 
@@ -246,7 +246,7 @@ String.codepoints("中国")
 ?中
 
 binary与bitstrings
-------------------
+~~~~~~~~~~~~~~~~~~
 binary 8bits
 bitstrings not 8bits
 截断/指定长度/与<<0>>链接
@@ -305,3 +305,448 @@ map.a
 users = [jorn: %{name: "johN"}]
 users[:john].name
 users = put_in users[:john].name, "John"
+
+模块/函数
+---------
+
+命名函数需要定义在module中, defmodule
+
+defmoudle,def,defp是macro实现
+
+.. code:: elixir
+
+   defmodule Math do
+     def sum(a, b) do
+       a + b
+     end
+   end
+
+   Math.sum(1, 2)
+
+
+使用elixirc file.ex编译，生成Elixir.Math.beam
+
+elixir项目一般包含三个目录ebin/lib(.ex)/test(.exs)
+
+
+.exs文件为脚本执行方式，同.ex无区别，只是不会编译为.beam
+
+
+定义函数支持guards/multi-clauses
+
+function capturing
+.. code:: elixir
+
+   fun = &Math.zero?/1
+   fun = &(&1 + 1)
+   fun.(1)
+
+
+函数支持默认参数,multi-clauses需要写函数声明
+
+.. code:: elixir
+
+   def join(a, b, sep \\ " ") do
+     a
+   end
+
+
+递归
+----
+
+elixir使用递归替代for迭代
+
+Enum-module utils
+Stream-module utils(lazy Enum)
+
+尾递归
+
+
+Enum/Stream
+-----------
+
+用于collection迭代(map/reduce/fold)
+Enum立即执行，Stream lazy执行
+
+Enum支持多态，只要实现Enumerable-protocol
+
+pipe操作,管道。讲左边的输出作为右边的first-argument
+
+.. code:: elixir
+
+   1..3 |> Enum.map(&(&1 * 3))
+
+
+Stream可以实现python with_file功能,用于大文件读取
+
+
+Processes进程
+-------------
+
+轻量级进程
+
+spawn -> PID
+Process.alive?(PID)
+self() -> PID
+
+send/receive
+receive支持multi-clause/after超时
+在terminal中用flush查看进程信箱
+.. code:: elixir
+
+   send self(), {:hello, "world"}
+   receive do
+     {:hello, msg} -> msg
+     {:world, msg} -> "won't match"
+   after
+     100 -> "timeout"
+   end
+
+
+spawn_link
+link-process会导致父进程崩溃
+
+Process.link手动link
+
+任其崩溃
+
+Tasks-module包装底层spawn/spawn_link,提供更好错误报告,return {:ok, pid}
+Task.start fn -> raise "oops" end
+Task.start_link fn -> raise "oops" end
+
+Task.async/1
+Task.await/1
+
+state
+一般用进程来保存状态
+可以使用Process.register注册进程名
+Agents-module提供state包装
+
+GenServer/OTP
+
+.. code:: elixir
+
+   {:ok, pid} = Agent.start_link(fn -> %{} end)
+   Agent.update(pid, fn map -> Map.put(map, :hello, :world)
+   Agent.get(pid, fn map -> Map.get(map, :hello) end)
+
+
+IO and file-system
+------------------
+
+IO/File/Path/StringIO module
+
+IO.puts
+IO.gets
+
+File.open/1
+File.read/1
+File.write/1
+File.rm/1
+File.mkdir/1
+File.mkdir_p/1
+
+group-leaders
+
+
+iodata/chardata注意File.open里指定的编码
+
+
+alias/require/import/use
+------------------------
+
+alias Foo.bar as: Bar
+
+require Foo (ensure Foo is compiled and avaiable, usually for macros)
+
+import Foo (call Foo functions without Foo. prefix)
+
+use (invoke custom code define in Foo as extension point)
+
+alias/require/import是词法作用域
+
+.. code:: elixir
+
+   alias Foo.Bar as: Bar
+
+   alias Math.List as :list
+   alias Math.List
+
+   # require make macros works, it work at compile-time
+   require Integer
+   Integer.is_odd(3)
+
+   # import
+   import List, only: [duplicate: 2]
+   import List, except: [duplicate: 2]
+   import List, only: :macros
+   import List, only: :functions
+
+   # use is macro, compile to require and __using__ to insert code
+   use ExUnit.Case, async: true
+
+   use Feature
+   requier Feature
+   Feature.__using__(options: :value)
+
+   # multi in one-line
+   alias MyApp.{Foo, Bar, Baz}
+
+
+elixir alias/require编译时替换为atom,因为erlang使用atom
+
+module可以nested
+.. code:: elixir
+
+   defmoudle E do
+    defmodule E.F do
+    end
+   end
+
+module attributes
+-----------------
+
+1) 作为注解使用
+
+2) 作为常量 (编译期间)
+
+3) 临时存储
+
+
+.. code:: elixir
+
+    # 注解
+    # 用于更新版本
+    @vsn 2
+    @moduledoc
+    @doc
+    # define OTP
+    @behaviour
+    # before compile to do something
+    @before_compile
+
+
+@moduledoc/@doc支持 markdown和doctest
+ExDoc module
+用来定义typespecs
+
+@attributes可被lib扩展来实现自定义功能
+
+
+user define attributes不存储在module中，与erlang不同.
+可以使用Module.register_attribute/3来实现erlang user-define attribute
+
+临时存储:Plug plug/ExUnit @Tag
+
+
+Structs
+-------
+
+structs基于maps, 提供编译时的fields检查
+structs.__struct__存储structs名字
+不可用与Enum/Stream,可使用Map-module
+
+与protocols一起实现数据多态
+
+不提供默认值则为nil
+可以指定必须在create时指定的key
+
+.. code:: elixir
+
+   defmodule User do
+     defstruct name: "John", age: 27
+   end
+   %User{}
+   %User{name: "meg"}
+   # %User{oops: :field}
+
+   # access and update
+   john = %User{}
+   john.name
+   meg = %{john | name: "Meg"}
+   # 匹配
+   %User{name: name} = john
+
+   # struct is map
+   is_map(john)
+   john.__struct__
+
+   # not default
+   defmodule Product do
+     defstruct [:name]
+   end
+   # enforce key exists
+   defmodule Car do
+     @enforce_keys [:make]
+     defstruct [:model, :make]
+   end
+   # %Car{}
+
+protocols
+---------
+
+用来实现多态
+
+配合Structs使用
+
+Any实现方式有两种 derive/fallback
+
+内建protocol
+Enumerable Enum-module
+String.Chars to_string
+Inspect inspect(more readable to_string)
+
+protocol固化问题??
+
+.. code:: elixir
+
+   defprotocol Size do
+     def size(data)
+   end
+   defimpl Size, for BitString do
+     def size(string) do: byte_size(string)
+   end
+
+   # derive
+   def impl Size, for Any do
+     def size(_), do: 0
+   end
+   defmoudle User do
+     @derive [Size]
+     defstruct [:name, :age]
+   end
+   # fallback
+   defprotocol Size do
+     @fallback_to_any true
+     def size(data)
+   end
+
+列表推倒
+--------
+
+由generators,filters,collectables组成
+
+可以多generaotrs, 多filters
+
+into: 选项用来生成非列表
+
+sigils语法糖
+------------
+
+支持8种分隔符:
+～r/hh/
+~r|hh/
+~r"hh"
+~r'hh'
+~r(hh)
+~r[hh]
+~r{hh}
+~r<hh>
+
+~r 正则
+~s string
+~c char-list
+~w word-list(s(string/c(char-list)/a(atom))
+
+有大小写两种形式,大写不支持转义和表达式求值
+
+可用与@doc，美化文档
+
+~r等于调用sigil_r(<String> <char-list>)
+可以自定义sigil
+.. code:: elixir
+
+   defmodule MySigils do
+     def sigil_i(string, []), do: String.to_integer(string)
+     def sigil_i(string, [?n]), do: -String.to_integer(string)
+   end
+   import MySigils
+   ~i(13)
+
+
+可以配合macro使用??
+
+异常处理
+--------
+
+Errors/throw/exit
+
+代码错误或raise会抛出Error
+raise/1 message(RuntimeError)
+raise/2 ErrorType, message
+
+自定义Error使用defexception
+
+try ... rescue .. after .. else
+try ... catch ... after .. else
+
+try..catch使用不多,elixir推行let it fails原则
+
+大多数函数有两个版本, !结尾版本直接raise Errors。其他版本需做匹配
+
+throw(values) vs raises(Error)
+
+after类似finally，可用于函数
+
+else使用try..rescue返回值继续
+
+try..rescue中的值不能在外部使用，但是可以作为表达式可以赋值给变量
+
+
+typespec与behaviours
+--------------------
+
+用来声明函数签名和做类型声明
+
+@spec round(number) :: integer
+支持复合类型, [integer]
+
+@typedoc """
+just a number
+"""
+@type number_with_remark :: {number, String.t}
+
+@type会export到外部作用域,@typep不回
+
+Dialyzer模块使用@spec和@type来静态分析代码，所以应该为private也写@spec
+
+
+behaviour类似interface,声明需要实现的函数,不实现会生成compile warning
+
+.. code:: elixir
+
+   defmoudle Parser do
+     @callback parse(String.t): any
+     @callback extension(): [String.t]
+   end
+
+   defmodule JSONParser do
+     @behaviour Parser
+
+     def parse(str), do: ...
+     def extensions, do: ["json"]
+   end
+
+
+与erlang结合
+------------
+
+调用erlang库使用:开头.
+:binary.bin_to_list ")"
+
+
+:io/:io_lib提供format库
+
+:crypto提供加密支持
+
+:digraph提供digraph图处理
+
+:ets, :dets提供erlang ets存储
+
+:math
+
+:queue 队列
+
+:rand 随机
+
+:zip :zlib压缩解压缩
