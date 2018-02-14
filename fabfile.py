@@ -11,14 +11,10 @@ from pelican.server import ComplexHTTPRequestHandler
 env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
-# Remote server configuration
-production = 'daipeng@note.hackrole.com:22'
-dest_path = '/var/www/hr-note'
-
-# Rackspace Cloud Files configuration settings
-env.cloudfiles_username = 'my_rackspace_username'
-env.cloudfiles_api_key = 'my_rackspace_api_key'
-env.cloudfiles_container = 'my_cloudfiles_container'
+# Remote server configuration, use ssh-config for convensation.
+env.use_ssh_config = True
+production = 'vultr'
+dest_path = '/sites/hr-note'
 
 # Github Pages configuration
 env.github_pages_branch = "gh-pages"
@@ -66,29 +62,36 @@ def preview():
     """Build production version of site"""
     local('pelican -s publishconf.py')
 
-def cf_upload():
-    """Publish to Rackspace Cloud Files"""
-    rebuild()
-    with lcd(DEPLOY_PATH):
-        local('swift -v -A https://auth.api.rackspacecloud.com/v1.0 '
-              '-U {cloudfiles_username} '
-              '-K {cloudfiles_api_key} '
-              'upload -c {cloudfiles_container} .'.format(**env))
 
 @hosts(production)
 def publish():
     """Publish to production via rsync"""
     local('pelican -s publishconf.py')
-    project.rsync_project(
-        remote_dir=dest_path,
-        exclude=".DS_Store",
-        local_dir=DEPLOY_PATH.rstrip('/') + '/',
-        delete=True,
-        extra_opts='-c',
-    )
+
+    cmd = ('rsync -ogavz --progress --delete'
+           ' --exclude ".DS_Store"'
+           '--chown=www-data:www-data '
+           'output/* vultr:/sites/hr-note/')
+    local(cmd)
 
 def gh_pages():
     """Publish to GitHub Pages"""
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
     local("git push origin {github_pages_branch}".format(**env))
+
+@hosts(production)
+def nginx():
+    """upload nginx config"""
+    cmd = 'scp nginx_site.conf vultr:/tmp/nginx_site.conf'
+    local(cmd)
+
+    run('sudo mv /tmp/nginx_site.conf /etc/nginx/sites-available/hr-note')
+    run('sudo chown root:root /etc/nginx/sites-available/hr-note')
+    run('sudo ln -f -s /etc/nginx/sites-available/hr-note /etc/nginx/sites-enabled/hr-note')
+    run('sudo nginx -s reload')
+
+
+@hosts(production)
+def clean_site():
+    run("sudo rm -rf /sites/hr-note/*")

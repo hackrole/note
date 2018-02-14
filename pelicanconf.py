@@ -64,7 +64,7 @@ PLUGIN_PATHS = [
 ]
 PLUGINS = [
     # need: pip install disqus-python
-    "disqus_static",
+    #"disqus_static",
     "series",
     # "sitemap",
     "plantuml",
