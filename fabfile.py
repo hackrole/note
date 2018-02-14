@@ -69,16 +69,17 @@ def publish():
     local('pelican -s publishconf.py')
 
     cmd = ('rsync -ogavz --progress --delete'
-           ' --exclude ".DS_Store"'
-           '--chown=www-data:www-data '
+           ' --exclude ".DS_Store" '
            'output/* vultr:/sites/hr-note/')
     local(cmd)
+
 
 def gh_pages():
     """Publish to GitHub Pages"""
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
     local("git push origin {github_pages_branch}".format(**env))
+
 
 @hosts(production)
 def nginx():
