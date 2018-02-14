@@ -1,3 +1,4 @@
 pelican==3.6.3
 disqus-python==0.4.2
 Fabric==1.14.0
+Markdown==2.6.11
