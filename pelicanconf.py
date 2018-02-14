@@ -102,7 +102,7 @@ DISQUS_SECRET_KEY = ('za2LQQnPg7oRPOYmVrFkEt2HD6KWIrjolR3icno'
 DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives')
 
 # page size
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 20
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
