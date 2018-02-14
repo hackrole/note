@@ -8,7 +8,7 @@ vim中使用virtualenv插件
 :tags: vim, virtualenv, python, pep8
 
 
-.. code-block:: 
+.. code-block:: bash
 
     pip install virtualenvwrapper
 
@@ -16,6 +16,6 @@ vim中使用virtualenv插件
     workon <env>
 
     pip install pep8 pylint pyflakes
-    
+
     # open vim and install virtualenv plugin
     gvim +PluginInstall 'jmcantrell/vim-virtualenv' +qa

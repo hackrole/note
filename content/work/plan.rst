@@ -1,6 +1,12 @@
 plan on the way
 ===============
 
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2017-03-29 15:58:07
+:status: draft
+:tags: plan,works
+
 projects
 --------
 

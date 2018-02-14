@@ -1,6 +1,15 @@
-==========
- 2017计划
-==========
+2017计划
+========
+
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-06-28 12:57:48
+:status: draft
+:tags: computer
+
+计划
+----
+
 
 1) emacs/elisp
 

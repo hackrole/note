@@ -1,5 +1,5 @@
- elixir官网教程笔记
-====================
+elixir官网教程笔记
+==================
 
 :author: hackrole
 :email: daipeng123456@gmail.com
@@ -124,7 +124,7 @@ elem(t, 1)
 tuple_size(t)
 put_tuple(t, 1, "world")
 
-byte_size *_size常数时间
+byte_size/*_size常数时间
 String.length *_length线性时间
 
 基础运算

@@ -1,10 +1,12 @@
 关于team合作与管理
 ==================
 
-author: hackrole
-email: daipeng123456@gmail.com
-date: 2016-10-31
-tags: team,work
+
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2016-06-28 12:57:48
+:status: draft
+:tags: work,plan
 
 
 关于离开舒适区
