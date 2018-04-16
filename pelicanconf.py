@@ -52,6 +52,7 @@ THEME = path.join(BASE_DIR, 'themes/aboutwilson')
 LINKS = [
     ('向日葵的博客', 'http://zshou.is-programmer.com/'),
     ('solos的网络日志', 'http://solos.so/'),
+    ('leei blog', 'https://leeifrankjaw.github.io'),
 ]
 
 SOCIAL = [
