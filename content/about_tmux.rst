@@ -19,14 +19,12 @@ https://medium.freecodecamp.org/tmux-in-practice-local-and-nested-remote-tmux-se
 
 2) use different prefix
 .. code-block:: tmux
-    linenos: inline
 
     set -g prefix C-b
     bind-key -n C-a send-prefix
 
 3) use a toggle key
 .. code-block:: tmux
-    linenos: inline
 
     bind -T root F12  \
     set prefix None \;\

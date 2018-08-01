@@ -2,6 +2,12 @@
 gitlab CI 相关
 ###################
 
+:author: hackrole
+:email: daipeng123456@gmail.com
+:date: 2018-05-04 10:56:35
+:status: draft
+:tags: gitlab,gitlab_ci,ci
+
 ******************
 起步
 ******************

@@ -5,7 +5,7 @@ wechat开发总结
 :email: daipeng123456@gmail.com
 :date: 2018-05-02 13:06:22
 :status: draft
-stags: wechat,ngrok,oauth2
+:stags: wechat,ngrok,oauth2
 
 wechat 开发本地调试
 -------------------
