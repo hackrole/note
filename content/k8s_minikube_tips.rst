@@ -26,7 +26,10 @@ minikube搭建issuses
 
 .. code-block:: bash
 
-    https_proxy=192.168.88.242:8118 minikube start --docker-env https_proxy=192.168.88.242:8118 --docker-env http_proxy=192.168.88.242:8118 --docker-env no_proxy=192.168.99.0/24 --vm-driver kvm
+    https_proxy=192.168.88.242:8118 minikube start --docker-env \
+    https_proxy=192.168.88.242:8118 --docker-env \
+    http_proxy=192.168.88.242:8118 --docker-env \
+    no_proxy=192.168.99.0/24 --vm-driver kvm
 
 
 启动后验证是否成功:
