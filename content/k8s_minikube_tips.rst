@@ -4,7 +4,7 @@ minikube tips
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2018-08-03 10:23:01
-:status: publish
+:status: published
 :tags: minikube,k8s,tips
 
 
