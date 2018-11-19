@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+pelican = "==3.6.3"
+disqus-python = "==0.4.2"
+markdown = "==2.6.11"
+Fabric = "==1.14.0"
+docutils = "*"
+typogrify = "*"
+
+[requires]
+python_version = "2.7"
