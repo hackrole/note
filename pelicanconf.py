@@ -46,7 +46,10 @@ EXTRA_PATH_METADATA = {
 }
 
 # theme
-THEME = path.join(BASE_DIR, 'themes/aboutwilson')
+THEME = path.join(BASE_DIR, 'themes/eevee')
+# THEME = 'pelican-hyde'
+#THEME = 'pelican-sober'
+
 
 # Blogroll
 LINKS = [
@@ -65,7 +68,7 @@ PLUGIN_PATHS = [
 ]
 PLUGINS = [
     # need: pip install disqus-python
-    #"disqus_static",
+    # "disqus_static",
     "series",
     # "sitemap",
     "plantuml",
