@@ -6,11 +6,8 @@ install:
   - pip install pipenv
   - pipenv install --dev --deploy
 script:
+  - echo ${GITHUB_TOKEN}
   - fab build
-  - cd output
-  - git add -A
-  - git commit -m "update blog"
-  - git push origin master
 
 deploy:
   provider: pages
