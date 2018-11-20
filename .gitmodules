@@ -1,6 +1,3 @@
 [submodule "themes/eevee"]
 	path = themes/eevee
 	url = https://github.com/kura/eevee.git
-[submodule "output"]
-	path = output
-	url = https://github.com/hackrole/hackrole.github.io.git
