@@ -16,6 +16,5 @@ deploy:
   local-dir: output
   github-token: $GITHUB_TOKEN
   keep-history: false
-  email: hack.role@gmail.com
-  name: hackrole
+  verbose: true
 
