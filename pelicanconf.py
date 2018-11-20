@@ -46,7 +46,8 @@ EXTRA_PATH_METADATA = {
 }
 
 # theme
-THEME = path.join(BASE_DIR, 'themes/eevee')
+THEME = path.join(BASE_DIR, 'themes/new-bootstrap2')
+#THEME = 'new-bootstrap2'
 # THEME = 'pelican-hyde'
 #THEME = 'pelican-sober'
 

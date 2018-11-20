@@ -5,7 +5,7 @@ minikube tips
 :email: daipeng123456@gmail.com
 :date: 2018-08-03 10:23:01
 :status: published
-:tags: minikube,kubernates,docker,tips
+:tags: minikube, kubernates, docker, tips
 :category: kubernates
 
 
