@@ -7,6 +7,10 @@ install:
   - pipenv install --dev --deploy
 script:
   - fab build
+  - cd output
+  - git add -A
+  - git commit -m "update blog"
+  - git push origin master
 
 deploy:
   provider: pages
