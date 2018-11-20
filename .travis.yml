@@ -5,6 +5,10 @@ branches:
 install:
   - pip install pipenv
   - pipenv install --dev --deploy
+before_script:
+  - echo ${ID_RSA} > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh -T git@github.com
 script:
   - fab build
 
