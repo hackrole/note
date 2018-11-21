@@ -56,6 +56,9 @@ DISPLAY_CATEGORIES_ON_MENU = False
 # THEME = 'foundation-default-colours'
 # FOUNDATION_PYGMENT_THEME = 'vs'
 
+# google analytics
+GOOGLE_ANALYTICS_ID = 'UA-71748525-1'
+GOOGLE_ANALYTICS_SITENAME = 'https://hackrole.github.io'
 
 # Blogroll
 LINKS = [
@@ -81,9 +84,11 @@ PLUGINS = [
     # "disqus_static",
     "series",
     "tag_cloud",
-    # "sitemap",
+    "sitemap",
     "plantuml",
-    # 'ga_page_view',
+    "pelican_gist",
+    "section_number",
+    #"ga_page_view",
 ]
 
 # disqus comment
@@ -99,19 +104,19 @@ TAG_CLOUD_MAX_ITEMS = 50
 TAG_CLOUD_BADGE = True
 
 # define sitemap
-# SITEMAP = {
-#     'format': 'xml',
-#     'priorities': {
-#         'articles': 0.5,
-#         'indexes': 0.5,
-#         'pages': 0.5
-#     },
-#     'changefreqs': {
-#         'articles': 'monthly',
-#         'indexes': 'daily',
-#         'pages': 'monthly'
-#     }
-# }
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
 
 # add templates for sitemaps
 # TODO tmp remove sitemap and drafts

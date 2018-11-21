@@ -1,20 +1,16 @@
 [[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[[source]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-name = "tuna"
+name = "pypi"
 verify_ssl = true
 
 [dev-packages]
 
 [packages]
-pelican = {version="==3.6.3", index="tuna"}
-disqus-python = {version="==0.4.2", index="tuna"}
-Fabric = {version="==1.14.0", index="tuna"}
-Markdown = {versin="==2.6.11", index="tuna"}
+pelican = "==3.6.3"
+disqus-python = "==0.4.2"
+Fabric = "==1.14.0"
+Markdown = "==2.6.11"
+pelican-gist = "*"
 
 [requires]
 python_version = "3.6"
