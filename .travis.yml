@@ -17,4 +17,4 @@ deploy:
   local-dir: output
   github-token: $GITHUB_TOKEN
   keep-history: false
-  fqdn: pages.hackrole.com
+  # fqdn: pages.hackrole.com
