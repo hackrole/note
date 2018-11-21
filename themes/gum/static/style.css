@@ -202,6 +202,10 @@ ul.blank {
   margin-left: 0;
 }
 
+#serial_active{
+  color: #858585;
+}
+
 /* Footer
 --------------------------------------------------------- */
 .bg { background:#eee; margin-top:35px; padding-top:25px; border-top:5px solid #3498DB; }

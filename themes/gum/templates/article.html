@@ -11,6 +11,23 @@
               <h2 class="entry-title">
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
                    title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+
+            <!-- add series -->
+            {% if article.series %}
+              <p>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:</p>
+              <ol class="parts">
+                {% for part_article in article.series.all %}
+                  <li {% if part_article == article %}class="active"{% endif %}>
+                    {% if part_article == article %}
+                      <a id="serial_active" href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+                    {% else %}
+                      <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+            {% endif %}
+            <!-- add series -->
+
            {% import 'translations.html' as translations with context %}
            {{ translations.translations_for(article) }}
             </header>
