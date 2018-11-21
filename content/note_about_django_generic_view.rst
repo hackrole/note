@@ -5,6 +5,7 @@ django generic-view使用笔记
 :email: daipeng123456@gmail.com
 :date: 2015-06-08 15:32:35
 :tags: django, style, python
+:category: programming
 
 
 做了一个django app, 由于数据库使用mongodb, 所以没法使用django-admin. 就自己写了个admin.

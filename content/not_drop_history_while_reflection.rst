@@ -6,6 +6,7 @@
 :date: 2016-06-20 13:35:42
 :status: draft
 :tags: reflection, history
+:category: design
 
 
 1) 完全抛弃历史的重构方式会引进新的历史原因

@@ -6,6 +6,7 @@ linux下nc命令使用
 :date: 2014-08-15 16:20:32
 :status: draft
 :tags: nc
+:category: tools
 
 
 nc/netcat 一个很强大的tcp/udp工具.

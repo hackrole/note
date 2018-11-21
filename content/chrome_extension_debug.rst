@@ -5,7 +5,8 @@ chrome extension调试
 :email: daipeng123456@gmail.com
 :date: 2016-01-19 15:44:33
 :status: draft
-:tags: chrome, chrome-extension
+:tags: chrome
+:category: programming
 
 调试须知
 --------

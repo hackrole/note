@@ -7,6 +7,7 @@ gitlab CI 相关
 :date: 2018-05-04 10:56:35
 :status: draft
 :tags: gitlab,gitlab_ci,ci
+:category: programming
 
 ******************
 起步

@@ -5,7 +5,8 @@
 :email: daipeng123456@gmail.com
 :date: 2016-04-12 14:44:13
 :status: draft
-:tags: software, develop
+:tags: design
+:category: design
 
 
 1) 没有银弹

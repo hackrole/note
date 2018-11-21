@@ -6,6 +6,7 @@ vim搭建nodejs/javascript开发环境
 :date: 2015-04-09 16:15:00
 :status: draft
 :tags: vim, nodejs, javascript
+:category: tools
 
 
 语法高亮插件

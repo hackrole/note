@@ -6,6 +6,7 @@ ejabberd服务器配置与常见问题汇总
 :date: 2014-08-08 14:51:58
 :status: draft
 :tags: ejabberd
+:category: tools       
 
 pt-get安装后无法启动server
 --------------------------

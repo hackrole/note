@@ -5,6 +5,7 @@ vim变量相关
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:35:44
 :tags: vim
+:category: tools
 
 
 概述

@@ -4,6 +4,7 @@ svn与git比较
 :email: daipeng123456@gmail.com
 :date: 2013-12-26 15:38:55
 :tags: git
+:category: tools
 
 
 svn比git的优势

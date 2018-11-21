@@ -4,6 +4,7 @@
 :email: daipeng123456@gmail.com
 :date: 2015-06-05 15:42:28
 :tags: python, supvisord
+:category: tools
 
 
 linux做为开发环境, 经常需要安装一些第三方服务。

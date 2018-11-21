@@ -6,6 +6,7 @@
 :date: 2016-03-23 10:00:50
 :status: draft
 :tags: mitproxy, python, scrapy
+:category: tools
 
 安装
 ----

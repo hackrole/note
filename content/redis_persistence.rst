@@ -7,6 +7,7 @@ redis持久化配置
 :tags: redis
 :title: redis持久化配置相关
 :summary: redis持久化配置相关
+:category: programming
 
 
 持久化级别

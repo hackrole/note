@@ -6,6 +6,7 @@ GAE碰到的小问题
 :date: 2013-10-03 15:13:41
 :status: draft
 :tags: GAE
+:category: programming
 
 url匹配失败问题
 ---------------

@@ -7,6 +7,7 @@ ruby koans笔记:基本类型
 :series: ruby koans note
 :series_index: 1
 :tags: ruby
+:category: programming
 
 boolean
 -------

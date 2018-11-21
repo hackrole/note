@@ -5,7 +5,8 @@ app.yaml configue for google app engine
 :email: daipeng123456@gmail.com
 :date: 2013-09-08 15:51:45
 :status: draft
-:tags: GAE, yaml
+:tags: GAE
+:category: programming 
 
 elements
 --------

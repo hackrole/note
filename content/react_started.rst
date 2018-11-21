@@ -7,6 +7,7 @@ react起步须知
 :tags: react,tips
 :title: react起步须知
 :summary: 总结react起步需要的内容.
+:category: programming
 
 起步须知
 --------

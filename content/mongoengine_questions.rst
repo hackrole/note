@@ -6,6 +6,7 @@ mongodb库设计问题
 :date: 2014-07-31 17:49:57
 :status: draft
 :tags: mongodb, mongoengine, python
+:category: programming
 
 
 **TODO**

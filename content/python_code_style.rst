@@ -4,7 +4,8 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08
-:tags: python, pep8
+:tags: python, design
+:category: design
 
 
 代码建议统一使用pep8规范加上部分最佳实践。

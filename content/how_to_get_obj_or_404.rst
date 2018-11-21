@@ -3,7 +3,8 @@ get_obj_or_404注意
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-06-05 15:22:47
-:tags: django, model
+:tags: django
+:category: programming
 
 
 在写get_obj_or_404时的注意事项.

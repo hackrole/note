@@ -7,6 +7,7 @@
 :serials: vim-syntastic
 :status: draft
 :tags: vim
+:category: tools
 
 
 本文是对syntastic中文档的简单翻译.

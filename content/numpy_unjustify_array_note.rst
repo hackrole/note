@@ -2,8 +2,9 @@ numpy中使用不对称数组初始话np.array的结果
 =========================================
 
 :author: hackrole
-:tags: numpy,pydata
+:tags: numpy
 :date: 2015/10/29
+:category: programming
 
 
 numpy.array一般使用对齐数组初始化.

@@ -4,7 +4,8 @@ chrome extension开发tips
 :email: daipeng123456@gmail.com
 :date: 2016-01-28 09:40:38
 :status: draft
-:tags: chrome, chrome-extension
+:tags:  chrome
+:category: programming
 
 localstorage
 ------------

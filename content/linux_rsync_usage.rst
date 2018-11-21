@@ -6,6 +6,7 @@
 :date: 2016-01-29 15:04:33
 :status: draft
 :tags: rsync
+:category: tools
 
 
 rsync是linux下开源的备份工具.

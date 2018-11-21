@@ -5,7 +5,8 @@ chrome-extension manifest文件详解
 :email: daipeng123456@gmail.com
 :date: 2016-01-19 16:21:51
 :status: draft
-:tags: chrome, chrome-extension, chrome-manifest
+:tags: chrome
+:category: programming
 
 manifest文件格式
 ----------------

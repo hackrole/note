@@ -3,7 +3,8 @@ python数据分析twitter相关
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-05-26 15:35:14
-:tags: python, data_analizer, social_data
+:tags: python
+:category: programming
 
 
 twitter提供了一系列的api使得可以通过api来分析twitter数据，获取最热话题等.

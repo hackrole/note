@@ -5,7 +5,8 @@
 :email: daipeng123456@gmail.com
 :date: 2016-01-20 10:04:46
 :status: published
-:tags: write
+:tags: tips
+:category: design
 
 本文是对 图灵社区文章<http://www.ituring.com.cn/article/210924> 的整理。
 

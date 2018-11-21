@@ -6,6 +6,7 @@
 :date: 2013-09-11 15:24:45
 :status: draft
 :tags: source_read
+:category: programming
 
 如何阅读c源码项目
 -----------------

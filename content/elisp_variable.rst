@@ -4,8 +4,10 @@ elisp变量相关
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2014-01-02 15:02:21
-:status: draft
-:tags: elisp
+:status: published
+:tags: emacs
+:category: tools    
+
 
 全局变量
 --------

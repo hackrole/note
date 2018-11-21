@@ -4,7 +4,8 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:25:23
-:tags: stackoverflow,how-to-ask-a-question,ask-for-help
+:tags: tips
+:category: design
 
 关于屏蔽
 --------

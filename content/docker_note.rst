@@ -5,6 +5,7 @@ docker笔记
 :email: daipeng123456@gmail.com
 :date: 2018-07-09 12:49:56
 :tags: docker
+:category: tools
 
 docker registry nginx 403
 -------------------------

@@ -7,6 +7,7 @@ ruby koans笔记:流程控制
 :series: ruby koans note
 :series_index: 2
 :tags: ruby
+:category: programming
 
 if/unless
 ---------

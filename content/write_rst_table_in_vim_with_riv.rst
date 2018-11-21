@@ -6,6 +6,7 @@ vim中使用riv插件输出表格
 :date: 2016-02-02 16:29:59
 :status: published
 :tags: vim
+:category: tools
 
 使用
 ----

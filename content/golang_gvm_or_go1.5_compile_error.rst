@@ -5,6 +5,7 @@ golang1.5编译失败及gvm安装golang报错
 :email: daipeng123456@gmail.com
 :date: 2015-09-02 15:22:11
 :tags: golang,tips
+:category: programming
 
 
 golang现在使用两套编译安装策略。

@@ -4,7 +4,8 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-06-09 15:03:11
-:tags: tools, team
+:tags: team
+:category: team
 
 
 工具的使用可以挺高工作管理的效率，但是如何在team中推行一套工具并不容易。

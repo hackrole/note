@@ -4,7 +4,8 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2014-12-18 14:48:27
-:tags: develop, style
+:tags: design,style
+:category: design
 
 
 严格遵守自底而上的设计策略

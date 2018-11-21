@@ -5,6 +5,7 @@ linux(ubuntu)下安装mongodb服务器
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:34:30
 :tags: mongodb
+:category: programming
 
 
 概述

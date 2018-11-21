@@ -4,6 +4,7 @@ ruby下的irb/iruby如何使用补全
 :author: hackrole
 :email: daipeng123456@gmail.com
 :tags: ruby,tips
+:category: programming
 
 
 概述

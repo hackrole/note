@@ -5,6 +5,7 @@
 :date: 2015/11/01
 :author: hackrole
 :summary: how to use pdb in py.test
+:category: programming
 
 
 写单元测试的过程其实也是调试代码的过程.

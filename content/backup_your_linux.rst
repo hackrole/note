@@ -6,6 +6,7 @@
 :date: 2014-03-24 16:23:51
 :status: draft
 :tags: tips
+:category: tools
 
 **TODO**
 

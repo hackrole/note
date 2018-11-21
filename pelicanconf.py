@@ -126,3 +126,40 @@ DEFAULT_PAGINATION = 20
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+
+
+## only tags and category in this is allowed
+CATEGORY_LIST = [
+    'plan',
+    'programming',
+    'tools'
+    'design',
+    'team',
+]
+
+TAGS_LIST = [
+    'python',
+    'django',
+    'vim',
+    'emacs',
+    'design',
+    'pelican',
+    'SQL',
+    'react',
+    'react_native',
+    'vagrant',
+    'musca-wm',
+    'matplotlib',
+    'py.test',
+    'ruby',
+    'mongodb',
+    'style',
+    'team',
+    'android',
+    'numpy',
+    'redis',
+    'golang',
+    'cluster',
+    'tips',
+    'kubenates',
+]

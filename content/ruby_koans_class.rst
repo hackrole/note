@@ -6,7 +6,8 @@ ruby koans:类相关
 :date: 2016-01-14 15:26:33
 :series: ruby koans note
 :series_index: 3
-:tags: ruby, koans
+:tags: ruby
+:category: programming
 
 
 属性

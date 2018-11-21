@@ -5,6 +5,7 @@
 :email: daipeng123456@gmail.com
 :date: 2016-01-08
 :tags: tips
+:category: design
 
 
 before or afeter

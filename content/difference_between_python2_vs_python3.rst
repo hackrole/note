@@ -6,6 +6,7 @@ python2与python的区别整理
 :date: 2016-02-01 10:54:46
 :status: draft
 :tags: python, python3, tips
+:category: programming       
 
 print keyword -> function
 -------------------------

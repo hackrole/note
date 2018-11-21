@@ -5,7 +5,8 @@ lisp 基本概念与内建数据类型简介
 :email: daipeng123456@gmail.com
 :date: 2013-12-23 14:56:20
 :status: draft
-:tags: elisp
+:tags: emacs
+:category: tools
 
 lisp的基本特性
 --------------

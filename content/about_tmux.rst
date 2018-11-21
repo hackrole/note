@@ -6,7 +6,7 @@ tmux配置整理
 :date: 2018-05-04 10:56:35
 :status: draft
 :tags: tmux
-
+:category: tools
 
 nested session
 --------------

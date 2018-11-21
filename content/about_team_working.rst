@@ -7,6 +7,7 @@
 :date: 2016-06-28 12:57:48
 :status: draft
 :tags: work,plan
+:category: team
 
 
 关于离开舒适区

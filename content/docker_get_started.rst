@@ -5,7 +5,7 @@ docker入门
 :email: daipeng123456@gmail.com
 :date: 2015-06-04 14:49:44
 :tags: docker, vagrant
-
+:category: tools
 
 docker不久，不过个人感觉docker还是很有用的，有时间要好好研究下。
 

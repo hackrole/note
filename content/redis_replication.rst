@@ -5,6 +5,7 @@ redis复制配置相关
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:31:05
 :tags: redis
+:category: programming
 
 
 原内容来自redis官方文档::

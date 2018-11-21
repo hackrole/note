@@ -6,6 +6,7 @@ vim中使用virtualenv插件
 :date: 2016-03-21 10:19:42
 :status: draft
 :tags: vim, virtualenv, python, pep8
+:category: tools
 
 
 .. code-block:: bash

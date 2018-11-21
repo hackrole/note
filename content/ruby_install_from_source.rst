@@ -5,7 +5,8 @@
 :email: daipeng123456@gmail.com
 :date: 2014-01-14 17:59:31
 :status: published
-:tags: ruby, make, source-install
+:tags: ruby,tips
+:category: programming
 
 多版本ruby与rvm问题
 -------------------

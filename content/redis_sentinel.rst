@@ -4,9 +4,10 @@ redis sentinel(redis监控)
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-12-31
-:tags: redis,redis-sentinel
+:tags: redis
 :title: redis高可用监控sentinel配置和使用
 :summary: 如何通过配置sentinel实现redis集群高可用 
+:category: programming
 
 sentinel功能
 ------------

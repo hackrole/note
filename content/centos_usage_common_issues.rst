@@ -6,6 +6,7 @@ centos常用配置总结
 :date: 2014-01-03 18:09:49
 :status: draft
 :tags: centos
+:category: tools
 
 网络配置问题
 ------------

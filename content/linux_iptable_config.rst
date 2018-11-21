@@ -6,6 +6,7 @@ linux下配置iptables
 :date: 2014-08-19 16:29:27
 :status: draft
 :tags: iptables
+:category: tools
 
 
 iptable主要用于配置linux服务器防火墙规则。

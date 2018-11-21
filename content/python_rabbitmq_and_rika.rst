@@ -6,6 +6,7 @@ rabbitmq和python-rika库入门
 :date: 2014-07-10 17:07:40
 :tags: python, rabbitmq, rika
 :status: draft
+:category: programming
 
 
 **TODO** this note is not finish

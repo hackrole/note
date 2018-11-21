@@ -5,6 +5,7 @@ mongodb与第一范式
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08
+:category: programming
 
 
 

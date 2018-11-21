@@ -4,6 +4,7 @@ model实现感想
 :email: daipeng123456@gmail.com
 :date: 2014-01-03 15:46:56
 :tags: tips
+:category: design
 
 
 model，即模型，业务模型。

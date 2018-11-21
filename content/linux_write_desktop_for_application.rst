@@ -6,6 +6,7 @@ linux下为应用写个desktop文件
 :date: 2014-05-05 16:27:53
 :status: draft
 :tags: tips
+:category: tools
 
 
 基本都是仿造/usr/share/applications/目录下来写，

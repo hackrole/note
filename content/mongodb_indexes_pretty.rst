@@ -6,6 +6,7 @@ mongodb索引建立和优化
 :date: 2014-06-27 17:38:06
 :status: draft
 :tags: mongodb,tips
+:category: programming
 
 **TODO**: 来源
 

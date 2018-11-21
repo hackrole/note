@@ -6,6 +6,7 @@ python中使用with来减少代码重复
 :date: 2015-09-10 15:36:07
 :status: draft
 :tags: python
+:category: programming
 
 
 python with的执行流程

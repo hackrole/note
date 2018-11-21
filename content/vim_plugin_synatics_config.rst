@@ -5,7 +5,8 @@ vim插件Synatics配置
 :date: 2015-04-28 15:44:44
 :serials: vim-syntastic
 :series_index: 2
-:tags: vim, syntastic
+:tags: vim
+:category: tools
 
 
 syntastic是一个通用的语法检查插件,通过调用外部命令完成语法检查,之后合并多个语法检查的结果,将结果显示在quick-issue上.

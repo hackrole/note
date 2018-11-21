@@ -5,6 +5,7 @@ http协议与restful-api设计
 :date: 2015-03-26 15:25:47
 :status: draft
 :tags: http, restful, api
+:category: programming
 
 http简介
 --------

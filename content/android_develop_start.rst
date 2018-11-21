@@ -6,6 +6,7 @@ android开发起步
 :date: 2016-01-08 14:32:47
 :tags: android
 :summary: linux(ubuntu)下搭建android开发环境.
+:category: programming
 
 安装sdk
 -------

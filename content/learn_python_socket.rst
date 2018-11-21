@@ -6,6 +6,7 @@ python socket库学习
 :date: 2016-04-09 10:53:46
 :status: draft
 :tags: python, socket, binary
+:category: programming
 
 
 # socket c paper

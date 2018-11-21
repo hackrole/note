@@ -5,6 +5,7 @@ redis分片相关
 :tags: redis
 :author: hackrole
 :date: 2015/12/30
+:category: programming
 
 
 介绍redis分片相关内容.

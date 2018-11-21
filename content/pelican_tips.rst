@@ -6,6 +6,7 @@ pelican使用tips
 :date: 2016-01-29 11:15:34
 :status: published
 :tags: pelican
+:category: programming
 
 不要配置SITEURL
 ---------------

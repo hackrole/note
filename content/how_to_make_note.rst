@@ -4,9 +4,10 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-11-05
-:tags: note,learn
+:tags: tips,design
 :marks: important
 :summary: 个人笔记和计划的管理和组织方式
+:category: plan
 
 
 个人笔记是个人学习成长中非常重要的记录和辅助.

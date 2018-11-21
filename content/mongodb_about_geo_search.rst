@@ -6,6 +6,7 @@ mongodb 地理位置查询tips
 :date: 2014-05-15 17:29:34
 :status: draft
 :tags: mongodb
+:category: programming
 
 
 + geo可以和其他字段生成联合索引

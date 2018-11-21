@@ -5,7 +5,8 @@ react-native中的如何加载图片
 :email: daipeng123456@gmail.com
 :date: 2016-03-02 15:53:58
 :status: draft
-:tags: reactjs, react-native, ios
+:tags: react,react-native
+:category: programming
 
 如何使用image标签
 -----------------

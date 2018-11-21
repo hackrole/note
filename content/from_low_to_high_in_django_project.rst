@@ -5,6 +5,7 @@ django项目自顶向下构造方式
 :email: daipeng123456@gmail.com
 :date: 2015-04-24 15:06:20
 :tags: django, style
+:category: programming
 
 自顶向下构建
 ------------

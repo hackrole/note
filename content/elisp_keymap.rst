@@ -5,7 +5,8 @@ elisp keymap相关
 :email: daipeng123456@gmail.com
 :date: 2014-01-03 14:58:24
 :status: draft
-:tags: elisp, emacs, lisp
+:tags: emacs
+:category: tools
 
 
 elisp按键序列概念

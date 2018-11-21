@@ -5,6 +5,7 @@ mnesia用户手册(官方文档)
 :date: 2014-12-24 15:30:37
 :status: draft
 :tags: erlang, mnesia
+:category: programming
 
 
 mnesia用户手册

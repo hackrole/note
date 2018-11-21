@@ -5,7 +5,8 @@ superviosr配置小节
 :email: daipeng123456@gmail.com
 :date: 2016-01-26 16:10:34
 :status: draft
-:tags: python, supervisor
+:tags: python,supervisord
+:category: tools
 
 概述
 ----

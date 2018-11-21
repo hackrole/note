@@ -6,7 +6,7 @@ minikube tips
 :date: 2018-08-03 10:23:01
 :status: published
 :tags: kubernates,docker,tips
-:category: kubernates
+:category: tools
 
 
 minikube搭建issuses

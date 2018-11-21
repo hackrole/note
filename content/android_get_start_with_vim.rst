@@ -6,6 +6,7 @@ get_started_with_android_hello_world
 :date: 2014-08-05 14:43:40
 :tags: android, hello world
 :status: draft
+:category: programming
 
 eclipse过程忽略，只记录vim/shell过程
 

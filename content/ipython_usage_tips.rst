@@ -6,6 +6,7 @@ ipython使用技巧
 :date: 2014-03-21 17:18:33
 :status: draft
 :tags: python, ipython, tools
+:category: programming
 
 
 内容参考: 来自 **TODO**

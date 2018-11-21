@@ -5,6 +5,7 @@ vim中使用nerdcomment来注释python代码tips
 :date: 2016-02-03 11:06:47
 :status: published
 :tags: vim, python
+:category: tools
 
 intro
 -----

@@ -1,4 +1,4 @@
-电阻住装清单
+电脑住装清单
 ============
 
 :author: hackrole
@@ -6,6 +6,7 @@
 :date: 2016-06-28 12:57:48
 :status: draft
 :tags: computer
+:category: plan
 
 清单
 ----

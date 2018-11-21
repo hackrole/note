@@ -7,6 +7,7 @@ git小计
 :status: draft
 :tags: git
 :summary: 简单记下git使用中碰到的问题和解决思路.
+:category: tools
 
 
 git log使用

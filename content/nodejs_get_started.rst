@@ -6,6 +6,7 @@ nodejs入门
 :date: 2014-01-06 16:01:57
 :status: draft
 :tags: nodejs, node
+:category: programming
 
 简介
 ----

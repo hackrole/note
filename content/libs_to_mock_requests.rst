@@ -4,8 +4,8 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:33:44
-:tags: requests, mock, unittest
-
+:tags: TDD,python,tips
+:category: programming
 
 
 requests模块是非常好用的python http处理模块，使用场景很长广。

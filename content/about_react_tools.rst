@@ -5,7 +5,8 @@ react相关工具
 :email: daipeng123456@gmail.com
 :date: 2016-02-16 11:45:30
 :status: draft
-:tags: react, babel, watchify, browserify, javascript, gulp, npm, es6
+:tags: react, javascript
+:category: programming
 
 写在前面
 --------

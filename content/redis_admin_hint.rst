@@ -5,7 +5,7 @@ redis服务管理需知
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:34:49
 :tags: redis
-
+:category: programming
 
 
 介绍一些redis部署时的注意事项

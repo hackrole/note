@@ -4,8 +4,9 @@ elisp buffer处理相关
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2014-01-02 14:55:08
-:status: draft
+:status: published
 :tags: elisp, emacs
+:category: tools
 
 buffer基本概念
 --------------

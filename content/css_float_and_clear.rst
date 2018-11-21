@@ -6,6 +6,7 @@ css布局float/clear
 :date: 2016-01-27 13:05:30
 :status: draft
 :tags: css
+:category: programming
 
 
 float会让元素脱离正常的文档留.

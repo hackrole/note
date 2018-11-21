@@ -6,6 +6,7 @@ golang入门
 :date: 2014-04-21 15:17:04
 :status: draft
 :tags: golang
+:category: programming
 
 golang特点
 ----------

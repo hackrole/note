@@ -5,7 +5,8 @@ GAE datastore相关
 :email: daipeng123456@gmail.com
 :date: 2013-09-13 15:12:17
 :status: draft
-:tags: GAE, datastore
+:tags: GAE
+:category: programming
 
 about Key
 ---------

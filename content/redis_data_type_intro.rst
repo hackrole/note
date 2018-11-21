@@ -7,6 +7,7 @@ redis数据结构介绍
 :tags: redis
 :title: redis数据结构介绍
 :summary: redis中string/list/hash/set/sorted-set/bit介绍
+:category: programming
 
 
 概述

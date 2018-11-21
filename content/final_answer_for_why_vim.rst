@@ -6,6 +6,7 @@
 :date: 2015-06-05 15:04:13
 :status: draft
 :tags: vim, tools, style
+:category: tools
 
 为什么vim/emacs不是IDE??
 ------------------------
