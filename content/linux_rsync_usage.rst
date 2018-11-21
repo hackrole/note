@@ -5,7 +5,7 @@
 :email: daipeng123456@gmail.com
 :date: 2016-01-29 15:04:33
 :status: draft
-:tags: linux, rsync
+:tags: rsync
 
 
 rsync是linux下开源的备份工具.

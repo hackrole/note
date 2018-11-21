@@ -4,7 +4,7 @@ react起步须知
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:26:01
-:tags: react,browserify-debug,react-get-started
+:tags: react,tips
 :title: react起步须知
 :summary: 总结react起步需要的内容.
 

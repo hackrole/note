@@ -4,7 +4,7 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08
-:tags: app, version, 协作
+:tags: tips
 
 
 before or afeter

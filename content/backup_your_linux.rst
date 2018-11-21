@@ -5,7 +5,7 @@
 :email: daipeng123456@gmail.com
 :date: 2014-03-24 16:23:51
 :status: draft
-:tags: linux, backup
+:tags: tips
 
 **TODO**
 

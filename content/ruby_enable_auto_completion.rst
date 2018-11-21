@@ -3,7 +3,7 @@ ruby下的irb/iruby如何使用补全
 :date: 2016-01-08 10:20
 :author: hackrole
 :email: daipeng123456@gmail.com
-:tags: ruby, irb, iruby, bond, ruby_completion
+:tags: ruby,tips
 
 
 概述

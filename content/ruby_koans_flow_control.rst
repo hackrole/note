@@ -6,7 +6,7 @@ ruby koans笔记:流程控制
 :date: 2016-01-14 14:16:28
 :series: ruby koans note
 :series_index: 2
-:tags: ruby, koans
+:tags: ruby
 
 if/unless
 ---------

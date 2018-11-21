@@ -5,7 +5,7 @@ linux下为应用写个desktop文件
 :email: daipeng123456@gmail.com
 :date: 2014-05-05 16:27:53
 :status: draft
-:tags: linux
+:tags: tips
 
 
 基本都是仿造/usr/share/applications/目录下来写，

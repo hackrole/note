@@ -5,7 +5,7 @@ mongodb 地理位置查询tips
 :email: daipeng123456@gmail.com
 :date: 2014-05-15 17:29:34
 :status: draft
-:tags: mongodb, geo-search,
+:tags: mongodb
 
 
 + geo可以和其他字段生成联合索引

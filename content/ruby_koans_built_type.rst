@@ -6,7 +6,7 @@ ruby koans笔记:基本类型
 :date: 2016-01-14 11:41:08
 :series: ruby koans note
 :series_index: 1
-:tags: ruby, koans
+:tags: ruby
 
 boolean
 -------

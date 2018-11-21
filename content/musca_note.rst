@@ -3,7 +3,7 @@ musca笔记
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-03-23 15:31:41
-:tags: musca, linux
+:tags: musca-wm
 
 
 简介

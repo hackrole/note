@@ -5,7 +5,7 @@ mongodb索引建立和优化
 :email: daipeng123456@gmail.com
 :date: 2014-06-27 17:38:06
 :status: draft
-:tags: mongodb, db-index
+:tags: mongodb,tips
 
 **TODO**: 来源
 

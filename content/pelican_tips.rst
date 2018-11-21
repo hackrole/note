@@ -5,7 +5,7 @@ pelican使用tips
 :email: daipeng123456@gmail.com
 :date: 2016-01-29 11:15:34
 :status: published
-:tags: pelican, python, rst
+:tags: pelican
 
 不要配置SITEURL
 ---------------

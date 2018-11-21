@@ -5,7 +5,7 @@ vim中使用riv插件输出表格
 :email: daipeng123456@gmail.com
 :date: 2016-02-02 16:29:59
 :status: published
-:tags: vim, riv, rst
+:tags: vim
 
 使用
 ----

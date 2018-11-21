@@ -1,7 +1,7 @@
 mongodb与第一范式
 =================
 
-:tags: mongodb,1NF,SQL,model
+:tags: mongodb,SQL
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08

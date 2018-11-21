@@ -2,7 +2,7 @@ redis分片相关
 =============
 
 :title: redis分片小记
-:tags: redis,partition,redis-partition
+:tags: redis
 :author: hackrole
 :date: 2015/12/30
 

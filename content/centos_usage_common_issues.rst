@@ -5,7 +5,7 @@ centos常用配置总结
 :email: daipeng123456@gmail.com
 :date: 2014-01-03 18:09:49
 :status: draft
-:tags: linux, centos
+:tags: centos
 
 网络配置问题
 ------------

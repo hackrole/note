@@ -4,7 +4,7 @@ redis持久化配置
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:35:13
-:tags: redis, redis_persistence, redis持久化
+:tags: redis
 :title: redis持久化配置相关
 :summary: redis持久化配置相关
 

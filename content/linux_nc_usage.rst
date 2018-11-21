@@ -5,7 +5,7 @@ linux下nc命令使用
 :email: daipeng123456@gmail.com
 :date: 2014-08-15 16:20:32
 :status: draft
-:tags: linux, nc, network
+:tags: nc
 
 
 nc/netcat 一个很强大的tcp/udp工具.

@@ -3,7 +3,7 @@
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2015-06-09 15:40:50
-:tags: python, mongodb, db_group
+:tags: python, mongodb
 
 
 最近写项目用到mongodb数据库。后续要做后台管理的时候，有一个需要按（天/人）做聚合的需求(group_by)。

@@ -4,7 +4,7 @@ android开发起步
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:32:47
-:tags: android,android-sdk,get-started
+:tags: android
 :summary: linux(ubuntu)下搭建android开发环境.
 
 安装sdk

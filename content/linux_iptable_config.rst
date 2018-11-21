@@ -5,7 +5,7 @@ linux下配置iptables
 :email: daipeng123456@gmail.com
 :date: 2014-08-19 16:29:27
 :status: draft
-:tags: linux, iptables, security
+:tags: iptables
 
 
 iptable主要用于配置linux服务器防火墙规则。

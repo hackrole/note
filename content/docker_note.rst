@@ -4,7 +4,7 @@ docker笔记
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2018-07-09 12:49:56
-:tags: docker,docker-registry,
+:tags: docker
 
 docker registry nginx 403
 -------------------------

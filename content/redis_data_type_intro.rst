@@ -4,7 +4,7 @@ redis数据结构介绍
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-01-08 14:31:57
-:tags: redis,data-type
+:tags: redis
 :title: redis数据结构介绍
 :summary: redis中string/list/hash/set/sorted-set/bit介绍
 

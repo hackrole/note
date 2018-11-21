@@ -1,7 +1,7 @@
 如果在pytest中使用pdb调试代码
 =============================
 
-:tags: py.test,python,pdb,TDD,test
+:tags: py.test,python,TDD
 :date: 2015/11/01
 :author: hackrole
 :summary: how to use pdb in py.test
