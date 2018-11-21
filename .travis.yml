@@ -12,7 +12,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  repo: hackrole.github.io
+  repo: hackrole/hackrole.github.io
   target-branch: master
   local-dir: output
   github-token: $GITHUB_TOKEN
