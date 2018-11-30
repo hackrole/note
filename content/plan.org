@@ -1,0 +1,11 @@
+* microservice
+** TODO go-micro framework
+** TODO martni flow blog
+** TODO grpc
+** TODO hashiple tools
+
+* TODO distribution system
+
+** TODO desgin data-intension application
+
+** TODO mit 6.824
