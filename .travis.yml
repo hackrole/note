@@ -23,7 +23,7 @@ notifications:
   email: false
   slack:
     rooms:
-      - hackrole:CoJ3AliFetTLB6lwttupZsXD
+      - ${SLACK_TOKEN}
     on_success: always
     on_failure: always
     template:
