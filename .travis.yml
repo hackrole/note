@@ -18,3 +18,15 @@ deploy:
   github-token: $GITHUB_TOKEN
   keep-history: false
   # fqdn: pages.hackrole.com
+
+notifications:
+  email: false
+  slack:
+    rooms:
+      - ${SLACK_TOKEN}
+    on_success: always
+    on_failure: always
+    template:
+      - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+      - "Execution time: *%{duration}*"
+      - "Message: %{message}"
