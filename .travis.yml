@@ -1,31 +1,28 @@
 language: python
 branches:
   only:
-    - master
+  - master
 install:
-  - pip install pipenv
-  - pipenv install --dev --deploy
+- pip install pipenv
+- pipenv install --dev --deploy
 script:
-  - echo ${GITHUB_TOKEN}
-  - fab build
-
+- echo ${GITHUB_TOKEN}
+- fab build
 deploy:
   provider: pages
   skip-cleanup: true
   repo: hackrole/hackrole.github.io
   target-branch: master
   local-dir: output
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: false
-  # fqdn: pages.hackrole.com
-
 notifications:
   email: false
   slack:
     rooms:
-      - ${SLACK_TOKEN}
-    on_success: always
-    on_failure: always
+      - secure: xb1I+IKF1PhdVdwm/TKeK6tCOl4L/jl4KMOHrM3XJHeaMQlWAAlz+ydbRtEGvh+0/rCFJQC73evFoDDO84rzSkrrXs54NpbApziUfE4KXoZA3vrITVnlGM2IdTAs9I1KaqmbqppIEycTlBeylENMlb3MpS0RGnLUTaB2GvRJIEUnBDWjMxUubrRX0lMbPsScQbg/ZghzJn4TNzDaAcUK57MHDcnBRS2oIXMQLgxXJTW9f38rITdBpaLgPIzNiipS9Hmm4i4ZkFm2f1XaP+fNdWsw6IiyMdZVCPPs3vjIrYaTrXfu/n4hG6Skon+idQcJbNxHCgGfL3zseAM96SLevW+L0r1nHHQLyQy8XVDhpxGiYgdZLKThtYPZOplN2qKlgjNeVnehrBy7jRnFWLU0iaVyl1idS0pqHmBhOZeeClseENyoafhenRSAAc9EFVJUU4Wx7Qbng7R15PjSp1xhcQT6nIQzb1oLzEjFse8q6W5ECJQ3/ZbFj858o27fzZjmzRKfIollRFGc2Vt/u2NSbgDQ1XqF4zGVpLWWtrghVuJv/ZqSWtgDhwUMjkOMM6EVne2DM8FuSq0gcYnN28Evj7na/WzA4/Ppbo4T+Rzwz7TbSRsw4nxYDPJ0NY0YC6vZjV2OK/M1qD6nQv20xK0+l46xHk5LONlH/lz0uBVpOjs=
+    on_success: always  # change: send a notification when the build status changes.
+    on_failure: always  # always: always send a notification.
     template:
       - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
       - "Execution time: *%{duration}*"

@@ -3,23 +3,24 @@ Date: 2018-12-06
 Category: docker
 Tags: docker
 Author: hackrole
+Status: Draft
 Email: hack.role@gmail.com
 
-# docker swarm concept
+## docker swarm concept
 
-## network
+### network
 
-## service
+### service
 
-## node
+### node
 
-# docker swarm usage
+## docker swarm usage
 
-## load balance/service discovery
+### load balance/service discovery
 
-## docker-compose/stack
+### docker-compose/stack
 
-# docker swarm shortcuts
+## docker swarm shortcuts
 
 ```bash
 docker swarm init --adverser-url <localhost-ip>
@@ -34,7 +35,7 @@ docker service rm
 ```
 
 
-# links
+## links
 [docker get-start](https://docs.docker.com/get-started/part1)
 
 [docker swarm](https://docs.docker.com/engine/swarm/)
