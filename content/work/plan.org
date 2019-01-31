@@ -19,3 +19,29 @@ selenium高抽象爬虫框架
 2) threads and Quene
 
 
+* TODO 论文
+1) google(gfs/mapreduce/bigtable)
+
+2) spark论文
+
+3) raft论文
+
+4) 其他
+
+5) mit 6.824
+
+* TODO 算法导论
+
+
+* TODO golang
+
+
+* TODO python源码剖析
+
+
+* TODO 数据库实现和高级算法数据结构
+
+
+* TODO redis源码实现
+
+* TODO k8s
