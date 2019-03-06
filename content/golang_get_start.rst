@@ -153,3 +153,13 @@ sublime text2
 ~~~~~~~~~~~~~
 
 **TODO**
+
+
+resource
+~~~~~~~~~
+
+https://dave.cheney.net/practical-go/presentations/qcon-china.html?utm_campaign=Master%20the%20World%20of%20Golang&utm_medium=email&utm_source=Revue%20newsletter
+
+https://medium.com/@dgryski/idiomatic-go-resources-966535376dba
+
+https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part2.html?utm_campaign=Master%20the%20World%20of%20Golang&utm_medium=email&utm_source=Revue%20newsletter
