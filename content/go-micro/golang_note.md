@@ -84,3 +84,25 @@ switch t := t.(type) {
 ## the go programming spec
 
 [offical go spec](https://golang.org/ref/spec)
+
+
+# golang gc ISMM
+
+[ISMM keynote about golang GC](https://blog.golang.org/ismmkeynote)
+
+# golang for industrial programming
+
+[golang for industrial programming](https://peter.bourgon.org/go-for-industrial-programming/)
+
+
+1) flag better than environment-vars and config. environment-vars for secret-config
+
+2) explicit dependencies
+
+3) no package level variable
+
+4) no func init
+
+5) pkg structure around business-domain. 
+
+6) never start a goroutine without know how it stop
