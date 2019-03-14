@@ -1,6 +1,7 @@
 i3-wm使用tips
 =============
 
+
 :author: hackrole
 :email: daipeng123456@gmail.com
 :date: 2016-03-30 18:04:24
@@ -19,3 +20,9 @@ i3-wm使用tips
 ---------
 
 **TODO**
+
+
+使用rofi取代dmenu
+----------------
+
+bindsym $mod+o exec rofi -show run
