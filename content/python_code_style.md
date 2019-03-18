@@ -1,11 +1,10 @@
-代码风格统一规范
-================
+Title: python代码风格
+Date: 2016-01-08
+Category: programming
+Tags: python,pep8
+Author: hackrole
+Email: hack.role@gmail.com
 
-:author: hackrole
-:email: daipeng123456@gmail.com
-:date: 2016-01-08
-:tags: python, design
-:category: design
 
 
 代码建议统一使用pep8规范加上部分最佳实践。
@@ -16,23 +15,19 @@ Guido 的主要洞察力 (key insights) 之一是：代码更多是用来读而�
 
 故本 指南致力于改善 Python 代码的可读性、使不同的 (wide spectrum) Python 代码 保持一致性。
 
-pep8规范
---------
+[python code comment style](./python_code_comment_style.md)
+
+# pep8规范
 
 代码pep8规范可以使用python pep8工具做检查.
 
-安装方法::
+安装方法 `pip install pep8`
 
-    pip install pep8
-
-使用方法::
-
-    pep8 <python文件>
+使用方法 `pep8 <python文件>`
 
 一般IDE工具都会有集成，可以在编写代码的工程中做pep8校验. 可自行google设置方法。
 
-代码布局
-~~~~~~~~
+## 代码布局
 
 1) 每级缩进用 4 个空格。
 
@@ -51,16 +46,16 @@ pep8规范
    在函数中使用空行时，请谨慎的用于表示一个逻辑段落 (logical sections)。
 
 7) python文件应统一使用utf8编码，并建议在文件头加生utf8声明。
-   申明头如下::
+   申明头如下
+```python
+## 格式一
+# -*- coding: utf-8 -*-
+## 格式二
+#!/usr/bin/env python
+# encoding: utf-8
+```
 
-       ## 格式一
-       # -*- coding: utf-8 -*-
-       ## 格式二
-       #!/usr/bin/env python
-       # encoding: utf-8
-
-导入import
-~~~~~~~~~~
+## 导入import
 
 1) 模块应在单行导入,模块内属性可以一行导入。
 
@@ -76,8 +71,7 @@ pep8规范
 
    具体可以参见pep328.
 
-空格处理
-~~~~~~~~
+## 空格处理
 
 空格问题大多可以通过pgp8工具检测出来，只要时间操作几次基本就能养出习惯。
 
@@ -96,8 +90,7 @@ pep8规范
 
 5) 复合语句 (Compound statements) (多条语句写在同一行) 一般不推荐。
 
-注释
-~~~~
+## 注释
 
 同代码不一致的注释比没注释更差。当代码修改时，始终优先更新注释！注释应该是完整的句子。
 
@@ -111,8 +104,7 @@ pep8规范
 
    这条注释应该出现在 "def" 行之后
 
-命名风格
-~~~~~~~~
+## 命名风格
 命名风格是为了保持代码的可读性.
 
 1) 模块名应该是简短的、全部小写的名字。可以在模块名中使用下划线以提高可读性。
@@ -136,10 +128,11 @@ pep8规范
 
 7) 对 non-public方法和实例变量采用一个前导下划线
 
-最佳实践
---------
+## 最佳实践
 
 内容源自: `Hitchhiker's Guide
 <https://www.python-guide.readthedocs.org/en/latest/writing/style/>`_.
 
 这里内容比较散乱，不太好整理.内容也不是必须要求，可以自行尝试实践。
+
+
