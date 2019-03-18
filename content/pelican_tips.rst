@@ -46,6 +46,37 @@ pelican使用tips
 
    SLUGIFY_SOUTCE = 'basename' # use filename. default use article title.
 
+
+设置文件draft状态
+---------------
+
+在文件头加入:
+
+    # rst-mode
+    :Status: draft
+    # markdown-mode
+    Status: draft
+
+可将文件设置为drafted, 不会发布到网上
+
+文件internal-link
+-----------------
+
+rst-mode 
+
+.. code-block:: rst
+
+   TODO
+
+markdown-mode
+
+.. code-block:: mardown
+
+   [description text](./filename.(md|rst))
+   # 例如
+   [python-code-style](./python/python-code-style.md)
+
+
 忽略部分文件
 ------------
 
@@ -56,6 +87,8 @@ pelican使用tips
 
    # 目录和文件都可以
    IGNORE_FILES = ['org-note', 'not-me.html']
+
+
 
 处理静态文件
 ------------
