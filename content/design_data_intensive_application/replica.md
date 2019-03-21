@@ -1,3 +1,12 @@
+Title: design data-intension application: replica
+Date: 2019-03-21
+Category: programming
+Tags: 
+Author: hackrole
+Email: hack.role@gmail.com
+Status: draft
+
+
 # replica复制
 
 ## word concept

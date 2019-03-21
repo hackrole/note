@@ -1,3 +1,12 @@
+Title: golang tips
+Date: 2019-03-21
+Category: programming
+Tags: golang
+Author: hackrole
+Email: hack.role@gmail.com
+Status: draft
+
+
 # golang tips
 
 

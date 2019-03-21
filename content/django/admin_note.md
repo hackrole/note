@@ -1,3 +1,12 @@
+Title: django admin note
+Date: 2019-03-21
+Category: programming
+Tags: django,python
+Author: hackrole
+Email: hack.role@gmail.com
+Status: draft
+
+
 
 # django admin note
 

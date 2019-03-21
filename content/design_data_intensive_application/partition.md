@@ -1,3 +1,12 @@
+Title: design data-intension application: shared
+Date: 2019-03-21
+Category: programming
+Tags: 
+Author: hackrole
+Email: hack.role@gmail.com
+Status: published
+
+
 # partition or shared
 
 ## word concept

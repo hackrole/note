@@ -1,11 +1,44 @@
 * microservice
-** TODO go-micro framework
-** TODO martni flow blog
-** TODO grpc
-** TODO hashiple tools
+** go-micro framework
+** martni flow blog
+** grpc
+** hashiple tools
 
-* TODO distribution system
+* distribution system
 
-** TODO desgin data-intension application
+** desgin data-intension application
 
-** TODO mit 6.824
+** mit 6.824
+
+* python
+
+** alogrithm
+  
+[algorithm](https://github.com/keon/algorithms)
+[algorithm](https://github.com/grantjenks/python-sortedcontainers)
+
+[python patterns](https://github.com/faif/python-patterns)
+[python patterns](https://github.com/tylerlaberge/PyPattyrn)
+
+** source-code
+
+requests
+
+flask
+
+hub
+
+tornado
+
+django
+
+** numpy/matplatlib/keras/sklearn/dask
+
+* Golang
+
+** go book
+
+** go stdlib
+
+** go-micro
+
